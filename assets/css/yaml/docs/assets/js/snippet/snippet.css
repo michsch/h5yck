@@ -35,6 +35,12 @@
 	font-style:normal;
 }
 
+.sh_peachpuff .sh_sourceCode strong .sh_string {
+	color:#268bd2;
+	font-weight:bold;
+	font-style:normal;
+}
+
 .sh_peachpuff .sh_sourceCode .sh_regexp {
 	color:#c00058;
 	font-weight:normal;

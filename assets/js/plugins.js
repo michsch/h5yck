@@ -3,22 +3,22 @@
  * plugins file with some jQuery plugins and standard functions
  *
  * @author             Michael Schulze
- * @version            $1.0$
+ * @version            $1.1$
  * @copyright          Michael Schulze <elsigno.de>, 29 December, 2011
  * @license            GNU General Public License, version 3 (GPL-3.0)
  * @package            coffeescript, jquery
- * @requirements       jquery-1.7.1.min.js
+ * @requirements       jquery-1.7.2.min.js
  *
- * @lastmodified       $Date: 2011-12-29 21:45:44  +0100 (Thu, 29 Dec 2011) $
+ * @lastmodified       $Date: 2012-03-30 13:16:22 +0200 (Fr., 30 Mär 2012) $
  *
-*/
-
-/**
-usage: log('inside coolFunc', this, arguments);
-paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
 */
 
 (function() {
+  "use strict";
+  /**
+  usage: log('inside coolFunc', this, arguments);
+  paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
+  */
   var isEventSupported;
 
   window.log = function() {
@@ -46,37 +46,51 @@ paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
   })(window.console = window.console || {});
 
   (function($) {
+    /**
+     * Accessifyhtml5.js
+     * Adds ARIA to new elements in browsers which don’t do it by themselves.
+     *
+     * originally by Eric Eggert
+     * https://github.com/yatil/accessifyhtml5.js
+    */
     var firstplugin;
-    $.accessifyhtml5 = function(options) {
+    $.accessifyhtml5 = function(defaults) {
       var fixes;
       fixes = {
-        'header.site': {
-          'role': 'banner'
+        article: {
+          role: "article"
         },
-        'footer.site': {
-          'role': 'contentinfo'
+        aside: {
+          role: "complementary"
         },
-        'article': {
-          'role': 'article'
+        nav: {
+          role: "navigation"
         },
-        'aside': {
-          'role': 'complementary'
+        output: {
+          "aria-live": "polite"
         },
-        'nav': {
-          'role': 'navigation'
+        section: {
+          role: "region"
         },
-        'output': {
-          'aria-live': 'polite'
-        },
-        'section': {
-          'role': 'region'
-        },
-        '[required]': {
-          'aria-required': 'true'
+        "[required]": {
+          "aria-required": "true"
         }
       };
+      if (defaults) {
+        if (defaults.header) {
+          fixes[defaults.header] = {
+            role: "banner"
+          };
+        }
+        if (defaults.footer) {
+          fixes[defaults.footer] = {
+            role: "contentinfo"
+          };
+        }
+      }
       $.each(fixes, function(index, item) {
-        return $(index).attr(item);
+        $(index).attr(item);
+        return true;
       });
       return true;
     };
@@ -96,8 +110,8 @@ paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
             firstplugin.update(o);
             return true;
           });
-          return this.each(function() {});
         }
+        return this.each(function() {});
       },
       update: function(o) {
         return el.each(function() {});

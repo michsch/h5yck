@@ -12,9 +12,9 @@
  *                  YAML-CDL (http://www.yaml.de/license.html)
  * @link            http://www.yaml.de
  * @package         yaml
- * @version         v4.0
- * @revision        $Revision: 686 $
- * @lastmodified    $Date: 2012-01-22 13:09:37 +0100 (So, 22 Jan 2012) $
+ * @version         v4.0.1
+ * @revision        $Revision: 726 $
+ * @lastmodified    $Date: 2012-03-03 12:21:50 +0100 (Sa, 03 Mrz 2012) $
  */
 
 @media all {
@@ -211,12 +211,6 @@
 	.ym-col2 { float:right; width:20%; }
 	.ym-col3 { width:auto; margin:0 20%; }
 
-	/* (en) Preparation for absolute positioning within content columns */
-	/* (de) Vorbereitung für absolute Positionierungen innerhalb der Inhaltsspalten */
-	.ym-cbox
-	.ym-cbox-left,
-	.ym-cbox-right { position:relative; }
-
 	.ym-cbox { padding: 0 10px }
 	.ym-cbox-left { padding: 0 10px 0 0 }
 	.ym-cbox-right { padding: 0 0 0 10px }
@@ -262,17 +256,14 @@
 
 	.ym-equalize { overflow:hidden; }
 
-	.ym-equalize > .ym-gl,
-	.ym-equalize > .ym-gr {
+	.ym-equalize > [class*="ym-g"] {
 		display:table-cell;
 		float:none;
 		margin:0;
 		vertical-align:top;
 	}
 
-	.ym-equalize > * > .ym-gbox,
-	.ym-equalize > * > .ym-gbox-left,
-	.ym-equalize > * > .ym-gbox-right {
+	.ym-equalize > [class*="ym-g"] > [class*="ym-gbox"] {
 		padding-bottom: 10000px;
 		margin-bottom: -10000px
 	}
@@ -301,7 +292,8 @@
 	.ym-form,
 	.ym-form fieldset { overflow:hidden; }
 
-	.ym-form div
+	.ym-form div { position:relative; }
+	
 	.ym-form label,
 	.ym-form .ym-message {
 		position:relative;

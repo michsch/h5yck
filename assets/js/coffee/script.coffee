@@ -2,30 +2,36 @@
  * main jQuery script file
  *
  * @author             Michael Schulze
- * @version            $1.0$
+ * @version            $1.1$
  * @copyright          Michael Schulze <elsigno.de>, 29 December, 2011
  * @license            All rights reserved. No usage without written permission.
  * @package            coffeescript, jquery
- * @requirements       jquery-1.7.1.min.js
+ * @requirements       jquery-1.7.2.min.js
  *
- * @lastmodified       $Date: 2011-12-29 21:43:28  +0100 (Thu, 29 Dec 2011) $
+ * @lastmodified       $Date: 2012-03-30 13:14:14 +0200 (Fr., 30 Mär 2012) $
  *
 ###
+
+"use strict"
 
 jQuery.noConflict()
 
 $ = jQuery
 
-language = 'de'
-lang = if !language then 'de' else language
+language = $('html').attr('lang')
+lang = if !language then 'en' else language
 
 ll = ['en', 'de']
+ll['en'] =
+	from: 'from'
+	to: 'to'
+	image: 'image'
 ll['de'] =
 	from: 'von'
 	to: 'bis'
 	image: 'Bild'
 
-jQuery(document).ready( ($) ->
+jQuery(document).ready ($) ->
   
   domReady =
     
@@ -270,4 +276,20 @@ jQuery(document).ready( ($) ->
     	true
   
   domReady.init()
-)
+
+jQuery(window).load ->
+  $ = jQuery
+  
+  domLoad =
+
+    ###*
+     * Init function for that page
+     *
+     * @return boolean true
+    ###
+    init : ->
+      self = this
+
+      true
+  
+  domLoad.init()

@@ -1,64 +1,48 @@
-/**
- * main stylesheet to import other css files or mixins and define some vars
- *
- * @author             Michael Schulze
- * @version            $1.0$
- * @copyright          Copyright 2005-2012, Dirk Jesse,
- *                     Michael Schulze, 18 February, 2012
- * @license            CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
- *                     YAML-CDL (http://www.yaml.de/license.html)
- *
- * @package            yaml,compass,sass
- * @-yaml-minver       4.0
- * @-sass-minver       2.0
- * @-compass-minver    0.11.6
- *
- * @lastmodified       $Date: 2012-02-18 22:47:22 +0100 (Sa., 18 Feb 2012) $
- */
+// main stylesheet to import other css files or mixins and define some vars
+//
+// @author             Michael Schulze
+// @version            $1.1$
+// @copyright          Copyright 2005-2012, Dirk Jesse,
+//                     Michael Schulze, 18 February, 2012
+// @license            CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+//                     YAML-CDL (http://www.yaml.de/license.html)
+//
+// @package            yaml,compass,sass
+// @-yaml-minver       4.0.1
+// @-sass-minver       2.0
+// @-compass-minver    0.12.0
+//
+// @lastmodified       $Date: 2012-03-30 14:02:54 +0200 (Fr., 30 Mär 2012) $
 
-//@import "all"; /* standard mixins for css3 vendor prefixes */
-@import "compass/css3";
+//@import "compass/css3";
+@import "mixin/css3";
 
-/* import core styles | Basis-Stylesheets einbinden */
-@import "yaml";
+// import core styles
+@import "yaml/full"; // import all
 
-/* import fonts */
-@import "fonts";
-//@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700|Droid+Sans:700);
+// yaml modules
+//@import "yaml/normalize";
+//@import "yaml/float";
+//@import "yaml/accessibility";
+//@import "yaml/column";
+//@import "yaml/grid";
+//@import "yaml/forms";
 
-/* colors */
-$c-bodybg: #ffffff;
-$c-white: #ffffff;
-$c-lila: #5e0952;
-$c-beige: #97874b;
+// import mixins
+@import "mixin/sizes";
 
-$c-text: #222;
-$c-text-link: #4D87C7;
-$c-text-link-hover: #4D87C7;
-$c-text-link-focus: #4D87C7;
-$c-text-link-visited: #4D87C7;
-$c-crypt: #ffffff; /* same as background color because that's the color of the additional dots in email addresses for spam protection (see setup.ts -> config) */
+// import config file with colors and other vars
+@import "config";
 
-/**
- * font size & line height
- *
- * !do not delete because this is needed in mixins -> _mixins.css
- */
-$font-size-body-px: 14;
-$line-height-px: 21;
+// import fonts
+@import "module/fonts";
 
-@import "mixins";
-
-/* calculate font-size (in %) and line-height (in em) */
-$font-size-body: $font-size-body-px / 16 * 100%;
-$line-height: em($line-height-px, $font-size-body-px);
-
-/* imports */
-@import "nav";
-@import "screen";
-@import "typography";
-@import "plugins";
-@import "forms";
-@import "responsive";
-@import "fancybox";
-@import "print";
+// modules
+@import "module/nav";
+@import "module/screen";
+@import "module/content";
+@import "module/plugins";
+@import "module/forms";
+@import "module/responsive";
+@import "module/fancybox";
+@import "module/print";

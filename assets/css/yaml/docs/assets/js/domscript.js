@@ -22,6 +22,34 @@ $(document).ready(function() {
 
 			if (nav.find('.ym-hlist').length > 0 ) {
 
+				// install smallscreen menu
+				var menu =	'<li><label for="ym-smnav" style="padding: 0 0.5em; color: rgba(255,255,255,.8)">Navigation:</label> '+
+							'<select id="ym-smnav" style="font-size: 16px;"><option value="0" selected="selected" disabled="disabled">Go to ...</option>';
+				var items = nav.find('a');
+				$.each(items, function(key){
+					menu += '<option data-target="'+$(this).attr('href')+'">'+$(this).text()+'</option>';
+				});
+				menu += '</select></li>';
+
+				var smnav = $(menu).appendTo(nav.find('ul')).hide();
+
+				$(window).bind('resize',function(){
+					var width = $(window).width();
+					
+					if (width > 740) {
+						smnav.siblings().show();
+						smnav.hide();
+					} else {
+						smnav.siblings().hide();
+						smnav.show();
+					}
+				});
+				
+				$(smnav).bind('change', function(){
+					var target = $(this).find('option:selected').data('target');
+					nav.find('a[href='+target+']').trigger('click');
+				});
+
 				$(document).bind('scroll',function(){
 					var hOffset = header.offset().top+header.height(),
 						top     = $(document).scrollTop(),
@@ -63,6 +91,7 @@ $(document).ready(function() {
 
 				// initial check for scroll-status ...
 				$(document).trigger('scroll');
+				$(window).trigger('resize');
 
 				if ($('body').hasClass('doc') === true) {
 
@@ -143,13 +172,38 @@ $(document).ready(function() {
 		},
 
 		installFormSwitcher: function installFormSwitcher () {
+			$('#formswitch [type="checkbox"]').prop('checked', true);
+			$('#formswitch [type="radio"]:first').prop('checked', true);
+			
 			$('#formswitch').change(function(event){
 				var target = event.target,
 					type   = $(target).data('type');
-				$('#demo-form1, #demo-form2').prop('class','ym-form').addClass(type);
+				
+				if ($(target).attr('type') == 'radio') {
+					$('#demo-form1, #demo-form2').removeClass('ym-columnar');
+					$('#demo-form1, #demo-form2').removeClass('ym-full');
+					$('#demo-form1, #demo-form2').addClass(type);
+				}
+				if ($(target).attr('type') == 'checkbox') {
+					if ($(target).prop('checked') === true) {
+						$('#demo-form1, #demo-form2').addClass('linearize-form');
+					} else {
+						$('#demo-form1, #demo-form2').removeClass('linearize-form');
+					}
+				}
 			});
 		}
 	};
 
 	domscripts.init();
+});
+
+//check for deep links
+$(window).load(function() {
+	var fragment = location.href.split('#'),
+		nav      = $('nav#level2');
+			
+	if (fragment.length > 0) {
+		$(nav.find('a[href="#'+fragment[1]+'"]')).trigger('click');
+	}
 });

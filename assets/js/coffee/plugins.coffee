@@ -2,15 +2,17 @@
  * plugins file with some jQuery plugins and standard functions
  *
  * @author             Michael Schulze
- * @version            $1.0$
+ * @version            $1.1$
  * @copyright          Michael Schulze <elsigno.de>, 29 December, 2011
  * @license            GNU General Public License, version 3 (GPL-3.0)
  * @package            coffeescript, jquery
- * @requirements       jquery-1.7.1.min.js
+ * @requirements       jquery-1.7.2.min.js
  *
- * @lastmodified       $Date: 2011-12-29 21:45:44  +0100 (Thu, 29 Dec 2011) $
+ * @lastmodified       $Date: 2012-03-30 13:16:22 +0200 (Fr., 30 Mär 2012) $
  *
 ###
+
+"use strict"
 
 ###*
 usage: log('inside coolFunc', this, arguments);
@@ -34,29 +36,40 @@ make it safe to use console.log always
 ) window.console = window.console or {}
 
 ( ($) ->
-   # Accessifyhtml5.js
-   # Adds ARIA to new elements in browsers which don’t do it by themselves.
-   #
-   # originally by Eric Eggert
-   # https://github.com/yatil/accessifyhtml5.js/blob/master/accessifyhtml5.js
-	$.accessifyhtml5 = ( options ) ->
-		fixes =
-			'header.site'   : { 'role':          'banner'        }
-			'footer.site'   : { 'role':          'contentinfo'   }
-			'article'       : { 'role':          'article'       }
-			'aside'         : { 'role':          'complementary' }
-			'nav'           : { 'role':          'navigation'    }
-			'output'        : { 'aria-live':     'polite'        }
-			'section'       : { 'role':          'region'        }
-			'[required]'    : { 'aria-required': 'true'          }
+  ###*
+   * Accessifyhtml5.js
+   * Adds ARIA to new elements in browsers which don’t do it by themselves.
+   *
+   * originally by Eric Eggert
+   * https://github.com/yatil/accessifyhtml5.js
+  ###
+  $.accessifyhtml5 = ( defaults ) ->
+    fixes =
+      article:
+        role: "article"
+      aside:
+        role: "complementary"
+      nav:
+        role: "navigation"
+      output:
+        "aria-live": "polite"
+      section:
+        role: "region"
+      "[required]":
+        "aria-required": "true"
 
-		$.each(fixes, (index, item) ->
-			$(index).attr(item)
-		)
+    if defaults
+      fixes[defaults.header] = role: "banner"  if defaults.header
+      fixes[defaults.footer] = role: "contentinfo"  if defaults.footer
 
-		true
+    $.each(fixes, (index, item) ->
+      $(index).attr(item)
+      true
+    )
 
-	firstplugin =
+    true
+
+  firstplugin =
     init : ( options ) ->
       defaults = 
         resize: 1
@@ -72,9 +85,9 @@ make it safe to use console.log always
           true
         )
 
-        this.each( ->
-          # place your plugin code here
-        )
+      this.each( ->
+        # place your plugin code here
+      )
 
     update: (o) ->
       el.each( ->

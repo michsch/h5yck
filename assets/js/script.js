@@ -3,28 +3,35 @@
  * main jQuery script file
  *
  * @author             Michael Schulze
- * @version            $1.0$
+ * @version            $1.1$
  * @copyright          Michael Schulze <elsigno.de>, 29 December, 2011
  * @license            All rights reserved. No usage without written permission.
  * @package            coffeescript, jquery
- * @requirements       jquery-1.7.1.min.js
+ * @requirements       jquery-1.7.2.min.js
  *
- * @lastmodified       $Date: 2011-12-29 21:43:28  +0100 (Thu, 29 Dec 2011) $
+ * @lastmodified       $Date: 2012-03-30 13:14:14 +0200 (Fr., 30 Mär 2012) $
  *
 */
 
 (function() {
+  "use strict";
   var $, lang, language, ll;
 
   jQuery.noConflict();
 
   $ = jQuery;
 
-  language = 'de';
+  language = $('html').attr('lang');
 
-  lang = !language ? 'de' : language;
+  lang = !language ? 'en' : language;
 
   ll = ['en', 'de'];
+
+  ll['en'] = {
+    from: 'from',
+    to: 'to',
+    image: 'image'
+  };
 
   ll['de'] = {
     from: 'von',
@@ -244,6 +251,24 @@
       }
     };
     return domReady.init();
+  });
+
+  jQuery(window).load(function() {
+    var domLoad;
+    $ = jQuery;
+    domLoad = {
+      /**
+       * Init function for that page
+       *
+       * @return boolean true
+      */
+      init: function() {
+        var self;
+        self = this;
+        return true;
+      }
+    };
+    return domLoad.init();
   });
 
 }).call(this);

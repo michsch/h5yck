@@ -8,7 +8,7 @@
  *                  YAML-CDL (http://www.yaml.de/license.html)
  * @link            http://www.yaml.de
  * @package         yaml
- * @version         4.0
+ * @version         v4.0.1
  * @lastmodified    $Date: 2012-01-05 23:56:54 +0100 (Do, 05 Jan 2012) $
  */
 
@@ -98,16 +98,18 @@
 	.linearize-level-1,
 	.linearize-level-1 > [class*="ym-g"],
 	.linearize-level-1 > [class*="ym-col"] {
-		display: table;
+		display: block;
 		float: none;
-		margin-left: 0;
-		margin-right: 0;
+		padding: 0;
+		margin: 0;
 		width: 100% !important;
 	}
 
 	.linearize-level-1 > [class*="ym-g"] > [class*="ym-gbox"],
 	.linearize-level-1 > [class*="ym-col"] > [class*="ym-cbox"] {
+		overflow: hidden; /* optional for containing floats */
 		padding: 0;
+		margin: 0;
 	}
 
 	nav .ym-hlist ul {
@@ -132,7 +134,7 @@
 	.ym-wbox {
 		padding: 0;
 	}
-	
+
 	header {
 		padding: 0.75em 10px;
 	}
@@ -155,16 +157,18 @@
 	.linearize-level-2,
 	.linearize-level-2 > [class*="ym-g"],
 	.linearize-level-2 > [class*="ym-col"] {
-		display: table;
+		display: block;
 		float: none;
-		margin-left: 0;
-		margin-right: 0;
+		padding: 0;
+		margin: 0;
 		width: 100% !important;
 	}
 
 	.linearize-level-2 > [class*="ym-g"] > [class*="ym-gbox"],
 	.linearize-level-2 > [class*="ym-col"] > [class*="ym-cbox"] {
+		overflow: hidden; /* optional for containing floats */
 		padding: 0;
+		margin: 0;
 	}
 
 	.ym-searchform,

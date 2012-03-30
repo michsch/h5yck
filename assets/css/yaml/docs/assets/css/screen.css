@@ -9,7 +9,7 @@
 * @link            http://www.yaml.de
 * @package         yaml
 * @version         4.0
-* @lastmodified    $Date: 2012-01-18 17:35:30 +0100 (Mi, 18 Jan 2012) $
+* @lastmodified    $Date: 2012-03-03 13:20:39 +0100 (Sa, 03 Mrz 2012) $
 */
 
 @media screen, projection {
@@ -32,11 +32,14 @@
 	/* (de) Randbereiche & Seitenhintergrund */
 	body { background: #0d1113; }
 
-	header,
-	footer,
-	nav,
+	body > header,
+	body > footer,
+	body > nav,
 	body > [id] {
 		min-width: 960px;
+	}
+	body > #intro {
+		min-width: 912px;
 	}
 
 	* html .ym-wrapper {
@@ -154,7 +157,7 @@
 		color: #fff;
 		color: rgba(255,255,255,.75);
 		font-family: "Times New Roman", Times, serif;
-		font-size-adjust: 0.5;
+		font-size-adjust: 0.55;
 	}
 
 	header h1 span {
@@ -454,7 +457,7 @@
 	h2[id] {
 		border-bottom: 1px #aa1124 solid;
 	}
-	
+
 	.indent {
 		padding-left: 10px;
 	}
@@ -559,11 +562,11 @@
 	.columnset-3 .ym-col2 { width: 6em; }
 	.columnset-3 .ym-col3 { width: auto; margin: 0 6em; }
 
-	.columnset-4 * { color: #444; text-align: left; margin-top: 0;} 
+	.columnset-4 * { color: #444; text-align: left; margin-top: 0;}
 	.columnset-4 .ym-col1 { width: 25%; }
 	.columnset-4 .ym-col2 { width: 25%; }
-	.columnset-4 .ym-col3 { 
-		width: auto; 
+	.columnset-4 .ym-col3 {
+		width: auto;
 		margin: 0 25%;
 		border-left: 1px solid #ddd;
 		border-right: 1px solid #ddd;
@@ -658,9 +661,10 @@
 
 @media screen and (min-width: 0px)  {
 
-	header,
-	footer,
-	nav,
+	body > header,
+	body > footer,
+	body > nav,
+	body > #intro,	
 	body > [id] {
 		min-width: 0;
 	}
@@ -672,7 +676,7 @@
 	#examples img {
 		width: auto;
 		max-width: 99%;
-	}	
+	}
 }
 
 @media screen and ( max-width: 960px )  {
@@ -688,27 +692,26 @@
 	.linearize-level-1,
 	.linearize-level-1 > [class*="ym-g"],
 	.linearize-level-1 > [class*="ym-col"] {
-		display: table;
+		display: block;
 		float: none;
-		margin-left: 0;
-		margin-right: 0;
+		padding: 0;
+		margin: 0;
 		width: 100% !important;
 	}
 
 	.linearize-level-1 > [class*="ym-g"] > [class*="ym-gbox"],
 	.linearize-level-1 > [class*="ym-col"] > [class*="ym-cbox"] {
-		overflow:hidden;
+		overflow:hidden; /* contain floats */
 		padding: 0;
+		margin: 0;
 	}
 
 	#secondary .linearize-level-1 > [class*="ym-g"] > [class*="ym-gbox"] {
 		padding: 10px;
-	}	
+	}
 }
 
 @media screen and ( max-width: 740px)  {
-
-	.fix { position: static; }
 
 	#intro {
 		letter-spacing: normal;
@@ -716,26 +719,30 @@
 	}
 
 	header h1 {
-		font-size: 48px;
-		line-height: 1.1em;
+		font-size: 60px;
+		line-height: 1.0em;
 	}
 
 	header h1 span {
-		display: inline;
-		background: transparent;
-		height: auto;
-		width: auto;
-		padding-top: 0;
-		margin-bottom: 0;
+		width: 118px;
+		padding-top: 40px;
+		margin-bottom: -2px;
+		background:url(../images/yaml-solo-transparent-small.png) no-repeat top left;
 	}
+
 	header h2 {
 		font-size: 28px;
-		letter-spacing: 4px;
+		letter-spacing: 2px;
 		line-height: 1.5em;
 	}
 
 	header p {
 		font-size: 14px;
+	}
+
+	th.nowrap,
+	td.nowrap {
+		white-space: normal;
 	}
 
 	nav .ym-wbox,
@@ -764,23 +771,54 @@
 		padding-left: 0px;
 	}
 
+	table th,
+	table td {
+		white-space: normal !important;
+	}
+
 	/* Linearisation for Grid- and Column-Module, based on CSS class .linearize-level-2 */
 	.linearize-level-2,
 	.linearize-level-2 > [class*="ym-g"],
 	.linearize-level-2 > [class*="ym-col"] {
-		display: table;
+		display: block;
 		float: none;
-		margin-left: 0;
-		margin-right: 0;
+		margin: 0;
+		padding: 0;
 		width: 100% !important;
 	}
 
 	.linearize-level-2 > [class*="ym-g"] > [class*="ym-gbox"],
 	.linearize-level-2 > [class*="ym-col"] > [class*="ym-cbox"] {
+		overflow:hidden; /* contain floats */
+		margin: 0;
 		padding: 0;
 	}
 
+	.ym-form .linearize-level-2 [class*="ym-fbox"] {
+		margin: 1em 0 0 0;
+		padding: 0.3em 1em;
+	}
+
+
 	#secondary .linearize-level-1 > [class*="ym-g"] > [class*="ym-gbox"] {
+		margin: 0;
 		padding: 0;
+	}
+
+	.linearize-form [class*="ym-fbox"]:not([class*="ym-fbox-check"]) label,
+	.linearize-form .ym-label,
+	.linearize-form .ym-message,
+	.linearize-form  input[type="text"],
+	.linearize-form  textarea,
+	.linearize-form  select {
+		display: block;
+		float: none;
+		position: static !important;
+		width:100% !important;
+	}
+
+	.linearize-form .ym-message,
+	.linearize-form  .ym-fbox-check input {
+		margin-left: 0 !important;		
 	}
 }
