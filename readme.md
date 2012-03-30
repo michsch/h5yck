@@ -18,7 +18,7 @@ Also the JavaScript is written in **[CoffeeScript](http://coffeescript.org/)** b
 ### Additional
 
 * [Modernizr 2.5.3](http://www.modernizr.com/) incl. [html5shiv v3.4](http://code.google.com/p/html5shiv/)
-* [jQuery 1.7.1](http://jquery.com/)
+* [jQuery 1.7.2](http://jquery.com/)
 * [accessifyhtml5.js](https://github.com/yatil/accessifyhtml5.js) by Eric Eggert (in file *assets/js/plugins.js* & *assets/js/coffee/plugins.coffee*)
 * [syncHeight 1.2](https://github.com/ginader/syncHeight) by Dirk Ginader
 * [Accessible-Tabs](https://github.com/ginader/Accessible-Tabs) by Dirk Ginader

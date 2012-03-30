@@ -1988,7 +1988,7 @@
     width: 60%;
   }
 
-  /* line 37, sass/module/_forms.scss */
+  /* line 34, sass/module/_forms.scss */
   .ym-columnar label {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -1996,14 +1996,14 @@
     box-sizing: border-box;
   }
 
-  /* line 46, sass/module/_forms.scss */
+  /* line 40, sass/module/_forms.scss */
   .ym-columnar .ym-fbox-select select,
   .ym-columnar .ym-fbox-text input,
   .ym-columnar .ym-fbox-text textarea {
     width: 70%;
   }
 
-  /* line 50, sass/module/_forms.scss */
+  /* line 44, sass/module/_forms.scss */
   .ym-full .ym-fbox-select select,
   .ym-full .ym-fbox-text input,
   .ym-full .ym-fbox-text textarea {
@@ -2017,18 +2017,18 @@
   * Styling for: <form>, <fieldset>, <legend>, <label> and rows (class="ym-fbox-[xxx]")
   *
   */
-  /* line 61, sass/module/_forms.scss */
+  /* line 55, sass/module/_forms.scss */
   .ym-form {
     background: #f4f4f4;
     border: 2px #fff solid;
     margin: 1.5em 0 0 0;
     padding: 0;
-    -webkit-box-shadow: 0 0 4px #ddd;
-    -moz-box-shadow: 0 0 4px #ddd;
-    box-shadow: 0 0 4px #ddd;
+    -webkit-box-shadow: 0 0 4px #dddddd;
+    -moz-box-shadow: 0 0 4px #dddddd;
+    box-shadow: 0 0 4px #dddddd;
   }
 
-  /* line 71, sass/module/_forms.scss */
+  /* line 63, sass/module/_forms.scss */
   .ym-form fieldset {
     position: static;
     background: transparent;
@@ -2036,7 +2036,7 @@
     padding: 0 0.5em;
   }
 
-  /* line 78, sass/module/_forms.scss */
+  /* line 70, sass/module/_forms.scss */
   .ym-form legend {
     background: transparent;
     color: #000;
@@ -2046,25 +2046,25 @@
     padding: 0 0.5em;
   }
 
-  /* line 87, sass/module/_forms.scss */
+  /* line 79, sass/module/_forms.scss */
   .ym-form label {
     color: #666;
     line-height: 1.5em;
   }
 
-  /* line 92, sass/module/_forms.scss */
+  /* line 84, sass/module/_forms.scss */
   .ym-label {
     color: #666;
     padding-top: 0.25em;
   }
 
-  /* line 97, sass/module/_forms.scss */
+  /* line 89, sass/module/_forms.scss */
   .ym-form .ym-form div.ym-fbox-check:focus + label {
     color: #000;
   }
 
   /* styling containing DIV elements | Gestaltung der kapselnden DIV-Elemente */
-  /* line 105, sass/module/_forms.scss */
+  /* line 97, sass/module/_forms.scss */
   .ym-form div.ym-fbox-text,
   .ym-form div.ym-fbox-select,
   .ym-form div.ym-fbox-check,
@@ -2073,7 +2073,7 @@
     margin-bottom: 0.5em;
   }
 
-  /* line 110, sass/module/_forms.scss */
+  /* line 102, sass/module/_forms.scss */
   .ym-form div.ym-fbox-button {
     background: #ececec;
     border-top: 1px #e0e0e0 solid;
@@ -2081,13 +2081,13 @@
     margin: 0;
   }
 
-  /* line 117, sass/module/_forms.scss */
+  /* line 109, sass/module/_forms.scss */
   .ym-form .ym-gbox {
     padding: 0 0.5em;
     margin-right: 0;
   }
 
-  /* line 122, sass/module/_forms.scss */
+  /* line 114, sass/module/_forms.scss */
   .ym-form h6 {
     color: #000;
     margin: 1em 0 0 1em;
@@ -2101,7 +2101,7 @@
   */
   /* styling standard form elements with 'almost' equal flexible width */
   /* Gestaltung der einzelnen Formularelemente mit annähend gleicher Breite */
-  /* line 137, sass/module/_forms.scss */
+  /* line 129, sass/module/_forms.scss */
   .ym-form .ym-fbox-text input,
   .ym-form .ym-fbox-text textarea {
     line-height: 1em;
@@ -2109,7 +2109,7 @@
     margin-top: -2px;
   }
 
-  /* line 143, sass/module/_forms.scss */
+  /* line 135, sass/module/_forms.scss */
   .ym-form .ym-fbox-select select {
     line-height: 1em;
     padding: 0.25em 2px 0.25em 1px;
@@ -2117,7 +2117,7 @@
   }
 
   /* proportional fonts for all form elements */
-  /* line 153, sass/module/_forms.scss */
+  /* line 145, sass/module/_forms.scss */
   .ym-form input,
   .ym-form textarea,
   .ym-form select,
@@ -2128,13 +2128,13 @@
     box-shadow: inset 0 0 4px #eee;
   }
 
-  /* line 160, sass/module/_forms.scss */
+  /* line 152, sass/module/_forms.scss */
   .ym-form optgroup {
     font-style: normal;
     font-weight: bold;
   }
 
-  /* line 167, sass/module/_forms.scss */
+  /* line 159, sass/module/_forms.scss */
   .ym-form .ym-fbox-text input,
   .ym-form .ym-fbox-text textarea,
   .ym-form .ym-fbox-select select {
@@ -2142,27 +2142,27 @@
   }
 
   /* General form styling	| Allgemeine Formatierung des Formulars */
-  /* line 172, sass/module/_forms.scss */
+  /* line 164, sass/module/_forms.scss */
   .ym-form .ym-message {
     color: #666;
     margin-bottom: 0.5em;
   }
 
   /* Highlight mandatory fields | Pflichtfeldkennzeichnung hervorheben */
-  /* line 178, sass/module/_forms.scss */
+  /* line 170, sass/module/_forms.scss */
   .ym-form sup {
     color: #800;
     font-weight: bold;
   }
 
   /* form validation highlight colors */
-  /* line 185, sass/module/_forms.scss */
+  /* line 177, sass/module/_forms.scss */
   .ym-form input:valid,
   .ym-form textarea:valid {
     background-color: #fff;
   }
 
-  /* line 187, sass/module/_forms.scss */
+  /* line 179, sass/module/_forms.scss */
   .ym-form input:invalid,
   .ym-form textarea:invalid {
     background-color: #fdd;
@@ -2172,20 +2172,20 @@
   * @section error messages
   *
   */
-  /* line 194, sass/module/_forms.scss */
+  /* line 186, sass/module/_forms.scss */
   .ym-form .ym-error label {
     color: #800;
     font-weight: normal;
   }
 
-  /* line 201, sass/module/_forms.scss */
+  /* line 193, sass/module/_forms.scss */
   .ym-form .ym-error input,
   .ym-form .ym-error select,
   .ym-form .ym-error textarea {
     border: 1px #800 solid;
   }
 
-  /* line 210, sass/module/_forms.scss */
+  /* line 202, sass/module/_forms.scss */
   .ym-form .ym-error input:hover,
   .ym-form .ym-error input:focus,
   .ym-form .ym-error select:hover,
@@ -2195,13 +2195,13 @@
     border: 1px #800 solid !important;
   }
 
-  /* line 214, sass/module/_forms.scss */
+  /* line 206, sass/module/_forms.scss */
   .ym-form .ym-error .ym-message {
     color: #800;
   }
 
   /* :hover and :focus status on form fields | Effekt zur Hervorhebung von Formularfeldern bei :hover oder :focus */
-  /* line 227, sass/module/_forms.scss */
+  /* line 219, sass/module/_forms.scss */
   .ym-form div.ym-fbox-text input:focus,
   .ym-form div select:focus,
   .ym-form div textarea:focus,
@@ -2220,7 +2220,7 @@
   *
   * inspired from: Catalin Rosu (http://www.red-team-design.com/just-another-awesome-css3-buttons)
   */
-  /* line 242, sass/module/_forms.scss */
+  /* line 234, sass/module/_forms.scss */
   .ym-button,
   .ym-form button,
   .ym-form input[type="button"],
@@ -2253,7 +2253,7 @@
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
   }
 
-  /* line 273, sass/module/_forms.scss */
+  /* line 265, sass/module/_forms.scss */
   .ym-form button:hover,
   .ym-form input[type="button"]:hover,
   .ym-form input[type="reset"]:hover,
@@ -2268,7 +2268,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');
   }
 
-  /* line 287, sass/module/_forms.scss */
+  /* line 279, sass/module/_forms.scss */
   .ym-form button:active,
   .ym-form input[type="button"]:active,
   .ym-form input[type="reset"]:active,
@@ -2286,7 +2286,7 @@
     top: 1px;
   }
 
-  /* line 304, sass/module/_forms.scss */
+  /* line 296, sass/module/_forms.scss */
   .ym-form button:focus,
   .ym-form input[type="button"]:focus,
   .ym-form input[type="reset"]:focus,
@@ -2297,7 +2297,7 @@
   }
 
   /* pseudo elements don't work on input */
-  /* line 311, sass/module/_forms.scss */
+  /* line 303, sass/module/_forms.scss */
   .ym-form button:before,
   .ym-button:before {
     background: #ccc;
@@ -2317,65 +2317,65 @@
     pointer-events: none;
   }
 
-  /* line 329, sass/module/_forms.scss */
+  /* line 321, sass/module/_forms.scss */
   .ym-add:before {
     content: "\271A";
   }
 
-  /* line 330, sass/module/_forms.scss */
+  /* line 322, sass/module/_forms.scss */
   .ym-delete:before {
     content: "\2718";
   }
 
-  /* line 331, sass/module/_forms.scss */
+  /* line 323, sass/module/_forms.scss */
   .ym-edit:before {
     content: "\270E";
   }
 
-  /* line 332, sass/module/_forms.scss */
+  /* line 324, sass/module/_forms.scss */
   .ym-email:before {
     content: "\2709";
   }
 
-  /* line 333, sass/module/_forms.scss */
+  /* line 325, sass/module/_forms.scss */
   .ym-like:before {
     content: "\2764";
   }
 
-  /* line 334, sass/module/_forms.scss */
+  /* line 326, sass/module/_forms.scss */
   .ym-next:before {
     content: "\279C";
   }
 
-  /* line 335, sass/module/_forms.scss */
+  /* line 327, sass/module/_forms.scss */
   .ym-play:before {
     content: "\25B6";
   }
 
-  /* line 336, sass/module/_forms.scss */
+  /* line 328, sass/module/_forms.scss */
   .ym-save:before {
     content: "\2714";
   }
 
-  /* line 337, sass/module/_forms.scss */
+  /* line 329, sass/module/_forms.scss */
   .ym-spark:before {
     content: "\2737";
   }
 
-  /* line 338, sass/module/_forms.scss */
+  /* line 330, sass/module/_forms.scss */
   .ym-star:before {
     content: "\2605";
   }
 
   /* removes extra inner spacing in Firefox */
-  /* line 341, sass/module/_forms.scss */
+  /* line 333, sass/module/_forms.scss */
   .ym-form button::-moz-focus-inner {
     border: 0;
     padding: 0;
   }
 
   /* If line-height can't be modified, then fix Firefox spacing with padding */
-  /* line 349, sass/module/_forms.scss */
+  /* line 341, sass/module/_forms.scss */
   .ym-form input[type=button]::-moz-focus-inner,
   .ym-form input[type=reset]::-moz-focus-inner,
   .ym-form input[type=submit]::-moz-focus-inner {
@@ -2383,7 +2383,7 @@
   }
 
   /* The disabled styles */
-  /* line 363, sass/module/_forms.scss */
+  /* line 355, sass/module/_forms.scss */
   .ym-form button[disabled],
   .ym-form button[disabled]:hover,
   .ym-form input[type=button][disabled],
@@ -2406,7 +2406,7 @@
   }
 
   /* ie6 support styles - redefined buttons, because of missing support for attribute selectors */
-  /* line 377, sass/module/_forms.scss */
+  /* line 369, sass/module/_forms.scss */
   * html .ym-button,
   * html .ym-form button {
     display: inline-block;
@@ -2424,21 +2424,21 @@
     text-decoration: none !important;
   }
 
-  /* line 393, sass/module/_forms.scss */
+  /* line 385, sass/module/_forms.scss */
   * html .ym-form button:focus,
   * html .ym-button:focus {
     outline: 0;
     background: #fafafa;
   }
 
-  /* line 399, sass/module/_forms.scss */
+  /* line 391, sass/module/_forms.scss */
   * html .ym-form button:hover,
   * html .ym-button:hover {
     background-color: #ddd;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');
   }
 
-  /* line 405, sass/module/_forms.scss */
+  /* line 397, sass/module/_forms.scss */
   * html .ym-form button:active,
   * html .ym-button:active {
     background-color: #bbb;
@@ -2447,7 +2447,7 @@
     top: 1px;
   }
 
-  /* line 413, sass/module/_forms.scss */
+  /* line 405, sass/module/_forms.scss */
   * html .ym-button.ym-disabled,
   * html .ym-button.ym-disabled:hover {
     background: #eee;

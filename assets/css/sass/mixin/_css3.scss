@@ -57,6 +57,7 @@ $useBackgroundClip: 1;
 @mixin box-sizing ($value) {
   -webkit-box-sizing: $value; // <=iOS4, <= Android  2.3
      -moz-box-sizing: $value; // FF1+
+      -ms-box-sizing: $value; // IE
           box-sizing: $value; // Chrome, IE8, Opera, Safari 5.1
 }
 
