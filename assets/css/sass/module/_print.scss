@@ -1,24 +1,18 @@
-/**
- * "Yet Another Multicolumn Layout" - YAML CSS Framework
- *
- * default print stylesheet
- *
- * @copyright       Copyright 2005-2012, Dirk Jesse
- * @license         CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
- *                  YAML-CDL (http://www.yaml.de/license.html)
- * @link            http://www.yaml.de
- * @package         yaml
- * @version         v4.0
- * @revision        $Revision: 686 $
- * @lastmodified    $Date: 2012-01-22 13:09:37 +0100 (So, 22 Jan 2012) $
- */
-
+// print stylesheet
+//
+// @author             Michael Schulze
+// @version            $1.1$
+// @copyright          Michael Schulze, 2 Mai, 2012
+// @license            All rights reserved. No usage without written permission.
+//
+// @package            yaml,compass,sass
+// @-yaml-minver       4.0.1
+// @-sass-minver       2.0
+// @-compass-minver    0.12.0
+//
+// @lastmodified       $Date: 2012-05-02 16:12:36 +0200 (Mi., 02 Mai 2012) $
 
 @media print {
-
-	/**
-	* @section basic layout preparation
-	*/
 
 	/* (en) change font size unit to [pt] - avoids problems with [px] in Gecko based browsers  	*/
 	/* (de) Wechsel der der Schriftgrößen-Maßheinheit zu [pt] - Probleme mit [px] in Gecko-Browsern vermeiden */

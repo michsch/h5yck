@@ -1,44 +1,25 @@
-/**
- * navigation stylesheet
- *
- * @author             Michael Schulze
- * @version            $1.0$
- * @copyright          Copyright 2005-2012, Dirk Jesse,
- *                     Michael Schulze, 18 February, 2012
- * @license            CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
- *                     YAML-CDL (http://www.yaml.de/license.html)
- *
- * @package            yaml,compass,sass
- * @-yaml-minver       4.0
- * @-sass-minver       2.0
- * @-compass-minver    0.11.6
- *
- * @lastmodified       $Date: 2012-02-18 18:40:07 +0100 (Sat, 18 Feb 2012) $
- */
+// navigation stylesheet
+//
+// @author             Michael Schulze
+// @version            $1.1$
+// @copyright          Copyright 2005-2012, Dirk Jesse,
+//                     Michael Schulze, 18 February, 2012
+// @license            CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+//                     YAML-CDL (http://www.yaml.de/license.html)
+//
+// @package            yaml,compass,sass
+// @-yaml-minver       4.0.1
+// @-sass-minver       2.0
+// @-compass-minver    0.12.0
+//
+// @lastmodified       $Date: 2012-05-02 16:08:31 +0200 (Mi., 02 Mai 2012) $
+
 
 @media screen, projection {
-  /**
-  * global nav definitions
-  *
-  */
+  // global nav definitions
   .nav ul li
   ,nav ul li { list-style-type: none; }
-  
-  /**
-   * "Yet Another Multicolumn Layout" - YAML CSS Framework
-   *
-   * (en) Horizontal list navigation "hlist"
-   * (de) Horizontale Navigationsliste "hlist"
-   *
-   * @copyright       Copyright 2005-2012, Dirk Jesse
-   * @license         CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
-   *                  YAML-CDL (http://www.yaml.de/license.html)
-   * @link            http://www.yaml.de
-   * @package         yaml
-   * @version         v4.0
-   * @revision        $Revision: 686 $
-   * @lastmodified    $Date: 2012-01-22 13:09:37 +0100 (So, 22 Jan 2012) $
-   */
+
   .ym-hlist {
 		/* (en) containing floats in IE */
 		/* (de) Einfassen der Floats im IE */
@@ -77,22 +58,10 @@
 		overflow: hidden;
 	}
 
-  /**
-   * "Yet Another Multicolumn Layout" - YAML CSS Framework
-   *
-   * (en) Vertical list navigation "vlist"
-   * (de) Vertikale Navigationsliste "vlist"
-   *
-   * @copyright       Copyright 2005-2012, Dirk Jesse
-   * @license         CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
-   *                  YAML-CDL (http://www.yaml.de/license.html)
-   * @link            http://www.yaml.de
-   * @package         yaml
-   * @version         v4.0
-   * @revision        $Revision: 686 $
-   * @lastmodified    $Date: 2012-01-22 13:09:37 +0100 (So, 22 Jan 2012) $
-   */
-  /* title */
+  // (en) Vertical list navigation "vlist"
+  // (de) Vertikale Navigationsliste "vlist"
+
+  // title
 	h6.ym-vlist,
 	.ym-vlist h6 {
 		font-weight: bold;
@@ -126,7 +95,7 @@
 	}
 	.ym-vlist ul li a,
 	,.ym-vlist ul li a:visited {
-		/* color:#444; */
+		/*color:#444;*/
 	}
 	.ym-vlist li span {
 		display: block;
@@ -183,5 +152,5 @@
 	.ym-vlist li ul li ul li ul li a:hover,
 	.ym-vlist li ul li ul li ul li a:active { background-color:#888; color:#fff; }
 	
-	/* add your navigation definitions here */
+	// add your navigation definitions here
 }

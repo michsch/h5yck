@@ -10,9 +10,9 @@
  // @-sass-minver       2.0
  // @-compass-minver    0.12.0
  //
- // @lastmodified       $Date: 2012-02-18 22:32:33 +0100 (Sat, 18 Feb 2012) $
+ // @lastmodified       $Date: 2012-05-02 16:13:44 +0200 (Mi., 02 Mai 2012) $
 
-/* activate max-width of media elements for browsers that support media queries */
+// activate max-width of media elements for browsers that support media queries
 @media only screen and (min-width: 0px) {
   img
   ,embed
@@ -48,10 +48,7 @@
 
 }
 
-/**
- * Device width
- *
- */
+// Device width
 @media only screen and (max-device-width: 768px) {
 
 }
@@ -60,7 +57,7 @@
 
 }
 
-/* for devices with retina display */
+// for devices with retina display
 @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
 
 }
