@@ -50,7 +50,7 @@
   <!-- All JavaScript at the bottom, except this Modernizr build.
        Modernizr enables HTML5 elements & feature detects for optimal performance.
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
-  <script type="text/javascript" src="js/vendor/modernizr-2.5.3.min.js"></script>
+  <script src="js/vendor/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
@@ -66,7 +66,7 @@
           <li><a class="ym-skip" href="#contentinfo">Skip to footer (Press Enter).</a></li>
         </ul>
         <div id="logo">
-          <img src="assets/images/logo_dummy.png" alt="Logo" />
+          <img src="img/logo_dummy.png" alt="Logo" />
         </div>
         <nav id="nav" class="ym-hlist" role="navigation">
           <a id="navigation"></a>
@@ -163,21 +163,21 @@
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
 
-  <script type="text/javascript" src="assets/js/vendor/Hyphenator.js"></script>
+  <script src="js/vendor/Hyphenator.js"></script>
 
   <!-- scripts concatenated and minified via build script -->
-  <script type="text/javascript" src="js/vendor/jquery.mousewheel-3.0.6.pack.js"></script>
-  <script type="text/javascript" src="js/vendor/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="js/plugins.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
+  <script src="js/modules/jquery.mousewheel-3.0.6.pack.js"></script>
+  <script src="js/modules/jquery.fancybox.pack.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
   <!-- end scripts -->
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
-  <script type="text/javascript">
+  <script>
     var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';

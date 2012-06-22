@@ -1,2 +1,6 @@
 User-agent: *
-Disallow: assets/
+Disallow: build/
+Disallow: css/
+Disallow: fonts/
+Disallow: img/
+Disallow: js/
