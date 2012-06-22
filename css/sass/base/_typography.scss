@@ -1,0 +1,218 @@
+// base typography stylesheets
+//
+// @author             Michael Schulze
+// @version            $1.2$
+// @copyright          Michael Schulze, 17 Mai, 2012
+// @license            MIT license
+//
+// @package            yaml,compass,sass
+// @-yaml-minver       4.0.1
+// @-sass-minver       2.0
+// @-compass-minver    0.12.0
+//
+// @lastmodified       $Date: 2012-06-23 00:06:37 +0200 (Sa., 23 Jun 2012) $
+
+@media all
+{
+
+  /**
+	* (en) reset monospaced elements to font size 16px in all browsers
+	* (de) Schriftgröße von monospaced Elemente in allen Browsern auf 16 Pixel setzen
+	*
+	* @see: http://webkit.org/blog/67/strange-medium/
+	*/
+
+  textarea,
+	pre,
+	code,
+	kbd,
+	samp,
+	var,
+	tt {
+		font-family: Consolas, "Lucida Console", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier;
+	}
+	
+	/*--- Headings | Überschriften ------------------------------------------------------------------------*/
+  
+  h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+		font-weight: normal;
+		color: #161e21;
+		margin: 0;
+	}
+
+  h1 {
+    @include headline(49,42);
+  }
+  h2 {
+    @include headline(42,42);
+  }
+  h3 { 
+    @include headline(25,21);
+  }
+  h4 {
+    @include headline(19,21);
+  }
+  h5 {
+    @include headline(16,21);
+  }
+  h6 {
+    @include headline(14,21);
+    font-weight: 700;
+  }
+
+  h4, h5, h6 { color: #8B8F90; }
+
+	/* --- Lists | Listen  -------------------------------------------------------------------------------- */
+
+	ul,
+	ol,
+	dl {
+		font-size: 1em;
+		line-height: $line-height;
+		margin: $line-height 0 0 1em;
+	}
+
+	ul {
+		list-style-type: disc;
+	}
+
+	ol {
+		list-style-type: decimal;
+	}
+
+	ul ul {
+		list-style-type: circle;
+		margin-top: 0;
+	}
+
+	ol ol {
+		list-style-type: lower-latin;
+		margin-top: 0;
+	}
+
+	ol ul {
+		list-style-type: circle;
+		margin-top: 0;
+	}
+
+	li {
+		font-size: 1em;
+		line-height: $line-height;;
+		margin-left: 0.8em;
+	}
+
+	dt { font-weight:bold; }
+
+	dd { margin:0 0 1.5em 0.8em; }
+
+	/* --- general text formatting | Allgemeine Textauszeichnung ------------------------------------------ */
+
+	p {
+		font-size:1em;
+		line-height:$line-height;
+		margin: $line-height 0 0 0;
+	}
+
+	blockquote, cite, q {
+		font-family: Georgia, "Times New Roman", Times, serif;
+		font-style:italic;
+	}
+
+	blockquote {
+		margin:$line-height 0 0 $line-height;
+		color:#666;
+	}
+
+	strong, b { font-weight:bold; }
+
+	em, i { font-style:italic; }
+
+	big {
+		@include font-size(16);
+	}
+
+	small {
+		@include font-size(12);
+	}
+
+	pre,
+	code,
+	kbd,
+	tt,
+	samp,
+	var {
+		font-size:100%;
+	}
+
+	pre {
+		line-height:$line-height;
+		margin: $line-height 0 0 0;
+		white-space: pre;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+	}
+	pre, code { color:#800; }
+
+	kbd, samp, var, tt {
+		color:#666;
+		font-weight:bold;
+	}
+
+	var, dfn { font-style:italic; }
+
+	acronym, abbr {
+		border-bottom:1px #aaa dotted;
+		font-variant:small-caps;
+		letter-spacing:.07em;
+		cursor:help;
+	}
+
+	sub,
+	sup {
+		@include font-size(11);
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
+	}
+
+	sup { top: -0.5em; }
+	sub { bottom: -0.25em; }
+
+	mark {
+		background: #ff0;
+		color: #000;
+	}
+
+	hr {
+		color:#fff;
+		background:transparent;
+		margin:0 0 ($line-height / 2) 0;
+		padding:0 0 ($line-height / 2) 0;
+		border:0;
+		border-bottom:1px #eee solid;
+	}
+
+  /*--- Links ----------------------------------------------------------------------------------------- */
+
+  a {
+		color: $c-text-link;
+		background:transparent;
+		text-decoration:none;
+		&:active { outline: none; }
+
+		&:focus,
+		&:hover {
+		  text-decoration:underline;
+		  color: $c-text-link-focus;
+		  background: #fff;
+		  outline: 0 none;
+		}
+	}
+
+}

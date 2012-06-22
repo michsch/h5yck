@@ -1,0 +1,29 @@
+// YAML skiplinks
+//
+// @author             Michael Schulze
+// @version            $1.2$
+// @copyright          Michael Schulze, 23 Juni, 2012
+// @license            MIT license
+//
+// @package            yaml,compass,sass
+// @-yaml-minver       4.0.1
+// @-sass-minver       2.0
+// @-compass-minver    0.12.0
+//
+// @lastmodified       $Date: 2012-06-23 00:11:44 +0200 (Sa., 23 Jun 2012) $
+
+@media screen, projection
+{
+  
+  .ym-skiplinks { height: 24px; width: #222; }
+
+  .ym-skiplinks a.ym-skip:focus,
+  .ym-skiplinks a.ym-skip:active { 
+  	color:#fff; 
+  	background:#333; 
+  	border-bottom:1px #000 solid;
+  	padding:10px 0;
+  	text-decoration:none;
+  }
+  
+}

@@ -2,11 +2,12 @@
  * main stylesheet for website <mywebsite.com>
  *
  * @author             Michael Schulze
- * @version            $1.1$
+ * @version            $1.2$
  * @copyright          Copyright 2005-2012, Dirk Jesse,
  *                     Michael Schulze, 18 February, 2012
  * @license            CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
  *                     YAML-CDL (http://www.yaml.de/license.html)
+ *                     MIT license
  *
  * @package            yaml,compass,sass
  * @-yaml-minver       4.0.1
@@ -16,17 +17,14 @@
  * @lastmodified       $Date: 2012-03-30 14:02:54 +0200 (Fr., 30 Mär 2012) $
  */
 
+// import mixins
 //@import "compass/css3";
 @import "mixin/css3";
-
-// import mixins
 @import "mixin/sizes";
 @import "mixin/helper";
 
-// import core styles
+// import yaml css framework
 @import "yaml/full"; // import all
-
-// yaml modules
 //@import "yaml/normalize";
 //@import "yaml/float";
 //@import "yaml/accessibility";
@@ -38,14 +36,26 @@
 @import "config";
 
 // import fonts
-@import "module/fonts";
+@import "base/fonts";
+
+// import base
+@import "base/main";
+@import "base/typography";
+@import "base/images";
+@import "base/tables";
+@import "base/forms";
+
+// import layout
+@import "layout/screen";
+@import "layout/responsive";
+@import "layout/print";
 
 // modules
+@import "module/skiplinks";
 @import "module/nav";
-@import "module/screen";
-@import "module/typography";
-@import "module/plugins";
+@import "module/generic";
+@import "module/images";
+@import "module/tables";
 @import "module/forms";
-@import "module/responsive";
 @import "module/fancybox";
-@import "module/print";
+@import "module/jquery-tabs";
