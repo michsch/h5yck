@@ -1,6 +1,6 @@
 # H5YCK 1.3 - HTML5 YAML Compass (SASS) Kickstarter
 
-**v1.3.0**
+**v1.3.1**
 
 This is my construction set for starting a new web project. Basically it contains elements from the **[HTML5 Boilerplate](http://html5boilerplate.com/)**, the CSS Framework **[YAML](http://www.yaml.de)**, the CSS preprocessor **[SASS](http://sass-lang.com/)** in combination with the SASS Framework **[Compass](http://compass-style.org/)** and the **[Build Script](https://github.com/h5bp/ant-build-script)** to compress the result.
 
@@ -45,7 +45,7 @@ grunt
 
 ### Additional
 
-* [Modernizr 2.5.3](http://www.modernizr.com/) incl. [html5shiv v3.4](http://code.google.com/p/html5shiv/)
+* [Modernizr 2.6.1](http://www.modernizr.com/) incl. [html5shiv 3.6](http://code.google.com/p/html5shiv/)
 * [jQuery 1.7.2](http://jquery.com/)
 * [accessifyhtml5.js](https://github.com/yatil/accessifyhtml5.js) by Eric Eggert (in file *js/plugins.js* & *assets/js/coffee/plugins.coffee*)
 * [syncHeight 1.2](https://github.com/ginader/syncHeight) by Dirk Ginader
@@ -66,6 +66,7 @@ grunt
 * **v1.2.2**: SMACSS for SASS files
 * **v1.2.3**: adding modules directory to ant-build-script configuration
 * **v1.3.0**: Grunt.js integration, sass folder in root directory, delete ant-build-script, MIT license in readme.md
+* **v1.3.1**: Modernizr 2.6.1 and html5shiv 3.6
 
 ## License
 
