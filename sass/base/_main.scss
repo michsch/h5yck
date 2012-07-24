@@ -1,0 +1,54 @@
+// stylesheets for main elements
+//
+// @author             Michael Schulze
+// @version            $1.3.0$
+// @copyright          Michael Schulze, 17 Mai, 2012
+// @license            MIT license
+//
+// @package            yaml,compass,sass
+// @-yaml-minver       4.0.1
+// @-sass-minver       2.0
+// @-compass-minver    0.12.0
+//
+// @lastmodified       $Date: 2012-07-24 19:36:46 +0200 (Di., 24 Jul 2012) $
+
+@media all
+{
+  
+  /*
+  * @section global typography settings
+  *
+  * vertical rhythm settings (based on em-unit)
+  * -------------------------------------------
+  * basefont-size: 14px (87.5%)
+  * line-height  : 21px (factor: 1.5)
+  */
+
+  /* (en) reset font size for all elements to standard (16 Pixel) */
+  /* (de) Alle Schriftgrößen auf Standardgröße (16 Pixel) zurücksetzen */
+  html * { font-size:100%; }
+  html, body { height: 100%; }
+  
+  /* (en) base layout gets standard font size 14px */
+  /* (de) Basis-Layout erhält Standardschriftgröße von 14 Pixeln */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $font-size-body;
+    color: $c-text;
+
+    /* (en) Prevent auto-scaling of text in mobile webkit browsers */
+    /* (en) Automatische Schriftvergrößerung in mobilen Webkit-Browsern vermeiden */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+}
+
+@media screen, projection {
+  
+  html, body, form {
+    padding: 0;
+  }
+  
+  /* force vertical scrollbar */
+  body { overflow-y:scroll; }
+}

@@ -6,8 +6,8 @@
   Project Manager:
   Development:
   Site:
-  Twitter: 
-  Location: 
+  Twitter:
+  Location:
 
 /* THANKS */
   Names (& URL):

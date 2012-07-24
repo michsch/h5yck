@@ -1,0 +1,10 @@
+@media screen, projection {
+  /* line 19, ../../sass/patch_lte_ie8.scss */
+  img
+  , embed
+  , object
+  , video {
+    width: 100%;
+    height: auto;
+  }
+}

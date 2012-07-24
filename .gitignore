@@ -1,4 +1,6 @@
-.sass-cache/
-.DS_Store
+*.sass-cache/
+*.DS_Store
 intermediate/
 publish/
+*.node_modules/
+*node_modules/

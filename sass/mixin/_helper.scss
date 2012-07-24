@@ -1,0 +1,50 @@
+// helper mixins
+//
+// @author             Michael Schulze
+// @version            $1.3.0$
+// @copyright          Michael Schulze, 30 March, 2012
+// @license            MIT license
+//
+// @package            yaml,compass,sass
+// @-yaml-minver       4.0.1
+// @-sass-minver       2.0
+// @-compass-minver    0.12.0
+//
+// @lastmodified       $Date: 2012-07-24 19:36:46 +0200 (Di., 24 Jul 2012) $
+
+// image replacement from Nicolas Gallagher and HTML5 boilerplate
+// http://nicolasgallagher.com/another-css-image-replacement-technique/
+@mixin image-replace() {
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  background-color: transparent;
+}
+
+// clearfix
+// http://css-tricks.com/snippets/css/clear-fix/
+@mixin clearfix() {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+    }
+  * html &             { zoom: 1; } // IE6
+  *:first-child+html & { zoom: 1; } // IE7
+}
+
+// cross browser display inline-block
+// http://blog.mozilla.org/webdev/2009/02/20/cross-browser-inline-block/
+// http://foohack.com/2007/11/cross-browser-support-for-inline-block-styling/
+@mixin inline-block() {
+  display: inline-block;
+  float: none;
+  
+  // IE7 bugfix
+  *display: inline;
+  zoom: 1;
+}
