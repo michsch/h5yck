@@ -47,7 +47,7 @@ grunt
 
 * [Modernizr 2.6.1](http://www.modernizr.com/) incl. [html5shiv 3.6](http://code.google.com/p/html5shiv/)
 * [jQuery 1.7.2](http://jquery.com/)
-* [accessifyhtml5.js](https://github.com/yatil/accessifyhtml5.js) by Eric Eggert (in file *js/plugins.js* & *assets/js/coffee/plugins.coffee*)
+* [accessifyhtml5.js](https://github.com/yatil/accessifyhtml5.js) by Eric Eggert (in file *js/plugins.js* & *js/coffee/plugins.coffee*)
 * [syncHeight 1.2](https://github.com/ginader/syncHeight) by Dirk Ginader
 * [Accessible-Tabs](https://github.com/ginader/Accessible-Tabs) by Dirk Ginader
 * [FancyBox 2](http://fancyapps.com/fancybox/) - the CSS is integrated into SASS (*sass/_fancybox.scss*)
