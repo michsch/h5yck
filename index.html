@@ -50,7 +50,7 @@
   <!-- All JavaScript at the bottom, except this Modernizr build.
        Modernizr enables HTML5 elements & feature detects for optimal performance.
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="js/vendor/modernizr-2.5.3.min.js"></script>
+  <script src="js/vendor/modernizr-2.6.1.min.js"></script>
 </head>
 <body>
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
@@ -75,7 +75,7 @@
         <h1 id="hyck">H5YCK v1.3</h1>
         <h2>HTML5 YAML Compass (SASS) Kickstarter</h2>
 
-        <p><strong>v1.3.1</strong></p>
+        <p><strong>v1.3.2</strong></p>
 
         <figure class="bordered float-right">
           <a class="fancybox" href="http://farm1.staticflickr.com/113/312754502_a1c6ac91e0_b.jpg" title="by gadl: http://www.flickr.com/photos/gadl/">
@@ -143,6 +143,24 @@
           <li><a href="https://github.com/brandonaaron/jquery-mousewheel">jquery-mousewheel 3.0.6</a> by Brandon Aaron</li>
         </ul>
 
+        <h2 id="static-webserver">Static Webserver</h2>
+
+        <p>h5yck comes with a built-in static webserver.
+        Just move to the project folder and run</p>
+
+        <p><code>
+        node server.js
+        </code></p>
+
+        <p>This will open a webserver on port 8080.
+        Just go to &#8216;http://localhost:8080&#8217; in your browser.</p>
+
+        <p>You can specify a different port, by adding it as an argument to your server call</p>
+
+        <p><code>
+        node server.js 8040
+        </code></p>
+
         <h2 id="changelog">Changelog</h2>
 
         <ul>
@@ -156,6 +174,7 @@
           <li><strong>v1.2.3</strong>: adding modules directory to ant-build-script configuration</li>
           <li><strong>v1.3.0</strong>: Grunt.js integration, sass folder in root directory, delete ant-build-script, MIT license in readme.md</li>
           <li><strong>v1.3.1</strong>: Modernizr 2.6.1 and html5shiv 3.6</li>
+          <li><strong>v1.3.2</strong>: minor bugfixes: Modernizr without hyphens, link to Modernizr JS file in index.html</li>
         </ul>
 
         <h2 id="license">License</h2>
@@ -202,10 +221,10 @@
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
   <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
+    //var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    //(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    //g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    //s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
 </body>
 </html>

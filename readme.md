@@ -1,6 +1,6 @@
 # H5YCK 1.3 - HTML5 YAML Compass (SASS) Kickstarter
 
-**v1.3.1**
+**v1.3.2**
 
 This is my construction set for starting a new web project. Basically it contains elements from the **[HTML5 Boilerplate](http://html5boilerplate.com/)**, the CSS Framework **[YAML](http://www.yaml.de)**, the CSS preprocessor **[SASS](http://sass-lang.com/)** in combination with the SASS Framework **[Compass](http://compass-style.org/)** and the **[Build Script](https://github.com/h5bp/ant-build-script)** to compress the result.
 
@@ -55,6 +55,24 @@ grunt
 * [Webfont-Load-Enhancer 1.2](https://github.com/MichaelvanLaar/Webfont-Load-Enhancer) by Michael van Laar
 * [jquery-mousewheel 3.0.6](https://github.com/brandonaaron/jquery-mousewheel) by Brandon Aaron
 
+## Static Webserver
+
+h5yck comes with a built-in static webserver.
+Just move to the project folder and run
+
+```bash
+node server.js
+```
+
+This will open a webserver on port 8080.
+Just go to 'http://localhost:8080' in your browser.
+
+You can specify a different port, by adding it as an argument to your server call
+
+```bash
+node server.js 8040
+```
+
 ## Changelog
 
 * **v1.0.0**: first public version with YAML 4.0
@@ -67,6 +85,7 @@ grunt
 * **v1.2.3**: adding modules directory to ant-build-script configuration
 * **v1.3.0**: Grunt.js integration, sass folder in root directory, delete ant-build-script, MIT license in readme.md
 * **v1.3.1**: Modernizr 2.6.1 and html5shiv 3.6
+* **v1.3.2**: minor bugfixes: Modernizr without hyphens, Link to Modernizr JS file in index.html
 
 ## License
 
