@@ -2,7 +2,7 @@
 
 **v1.3.2**
 
-This is my construction set for starting a new web project. Basically it contains elements from the **[HTML5 Boilerplate](http://html5boilerplate.com/)**, the CSS Framework **[YAML](http://www.yaml.de)**, the CSS preprocessor **[SASS](http://sass-lang.com/)** in combination with the SASS Framework **[Compass](http://compass-style.org/)** and the **[Build Script](https://github.com/h5bp/ant-build-script)** to compress the result.
+This is my construction set for starting a new web project. Basically it contains elements from the **[HTML5 Boilerplate](http://html5boilerplate.com/)**, the CSS Framework **[YAML](http://www.yaml.de)**, the CSS preprocessor **[SASS](http://sass-lang.com/)** in combination with the SASS Framework **[Compass](http://compass-style.org/)** and **[Grunt.js](https://github.com/cowboy/grunt)** to verify, concatenate, minify and compress the CSS and JS files.
 
 Also the JavaScript is written in **[CoffeeScript](http://coffeescript.org/)** but all CoffeeScript files are compiled to readable JavaScript (no compression). So you don't need to know CoffeeScript and can work in the compiled JavaScript files.
 
@@ -50,7 +50,7 @@ grunt
 * [accessifyhtml5.js](https://github.com/yatil/accessifyhtml5.js) by Eric Eggert (in file *js/plugins.js* & *assets/js/coffee/plugins.coffee*)
 * [syncHeight 1.2](https://github.com/ginader/syncHeight) by Dirk Ginader
 * [Accessible-Tabs](https://github.com/ginader/Accessible-Tabs) by Dirk Ginader
-* [FancyBox 2](http://fancyapps.com/fancybox/) - the CSS is integrated into SASS (*css/sass/_fancybox.scss*)
+* [FancyBox 2](http://fancyapps.com/fancybox/) - the CSS is integrated into SASS (*sass/_fancybox.scss*)
 * [Hyphenator 4.0.0](http://code.google.com/p/hyphenator/) by Mathias Nater
 * [Webfont-Load-Enhancer 1.2](https://github.com/MichaelvanLaar/Webfont-Load-Enhancer) by Michael van Laar
 * [jquery-mousewheel 3.0.6](https://github.com/brandonaaron/jquery-mousewheel) by Brandon Aaron
