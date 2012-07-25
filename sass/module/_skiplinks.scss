@@ -1,7 +1,7 @@
 // YAML skiplinks
 //
 // @author             Michael Schulze
-// @version            $1.3.0$
+// @version            $1.3.3$
 // @copyright          Michael Schulze, 23 Juni, 2012
 // @license            MIT license
 //
@@ -10,11 +10,11 @@
 // @-sass-minver       2.0
 // @-compass-minver    0.12.0
 //
-// @lastmodified       $Date: 2012-07-24 19:36:46 +0200 (Di., 24 Jul 2012) $
+// @lastmodified       $Date: 2012-07-25 22:58:41 +0200 (Mi., 25 Jul 2012) $
 
 @media screen, projection
 {
-  
+
   .ym-skiplinks { height: 24px; width: #222; }
 
   .ym-skiplinks a.ym-skip:focus,
@@ -25,5 +25,5 @@
     padding:10px 0;
     text-decoration:none;
   }
-  
+
 }

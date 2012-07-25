@@ -2,9 +2,9 @@
  * main stylesheet for website <mywebsite.com>
  *
  * @author             Michael Schulze
- * @version            $1.3.0$
- * @copyright          Copyright 2005-2012, Dirk Jesse,
- *                     Michael Schulze, 18 February, 2012
+ * @version            $1.3.3$
+ * @copyright          Michael Schulze, 18 February, 2012,
+ *                     Copyright 2005-2012, Dirk Jesse
  * @license            CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
  *                     YAML-CDL (http://www.yaml.de/license.html)
  *                     MIT license
@@ -14,7 +14,7 @@
  * @-sass-minver       2.0
  * @-compass-minver    0.12.0
  *
- * @lastmodified       $Date: 2012-07-24 19:36:46 +0200 (Di., 24 Jul 2012) $
+ * @lastmodified       $Date: 2012-07-25 22:58:41 +0200 (Mi., 25 Jul 2012) $
  */
 @media all {
   /**
@@ -1150,9 +1150,10 @@
     background: #f8f8f8;
   }
 }
-@media screen and (min-width: 0px) {
+@media screen
+and (min-width: 0px) {
   /* use border-box for form elements */
-  /* line 21, ../../sass/base/_forms.scss */
+  /* line 22, ../../sass/base/_forms.scss */
   input
   , textarea
   , select {
@@ -1162,7 +1163,7 @@
     box-sizing: border-box;
   }
 
-  /* line 25, ../../sass/base/_forms.scss */
+  /* line 26, ../../sass/base/_forms.scss */
   label {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -1538,12 +1539,12 @@ and (min-width: 0px) {
     margin: 1.5em 0 0 0;
   }
 
-  /* line 41, ../../sass/module/_generic.scss */
+  /* line 39, ../../sass/module/_generic.scss */
   .box > *:first-child {
     margin-top: 0;
   }
 
-  /* line 45, ../../sass/module/_generic.scss */
+  /* line 43, ../../sass/module/_generic.scss */
   .label {
     font-family: Verdana, Geneva, sans-serif;
     padding: 1px 6px 2px;
@@ -1554,66 +1555,69 @@ and (min-width: 0px) {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
     background: #06C;
     color: #fff;
     font-size: 10px;
     line-height: 12px;
   }
 
-  /* line 61, ../../sass/module/_generic.scss */
+  /* line 57, ../../sass/module/_generic.scss */
   .info {
     background: #f4f4f4;
   }
 
-  /* line 64, ../../sass/module/_generic.scss */
+  /* line 60, ../../sass/module/_generic.scss */
   .success {
     background: #8c8;
   }
 
-  /* line 67, ../../sass/module/_generic.scss */
+  /* line 63, ../../sass/module/_generic.scss */
   .warning {
     background: #cc8;
   }
 
-  /* line 70, ../../sass/module/_generic.scss */
+  /* line 66, ../../sass/module/_generic.scss */
   .error {
     background: #c88;
   }
 
-  /* line 74, ../../sass/module/_generic.scss */
+  /* line 70, ../../sass/module/_generic.scss */
   .highlight {
     color: #c30;
   }
 
-  /* line 77, ../../sass/module/_generic.scss */
+  /* line 73, ../../sass/module/_generic.scss */
   .dimmed {
     color: #888;
   }
 
-  /* line 81, ../../sass/module/_generic.scss */
+  /* line 77, ../../sass/module/_generic.scss */
   .cartogothic {
     font-family: 'CartoGothicStd', Arial, Helvetica, sans-serif;
   }
-  /* line 83, ../../sass/module/_generic.scss */
+  /* line 79, ../../sass/module/_generic.scss */
   .cartogothic p, .cartogothic h1, .cartogothic h2, .cartogothic h3, .cartogothic h4, .cartogothic h5, .cartogothic h6 {
     font-family: 'CartoGothicStd', Arial, Helvetica, sans-serif;
   }
 
-  /* line 88, ../../sass/module/_generic.scss */
+  /* line 84, ../../sass/module/_generic.scss */
   .float-left {
     float: left;
     display: inline;
     margin: 1.5em 1em 0 0;
   }
 
-  /* line 94, ../../sass/module/_generic.scss */
+  /* line 90, ../../sass/module/_generic.scss */
   .float-right {
     float: right;
     display: inline;
     margin: 1.5em 0 0 1em;
   }
 
-  /* line 100, ../../sass/module/_generic.scss */
+  /* line 96, ../../sass/module/_generic.scss */
   .center {
     display: block;
     text-align: center;
@@ -1621,7 +1625,7 @@ and (min-width: 0px) {
   }
 
   /* Class for additional email dots */
-  /* line 107, ../../sass/module/_generic.scss */
+  /* line 103, ../../sass/module/_generic.scss */
   .crypt {
     color: white;
     font-size: 1px;
