@@ -1,4 +1,4 @@
-/*! H5YCK - v1.3.3 - 2012-07-25
+/*! H5YCK - v1.3.4 - 2012-09-15
 * https://github.com/michsch/h5yck
 * Copyright (c) 2012 Michael Schulze; Licensed MIT license */
 
@@ -72,16 +72,24 @@ d.event.mouseHooks;d.event.special.mousewheel={setup:function(){if(this.addEvent
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
  *
- * Version: 1.2
+ * Version: 1.1
  *
  * Usage:
- 	$(window).load(function(){
+ 	$(document).ready(function(){
 		$('p').syncHeight();
 	});
  */
 
 (function($) {
-    var getHeightProperty = function() {
+	$.fn.syncHeight = function(config) {
+		var defaults = {
+			updateOnResize: false	// re-sync element heights after a browser resize event (useful in flexible layouts)
+		};
+		var options = $.extend(defaults, config);
+		
+		var e = this;
+		
+		var max = 0;
 		var browser_id = 0;
 		var property = [
 			// To avoid content overflow in synchronised boxes on font scaling, we 
@@ -95,50 +103,24 @@ d.event.mouseHooks;d.event.special.mousewheel={setup:function(){if(this.addEvent
 		if($.browser.msie && $.browser.version < 7){
 			browser_id = 1;
 		}
-        
-        return { 'name': property[browser_id][0], 
-                 'autoheightVal': property[browser_id][1] };
-    };
-    
-    $.getSyncedHeight = function(selector) {
-        var max = 0;
-        var heightProperty = getHeightProperty();
+		
 		// get maximum element height ...
-		$(selector).each(function() {
+		$(this).each(function() {
 			// fallback to auto height before height check ...
-			$(this).css(heightProperty.name, heightProperty.autoheightVal);
-			var val = $(this).height();
+			$(this).css(property[browser_id][0],property[browser_id][1]);
+			var val=$(this).height();
 			if(val > max){
 			   max = val;
 			}
 		});
-        return max;
-    };
-    
-	$.fn.syncHeight = function(config) {
-		var defaults = {
-			updateOnResize: false,	// re-sync element heights after a browser resize event (useful in flexible layouts)
-            height: false
-		};
-		var options = $.extend(defaults, config);
-
-		var e = this;
-
-		var max = 0;
-        var heightPropertyName = getHeightProperty().name;
-
-        if(typeof(options.height) === "number") {
-            max = options.height;
-        } else {
-            max = $.getSyncedHeight(this);
-        }
+		
 		// set synchronized element height ...
  		$(this).each(function() {
-  			$(this).css(heightPropertyName, max+'px');
+  			$(this).css(property[browser_id][0],max+'px');
 		});
-
+		
 		// optional sync refresh on resize event ...
-		if (options.updateOnResize === true) {
+		if (options.updateOnResize == true) {
 			$(window).resize(function(){ 
 				$(e).syncHeight();
 			});
@@ -149,7 +131,7 @@ d.event.mouseHooks;d.event.special.mousewheel={setup:function(){if(this.addEvent
 /**
  * Accessible Tabs - jQuery plugin for accessible, unobtrusive tabs
  * Build to seemlessly work with the CCS-Framework YAML (yaml.de) not depending on YAML though
- * @requires jQuery - tested with 1.4.2 but might as well work with older versions
+ * @requires jQuery - tested with 1.7 and 1.4.2 but might as well work with older versions
  *
  * english article: http://blog.ginader.de/archives/2009/02/07/jQuery-Accessible-Tabs-How-to-make-tabs-REALLY-accessible.php
  * german article: http://blog.ginader.de/archives/2009/02/07/jQuery-Accessible-Tabs-Wie-man-Tabs-WIRKLICH-zugaenglich-macht.php
@@ -162,7 +144,7 @@ d.event.mouseHooks;d.event.special.mousewheel={setup:function(){if(this.addEvent
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
  *
- * Version: 1.9.3
+ * Version: 1.9.5
  * 
  * History:
  * * 1.0 initial release
@@ -211,6 +193,8 @@ d.event.mouseHooks;d.event.special.mousewheel={setup:function(){if(this.addEvent
  * * 1.9.3
  * * * Bugfix by Norm: before, when cssClassAvailable was true, all of the tabhead elements had to have classes or they wouldn't get pulled out into tabs. 
  * * * This commit fixes this assumption, as I only want classes on some elements https://github.com/ginader/Accessible-Tabs/pull/25
+ * * 1.9.4 Bugfix by Patrick Bruckner to fix issue with Internet Explorer using jQuery 1.7 https://github.com/ginader/Accessible-Tabs/issues/26
+ * * 1.9.5 new option "clearfixClass" name of the Class that is used to clear/contain floats fixes https://github.com/ginader/Accessible-Tabs/issues/28
  */
 
 
@@ -245,7 +229,8 @@ d.event.mouseHooks;d.event.special.mousewheel={setup:function(){if(this.addEvent
                 position:'top', // can be 'top' or 'bottom'. Defines where the tabs list is inserted.
                 wrapInnerNavLinks: '', // inner wrap for a-tags in tab navigation. See http://api.jquery.com/wrapInner/ for further informations
                 firstNavItemClass: 'first', // Classname of the first list item in the tab navigation
-                lastNavItemClass: 'last' // Classname of the last list item in the tab navigation
+                lastNavItemClass: 'last', // Classname of the last list item in the tab navigation
+                clearfixClass: 'clearfix' // Name of the Class that is used to clear/contain floats
             };
             var keyCodes = {
                 37 : -1, //LEFT
@@ -311,7 +296,7 @@ d.event.mouseHooks;d.event.special.mousewheel={setup:function(){if(this.addEvent
                 // Ensure that the call to setup tabs is re-runnable
                 var tabs_selector = '.' + o.options.tabsListClass;
                 if(!$(el).find(tabs_selector).length) {
-                    $(el)[positions[o.options.position]]('<ul class="clearfix '+o.options.tabsListClass+' tabamount'+tabCount+'"></ul>');
+                    $(el)[positions[o.options.position]]('<ul class="'+o.options.clearfixClass+' '+o.options.tabsListClass+' tabamount'+tabCount+'"></ul>');
                 }
 
                 $(el).find(tabs_selector).append(list);
@@ -345,7 +330,7 @@ d.event.mouseHooks;d.event.special.mousewheel={setup:function(){if(this.addEvent
                         $(this)[o.options.currentInfoPosition]('<span class="'+o.options.currentInfoClass+'">'+o.options.currentInfoText+'</span>')
                         .parent().addClass(o.options.currentClass);
                         //now, only after writing the currentInfoText span to the tab list link, set focus to the tab's heading
-                        $($(this).attr("href")).focus().keyup(function(event){
+                        $($(this).attr("href"),true).focus().keyup(function(event){
                             if(keyCodes[event.keyCode]){
                                 o.showAccessibleTab(i+keyCodes[event.keyCode]);
                                 $(this).unbind( "keyup" );
@@ -463,6 +448,7 @@ d.event.mouseHooks;d.event.special.mousewheel={setup:function(){if(this.addEvent
         }
     }
 })(jQuery);
+
 /**
  * plugins file with some jQuery plugins and standard functions
  *

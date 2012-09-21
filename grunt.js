@@ -103,7 +103,7 @@ module.exports = function(grunt) {
         src: 'sass',
         dest: 'css/dev',
         linecomments: true,
-        forcecompile: true,
+        forcecompile: false,
         debugsass: false,
         images: 'img'
       },
@@ -123,7 +123,7 @@ module.exports = function(grunt) {
           mode: "gzip"
         },
         files: {
-          "js/main-<%= pkg.version %>.js.gz": "js/main-<%= pkg.version %>.js",
+          "js/main-<%= pkg.version %>.min.js.gz": "js/main-<%= pkg.version %>.min.js",
           "css/prod/main.css.gz": "css/prod/main.css"
         }
       }

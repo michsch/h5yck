@@ -1,20 +1,6 @@
-/**
- * main stylesheet for website <mywebsite.com>
- *
- * @author             Michael Schulze
- * @version            $1.3.3$
- * @copyright          Michael Schulze, 18 February, 2012,
- *                     Copyright 2005-2012, Dirk Jesse
- * @license            CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
- *                     YAML-CDL (http://www.yaml.de/license.html)
- *                     MIT license
- *
- * @package            yaml,compass,sass
- * @-yaml-minver       4.0.1
- * @-sass-minver       2.0
- * @-compass-minver    0.12.0
- *
- * @lastmodified       $Date: 2012-07-25 22:58:41 +0200 (Mi., 25 Jul 2012) $
+/* H5YCK - v1.3.4 - 2012-09-15
+ * https://github.com/michsch/h5yck
+ * Copyright (c) 2012 Michael Schulze; Licensed MIT license
  */
 @media all {
   /**
@@ -838,8 +824,8 @@
   /* line 49, ../../sass/base/_typography.scss */
   h1 {
     font-size: 350%;
-    line-height: 0.857em;
-    margin-top: 0.429em;
+    line-height: 0.85714em;
+    margin-top: 0.42857em;
   }
 
   /* line 52, ../../sass/base/_typography.scss */
@@ -851,23 +837,23 @@
 
   /* line 55, ../../sass/base/_typography.scss */
   h3 {
-    font-size: 178.571%;
+    font-size: 178.57143%;
     line-height: 0.84em;
     margin-top: 0.84em;
   }
 
   /* line 58, ../../sass/base/_typography.scss */
   h4 {
-    font-size: 135.714%;
-    line-height: 1.105em;
-    margin-top: 1.105em;
+    font-size: 135.71429%;
+    line-height: 1.10526em;
+    margin-top: 1.10526em;
   }
 
   /* line 61, ../../sass/base/_typography.scss */
   h5 {
-    font-size: 114.286%;
-    line-height: 1.313em;
-    margin-top: 1.313em;
+    font-size: 114.28571%;
+    line-height: 1.3125em;
+    margin-top: 1.3125em;
   }
 
   /* line 64, ../../sass/base/_typography.scss */
@@ -970,12 +956,12 @@
 
   /* line 136, ../../sass/base/_typography.scss */
   big {
-    font-size: 114.286%;
+    font-size: 114.28571%;
   }
 
   /* line 140, ../../sass/base/_typography.scss */
   small {
-    font-size: 85.714%;
+    font-size: 85.71429%;
   }
 
   /* line 149, ../../sass/base/_typography.scss */
@@ -1024,7 +1010,7 @@
   /* line 177, ../../sass/base/_typography.scss */
   sub,
   sup {
-    font-size: 78.571%;
+    font-size: 78.57143%;
     line-height: 0;
     position: relative;
     vertical-align: baseline;
@@ -1150,8 +1136,7 @@
     background: #f8f8f8;
   }
 }
-@media screen
-and (min-width: 0px) {
+@media screen and (min-width: 0px) {
   /* use border-box for form elements */
   /* line 22, ../../sass/base/_forms.scss */
   input
@@ -1210,8 +1195,7 @@ and (min-width: 0px) {
 
   /* Column-Set Configuration: 1-3 (sidebar left) */
 }
-@media only screen
-and (min-width: 0px) {
+@media only screen and (min-width: 0px) {
   /* line 22, ../../sass/layout/_responsive.scss */
   img
   , embed
@@ -1535,7 +1519,7 @@ and (min-width: 0px) {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
     color: #444;
     color: rgba(0, 0, 0, 0.8);
-    padding: 1.429em;
+    padding: 1.42857em;
     margin: 1.5em 0 0 0;
   }
 
@@ -1667,13 +1651,13 @@ and (min-width: 0px) {
   /* narrow table */
   /* line 25, ../../sass/module/_tables.scss */
   table.narrow {
-    margin: 1.357em 0 0 0;
+    margin: 1.35714em 0 0 0;
   }
   /* line 29, ../../sass/module/_tables.scss */
   table.narrow th
   , table.narrow td {
     padding: 0 0.5em;
-    line-height: 1.429em;
+    line-height: 1.42857em;
   }
   /* line 36, ../../sass/module/_tables.scss */
   .boxshadow table.narrow th

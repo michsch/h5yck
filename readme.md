@@ -1,6 +1,6 @@
 # H5YCK 1.3 - HTML5 YAML Compass (SASS) Kickstarter
 
-**v1.3.3**
+**v1.3.4**
 
 This is my construction set for starting a new web project. Basically it contains elements from the **[HTML5 Boilerplate](http://html5boilerplate.com/)**, the CSS Framework **[YAML](http://www.yaml.de)**, the CSS preprocessor **[SASS](http://sass-lang.com/)** in combination with the SASS Framework **[Compass](http://compass-style.org/)** and **[Grunt.js](https://github.com/cowboy/grunt)** to verify, concatenate, minify and compress the CSS and JS files.
 
@@ -45,8 +45,8 @@ grunt
 
 ### Additional
 
-* [Modernizr 2.6.1](http://www.modernizr.com/) incl. [html5shiv 3.6](http://code.google.com/p/html5shiv/)
-* [jQuery 1.7.2](http://jquery.com/)
+* [Modernizr 2.6.2](http://www.modernizr.com/) incl. [html5shiv 3.6](http://code.google.com/p/html5shiv/)
+* [jQuery 1.8.0](http://jquery.com/)
 * [accessifyhtml5.js](https://github.com/yatil/accessifyhtml5.js) by Eric Eggert (in file *js/plugins.js* & *js/coffee/plugins.coffee*)
 * [syncHeight 1.2](https://github.com/ginader/syncHeight) by Dirk Ginader
 * [Accessible-Tabs](https://github.com/ginader/Accessible-Tabs) by Dirk Ginader
@@ -75,18 +75,19 @@ node server.js 8040
 
 ## Changelog
 
-* **v1.0.0**: first public version with YAML 4.0
-* **v1.0.1**: YAML v4.0.1 (Build 120306), jQuery update to 1.7.2
-* **v1.1.0**: some minor bugfixes
-* **v1.1.1**: new structure without *assets* directory
-* **v1.2.0**: directories and filenames like H5BP v3.0
-* **v1.2.1**: minor bugfixes in build-script and compass configuration files
-* **v1.2.2**: SMACSS for SASS files
-* **v1.2.3**: adding modules directory to ant-build-script configuration
-* **v1.3.0**: Grunt.js integration, sass folder in root directory, delete ant-build-script, MIT license in readme.md
-* **v1.3.1**: Modernizr 2.6.1 and html5shiv 3.6
-* **v1.3.2**: minor bugfixes: Modernizr without hyphens, Link to Modernizr JS file in index.html
+* **v1.3.4**: resources update (jQuery 1.8.0, Modernizr 2.6.2)
 * **v1.3.3**: CSS3 mixin for linear gradient, license changes in some sass files to MIT license
+* **v1.3.2**: minor bugfixes: Modernizr without hyphens, Link to Modernizr JS file in index.html
+* **v1.3.1**: Modernizr 2.6.1 and html5shiv 3.6
+* **v1.3.0**: Grunt.js integration, sass folder in root directory, delete ant-build-script, MIT license in readme.md
+* **v1.2.3**: adding modules directory to ant-build-script configuration
+* **v1.2.2**: SMACSS for SASS files
+* **v1.2.1**: minor bugfixes in build-script and compass configuration files
+* **v1.2.0**: directories and filenames like H5BP v3.0
+* **v1.1.1**: new structure without *assets* directory
+* **v1.1.0**: some minor bugfixes
+* **v1.0.1**: YAML v4.0.1 (Build 120306), jQuery update to 1.7.2
+* **v1.0.0**: first public version with YAML 4.0
 
 ## License
 
