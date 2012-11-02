@@ -22,7 +22,7 @@
   background-color: transparent;
 }
 
-// clearfix
+// standard clearfix
 // http://css-tricks.com/snippets/css/clear-fix/
 @mixin clearfix() {
   &:after {
@@ -32,9 +32,42 @@
     content: " ";
     clear: both;
     height: 0;
-    }
-  * html &             { zoom: 1; } // IE6
-  *:first-child+html & { zoom: 1; } // IE7
+  }
+  * html &             { zoom: 1; } /* IE6 */
+  *:first-child+html & { zoom: 1; } /* IE7 */
+}
+
+// YAML clearfix method
+// https://github.com/djesse/yaml4-sass/blob/master/sass/yaml/core/base-modules/_float-handling.scss
+@mixin ym-clearfix() {
+  &:before {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+// micro clearfix from Nicolas Gallagher
+// http://css-tricks.com/snippets/css/clear-fix/
+@mixin micro-clearfix() {
+  .group:before,
+  .group:after {
+    content: "";
+    display: table;
+  } 
+  .group:after {
+    clear: both;
+  }
+  .group {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+  }
 }
 
 // cross browser display inline-block
@@ -44,7 +77,16 @@
   display: inline-block;
   float: none;
   
-  // IE7 bugfix
+  /* IE7 bugfix */
   *display: inline;
   zoom: 1;
+}
+
+// get first child of element and also th first child inside an
+// header element which is the first child.
+@mixin first-child {
+  > *:first-child,
+  > header:first-child *:first-child {
+    @content;
+  }
 }

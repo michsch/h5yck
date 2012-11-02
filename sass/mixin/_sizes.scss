@@ -73,8 +73,16 @@
 
 // ---- headline calulactions -----------------------------------------------------------------
 
-@mixin headline($font-size: $font-size-body-px, $line-height: $line-height-px, $margin-top: $line-height-px) {
+@mixin headline($font-size: $font-size-body-px, $line-height: $line-height-px, $margin-top: $std-margin-px) {
   @include font-size($font-size);
   @include line-height($line-height,$font-size);
   margin-top: em($margin-top,$font-size);
+}
+
+@mixin ym-headline($font-size: $h1-font-size, $base-font-size: $base-font-size, $line-height: $line-height){
+  $font-scale : $font-size / $base-font-size;
+
+  font-size: $font-scale * 100%;
+  line-height: 2 * $line-height / $font-scale;
+  margin: $line-height / $font-scale * 1em 0 0;
 }

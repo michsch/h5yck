@@ -1,0 +1,22 @@
+// YAML 4 mixins
+//
+
+@mixin ym-column(){
+	display: table;
+	width: 100%;
+}
+
+@mixin ym-clearfix() {
+	&:before {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+		content: ".";
+		display: block;
+		font-size: 0;
+		height: 0;
+		visibility: hidden;
+	}
+}

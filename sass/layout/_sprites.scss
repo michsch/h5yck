@@ -1,0 +1,35 @@
+// sprites styles
+//
+// @author             Michael Schulze
+// @version            $1.3.4$
+// @copyright          Michael Schulze, 31 October, 2012
+// @license            All rights reserved. No usage without written permission.
+//
+// @package            compass,sass
+// @-sass-minver       3.2
+// @-compass-minver    0.12.2
+//
+// @lastmodified       $Date: 2012-11-02 03:41:17 +0100 (Fri, 02 Nov 2012) $
+
+$use-icon-font: 0;
+$use-retina: 0;
+
+//$sprites: $icon;
+//$sprites-retina: $icon-retina;
+
+@mixin icon-sprite-position($name, $x: 0, $y: 0, $use-retina: $use-retina) {
+	@include sprite-position($name, $x, $y, $icon, $icon-retina, $use-retina);
+}
+
+@mixin icon-sprite-position-retina($name, $x: 0, $y: 0) {
+	@include sprite-position-retina($name, $x, $y, $icon, $icon-retina);
+}
+
+@media screen, projection
+{
+
+	%sprite {
+		@include insert-sprites($icon);
+	}
+
+}

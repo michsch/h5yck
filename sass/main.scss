@@ -25,15 +25,10 @@
 @import "mixin/css3";
 @import "mixin/sizes";
 @import "mixin/helper";
+@import "mixin/sprites";
 
 // import yaml css framework
-@import "yaml/full"; // import all
-//@import "yaml/normalize";
-//@import "yaml/float";
-//@import "yaml/accessibility";
-//@import "yaml/column";
-//@import "yaml/grid";
-//@import "yaml/forms";
+@import "yaml/base";
 
 // import config file with colors and other vars
 @import "config";
@@ -52,6 +47,7 @@
 @import "layout/screen";
 @import "layout/responsive";
 @import "layout/print";
+@import "layout/sprites";
 
 // modules
 @import "module/skiplinks";

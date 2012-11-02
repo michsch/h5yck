@@ -1,20 +1,7 @@
 /**
  * "Yet Another Multicolumn Layout" - YAML CSS Framework
- *
  * (en) YAML core stylesheet - structure-independent bugfixes of IE/Win CSS-bugs
  * (de) YAML Basis-Stylesheet - Strukturunabhängige Bugfixes von CSS-Bugs des IE/Win
- *
- * Don't make any changes in this file!
- *
- * @copyright       Copyright 2005-2012, Dirk Jesse
- * @license         CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
- *                  YAML-CDL (http://www.yaml.de/license.html)
- * @link            http://www.yaml.de
- * @package         yaml
- * @version         v4.0.1
- * @revision        $Revision: 724 $
- * @lastmodified    $Date: 2012-07-24 19:36:46 +0200 (Di., 24 Jul 2012) $
- * @appdef yaml
  */
 @media all {
   /**
@@ -24,14 +11,14 @@
   * @debug
   * @app-yaml-default disabled
   */
-  /* body { background:#0f0; background-image:none; }   */
+  /* body { background:#0f0; background-image:none; }	*/
   /**
   * Correct inline positioning for unknown HTML5 elements in IE 6 & 7
   *
   * @workaround
-  * @affected  IE6, IE7
-  * @css-for   IE6, IE7
-  * @valid     no
+  * @affected	IE6, IE7
+  * @css-for	 IE6, IE7
+  * @valid		 no
   */
   /*------------------------------------------------------------------------------------------------------*/
   /**
@@ -39,11 +26,11 @@
   * (de) Scrollbar-Fix wird in alten IE's nicht benötigt, zudem verursacht der Fix Probleme im IE6
   *
   * @workaround
-  * @affected  IE6, IE7
-  * @css-for   IE6, IE7
-  * @valid     no
+  * @affected	IE6, IE7
+  * @css-for	 IE6, IE7
+  * @valid		 no
   */
-  /* line 53, ../../sass/yaml/_iehacks.scss */
+  /* line 52, ../../sass/yaml/_iehacks.scss */
   body {
     o\verflow: visible;
   }
@@ -52,13 +39,13 @@
   * (en) HTML5 - default media element styles
   * (de) HTML5 - Standard Eigenschaften für Media-Elemente
   */
-  /* line 61, ../../sass/yaml/_iehacks.scss */
+  /* line 60, ../../sass/yaml/_iehacks.scss */
   article, aside, details, figcaption, figure,
   footer, header, hgroup, nav, section {
     zoom: 1;
   }
 
-  /* line 67, ../../sass/yaml/_iehacks.scss */
+  /* line 66, ../../sass/yaml/_iehacks.scss */
   audio,
   canvas,
   video {
@@ -70,7 +57,7 @@
   * (en) enable bicubic interpolation of images on scaling
   * (de) aktiviert bikubische Interpolation beim Skalieren von Bildern
   */
-  /* line 76, ../../sass/yaml/_iehacks.scss */
+  /* line 75, ../../sass/yaml/_iehacks.scss */
   img {
     -ms-interpolation-mode: bicubic;
     zoom: 1;
@@ -82,23 +69,23 @@
   * (de) Korrigiert das fehlerhafte overflow-Verhalten von textarea und input-Elementen
   *
   * @workaround
-  * @affected  IE 5.x/Win, IE6
-  * @css-for   IE 5.x/Win, IE6
-  * @valid     no
+  * @affected	IE 5.x/Win, IE6
+  * @css-for	 IE 5.x/Win, IE6
+  * @valid		 no
   */
-  /* line 94, ../../sass/yaml/_iehacks.scss */
+  /* line 93, ../../sass/yaml/_iehacks.scss */
   * html iframe,
   * html frame {
     overflow: auto;
   }
 
-  /* line 96, ../../sass/yaml/_iehacks.scss */
+  /* line 95, ../../sass/yaml/_iehacks.scss */
   * html input,
   * html frameset {
     overflow: hidden;
   }
 
-  /* line 97, ../../sass/yaml/_iehacks.scss */
+  /* line 96, ../../sass/yaml/_iehacks.scss */
   * html textarea {
     overflow: scroll;
     overflow-x: hidden;
@@ -113,16 +100,16 @@
   * Helpful to fix several possible problems in older IE versions (#main).
   *
   * @bugfix
-  * @affected   IE 5.x/Win, IE6, IE7
-  * @css-for   IE 5.x/Win, IE6, IE7
-  * @valid     yes
+  * @affected	IE 5.x/Win, IE6, IE7
+  * @css-for	 IE 5.x/Win, IE6, IE7
+  * @valid		 yes
   */
-  /* line 114, ../../sass/yaml/_iehacks.scss */
+  /* line 113, ../../sass/yaml/_iehacks.scss */
   body, #main {
     position: relative;
   }
 
-  /* line 115, ../../sass/yaml/_iehacks.scss */
+  /* line 114, ../../sass/yaml/_iehacks.scss */
   * html body {
     position: static;
   }
@@ -134,11 +121,11 @@
   *
   * @workaround
   * @see http://perishablepress.com/press/2009/12/06/new-clearfix-hack/
-  * @affected  IE 5.x/Win, IE6, IE7
-  * @css-for   IE 5.x/Win, IE6, IE7
-  * @valid     yes
+  * @affected	IE 5.x/Win, IE6, IE7
+  * @css-for	 IE 5.x/Win, IE6, IE7
+  * @valid		 yes
   */
-  /* line 130, ../../sass/yaml/_iehacks.scss */
+  /* line 129, ../../sass/yaml/_iehacks.scss */
   .ym-clearfix {
     zoom: 1;
   }
@@ -150,11 +137,11 @@
   * (de) Bugfix für unvollständige Darstellung der Spalteninhalte / Spaltentrenner
   *
   * @bugfix
-  * @affected   IE 5.x/Win, IE6
-  * @css-for   IE 5.x/Win, IE6
-  * @valid     yes
+  * @affected	IE 5.x/Win, IE6
+  * @css-for	 IE 5.x/Win, IE6
+  * @valid		 yes
   */
-  /* line 146, ../../sass/yaml/_iehacks.scss */
+  /* line 145, ../../sass/yaml/_iehacks.scss */
   * html .ym-col1,
   * html .ym-col2,
   * html .ym-col3 {
@@ -167,29 +154,29 @@
   * (de) Vermeidung verschiedenster Bugs durch Erzwingen von "hasLayout"
   *
   * @workaround
-  * @affected  IE 5.x/Win, IE6, IE7
-  * @css-for   IE 5.x/Win, IE6, IE7
-  * @valid     no
+  * @affected	IE 5.x/Win, IE6, IE7
+  * @css-for	 IE 5.x/Win, IE6, IE7
+  * @valid		 no
   */
-  /* line 160, ../../sass/yaml/_iehacks.scss */
+  /* line 159, ../../sass/yaml/_iehacks.scss */
   body {
     height: 1%;
   }
 
-  /* line 161, ../../sass/yaml/_iehacks.scss */
+  /* line 160, ../../sass/yaml/_iehacks.scss */
   .ym-wrapper, .ym-wbox, #header, #nav, #main, #footer {
     zoom: 1;
   }
 
-  /* IE6 & IE7  */
-  /* line 162, ../../sass/yaml/_iehacks.scss */
+  /* IE6 & IE7	*/
+  /* line 161, ../../sass/yaml/_iehacks.scss */
   * html .ym-wrapper, * html .ym-wbox {
     height: 1%;
     hei\ght: auto;
   }
 
   /* IE 5.x & IE6 | IE6 only */
-  /* line 163, ../../sass/yaml/_iehacks.scss */
+  /* line 162, ../../sass/yaml/_iehacks.scss */
   * html #header, * html #nav, * html #main, * html #footer {
     width: 100%;
     wid\th: auto;
@@ -197,7 +184,7 @@
 
   /* IE 5.x & IE6 | IE6 only */
   /* trigger hasLayout to force containing content */
-  /* line 166, ../../sass/yaml/_iehacks.scss */
+  /* line 165, ../../sass/yaml/_iehacks.scss */
   .ym-gbox, .ym-gbox-left, .ym-gbox-right {
     height: 1%;
   }
@@ -208,11 +195,11 @@
   * @see http://www.positioniseverything.net/explorer/ie-listbug.html
   *
   * @bugfix
-  * @affected  IE 5.x/Win, IE6
-  * @css-for   IE 5.x/Win, IE6
-  * @valid     yes
+  * @affected	IE 5.x/Win, IE6
+  * @css-for	 IE 5.x/Win, IE6
+  * @valid		 yes
   */
-  /* line 180, ../../sass/yaml/_iehacks.scss */
+  /* line 179, ../../sass/yaml/_iehacks.scss */
   * html ul, * html ol, * html dl {
     position: relative;
   }
@@ -222,11 +209,11 @@
   * List-Numbering Bug
   *
   * @bugfix
-  * @affected  IE 5.x/Win, IE6, IE7
-  * @css-for   IE 5.x/Win, IE6, IE7
-  * @valid     yes
+  * @affected	IE 5.x/Win, IE6, IE7
+  * @css-for	 IE 5.x/Win, IE6, IE7
+  * @valid		 yes
   */
-  /* line 193, ../../sass/yaml/_iehacks.scss */
+  /* line 192, ../../sass/yaml/_iehacks.scss */
   body ol li {
     display: list-item;
   }
@@ -236,11 +223,11 @@
   * Browser-based image scaling (not)
   *
   * @workaround
-  * @affected  IE 5.x/Win, IE6
-  * @css-for   IE 5.x/Win, IE6
-  * @valid     yes
+  * @affected	IE 5.x/Win, IE6
+  * @css-for	 IE 5.x/Win, IE6
+  * @valid		 yes
   */
-  /* line 206, ../../sass/yaml/_iehacks.scss */
+  /* line 205, ../../sass/yaml/_iehacks.scss */
   * html .flexible {
     zoom: 1;
   }
@@ -249,21 +236,21 @@
   * Form related bugfixes
   *
   * @bugfix
-  * @affected  IE 5.x/Win, IE6, IE7
-  * @css-for   IE 5.x/Win, IE6, IE7
-  * @valid     no
+  * @affected	IE 5.x/Win, IE6, IE7
+  * @css-for	 IE 5.x/Win, IE6, IE7
+  * @valid		 no
   */
-  /* line 219, ../../sass/yaml/_iehacks.scss */
+  /* line 218, ../../sass/yaml/_iehacks.scss */
   button, input {
     *overflow: visible;
   }
 
-  /* line 220, ../../sass/yaml/_iehacks.scss */
+  /* line 219, ../../sass/yaml/_iehacks.scss */
   table button, table input {
     *overflow: auto;
   }
 
-  /* line 222, ../../sass/yaml/_iehacks.scss */
+  /* line 221, ../../sass/yaml/_iehacks.scss */
   fieldset, legend {
     position: relative;
   }
@@ -273,11 +260,11 @@
   * Global adjustments/fixes for YAML's form construction kit
   *
   * @workaround
-  * @affected  IE 5.x/Win, IE6, IE7
-  * @css-for   IE 5.x/Win, IE6, IE7
-  * @valid     no
+  * @affected	IE 5.x/Win, IE6, IE7
+  * @css-for	 IE 5.x/Win, IE6, IE7
+  * @valid		 no
   */
-  /* line 237, ../../sass/yaml/_iehacks.scss */
+  /* line 236, ../../sass/yaml/_iehacks.scss */
   .ym-form,
   .ym-form div,
   .ym-form div * {
@@ -287,21 +274,21 @@
   /*------------------------------------------------------------------------------------------------------*/
   /**
   * (en) Workaround for 'collapsing margin at #col3' when using CSS-property clear
-  *     Left margin of #col3 collapses when using clear:both in 1-3-2 (or 2-3-1) layout and right column is the
-  *     longest and left column is the shortest one. For IE6 and IE7 a special workaround was developed
-  *     in YAML.
+  *		Left margin of #col3 collapses when using clear:both in 1-3-2 (or 2-3-1) layout and right column is the
+  *		longest and left column is the shortest one. For IE6 and IE7 a special workaround was developed
+  *		in YAML.
   *
   * (de) Workaround für 'kollabierenden Margin an #col3' bei Verwendung der CSS-Eigenschaft clear
-  *     Der linke Margin von #col3 kollabiert bei der Verwendung von clear:both im 1-3-2 (oder 2-3-1) Layout
-  *     wenn gleichzeitig die linke Spalte die kürzeste und die rechte die längste ist. Im IE6 und IE7 lässt
-  *     sich der Bug durch eine speziell für YAML entwickelten Workaround umgehen.
+  *		Der linke Margin von #col3 kollabiert bei der Verwendung von clear:both im 1-3-2 (oder 2-3-1) Layout
+  *		wenn gleichzeitig die linke Spalte die kürzeste und die rechte die längste ist. Im IE6 und IE7 lässt
+  *		sich der Bug durch eine speziell für YAML entwickelten Workaround umgehen.
   *
   * @workaround
-  * @affected  IE 5.x/Win, IE6, IE7
-  * @css-for   IE 5.x/Win, IE6, IE7
-  * @valid     no
+  * @affected	IE 5.x/Win, IE6, IE7
+  * @css-for	 IE 5.x/Win, IE6, IE7
+  * @valid		 no
   */
-  /* line 258, ../../sass/yaml/_iehacks.scss */
+  /* line 257, ../../sass/yaml/_iehacks.scss */
   html .ym-ie-clearing {
     /* (en) Only a small help for debugging */
     /* (de) Nur eine kleine Hilfe zur Fehlersuche */
@@ -320,31 +307,31 @@
     margin: -2px 0 -1em 1px;
   }
 
-  /* line 279, ../../sass/yaml/_iehacks.scss */
+  /* line 278, ../../sass/yaml/_iehacks.scss */
   * html .ym-ie-clearing {
     margin: -2px 0 -1em 0;
   }
 
-  /* line 280, ../../sass/yaml/_iehacks.scss */
+  /* line 279, ../../sass/yaml/_iehacks.scss */
   .ym-cbox {
     margin-bottom: -2px;
   }
 
   /* (en) avoid horizontal scrollbars in IE7 in borderless layouts because of negative margins */
   /* (de) Vermeidung horizontaler Scrollbalken bei randabfallenden Layouts im IE7 */
-  /* line 284, ../../sass/yaml/_iehacks.scss */
+  /* line 283, ../../sass/yaml/_iehacks.scss */
   html {
     margin-right: 1px;
   }
 
-  /* line 285, ../../sass/yaml/_iehacks.scss */
+  /* line 284, ../../sass/yaml/_iehacks.scss */
   * html {
     margin-right: 0;
   }
 
   /* (en) Bugfix:Essential for IE7 */
   /* (de) Bugfix:Notwendig im IE7 */
-  /* line 289, ../../sass/yaml/_iehacks.scss */
+  /* line 288, ../../sass/yaml/_iehacks.scss */
   .ym-col3 {
     position: relative;
   }
@@ -355,9 +342,9 @@
   * @see http://www.positioniseverything.net/explorer/guillotine.html
   *
   * @workaround
-  * @affected  IE 5.x/Win, IE6
-  * @css-for   IE 5.x/Win, IE6
-  * @valid     yes
+  * @affected	IE 5.x/Win, IE6
+  * @css-for	 IE 5.x/Win, IE6
+  * @valid		 yes
   */
 }
 @media screen, projection {
@@ -369,35 +356,35 @@
   * @see http://positioniseverything.net/explorer/doubled-margin.html
   *
   * @bugfix
-  * @affected  IE 5.x/Win, IE6
-  * @css-for   IE 5.x/Win, IE6, IE7
-  * @valid     yes
+  * @affected	IE 5.x/Win, IE6
+  * @css-for	 IE 5.x/Win, IE6, IE7
+  * @valid		 yes
   */
-  /* line 319, ../../sass/yaml/_iehacks.scss */
+  /* line 318, ../../sass/yaml/_iehacks.scss */
   .ym-col1, .ym-col2 {
     display: inline;
   }
 
   /* Fix for:"Linking to anchors in elements within the containing block" Problem in IE5.x & IE 6.0 */
-  /* line 322, ../../sass/yaml/_iehacks.scss */
+  /* line 321, ../../sass/yaml/_iehacks.scss */
   .ym-grid {
     overflow: hidden;
     display: block;
   }
 
-  /* line 323, ../../sass/yaml/_iehacks.scss */
+  /* line 322, ../../sass/yaml/_iehacks.scss */
   * html .ym-grid {
     overflow: visible;
   }
 
-  /* line 326, ../../sass/yaml/_iehacks.scss */
+  /* line 325, ../../sass/yaml/_iehacks.scss */
   .ym-gl,
   .ym-gr {
     display: inline;
   }
 
   /* transform CSS tables back into floats */
-  /* line 329, ../../sass/yaml/_iehacks.scss */
+  /* line 328, ../../sass/yaml/_iehacks.scss */
   .ym-equalize .ym-gl {
     float: left;
     display: inline;
@@ -405,7 +392,7 @@
     margin-bottom: -32767px;
   }
 
-  /* line 335, ../../sass/yaml/_iehacks.scss */
+  /* line 334, ../../sass/yaml/_iehacks.scss */
   .ym-equalize .ym-gr {
     float: right;
     margin-left: -5px;
@@ -414,7 +401,7 @@
     margin-bottom: -32767px;
   }
 
-  /* line 342, ../../sass/yaml/_iehacks.scss */
+  /* line 341, ../../sass/yaml/_iehacks.scss */
   .no-ie-padding .ym-gl,
   .no-ie-padding .ym-gr {
     padding-bottom: 0;
@@ -427,11 +414,11 @@
   * @see http://www.positioniseverything.net/explorer/expandingboxbug.html
   *
   * @workaround
-  * @affected  IE 5.x/Win, IE6
-  * @css-for   IE 5.x/Win, IE6
-  * @valid     yes
+  * @affected	IE 5.x/Win, IE6
+  * @css-for	 IE 5.x/Win, IE6
+  * @valid		 yes
   */
-  /* line 361, ../../sass/yaml/_iehacks.scss */
+  /* line 360, ../../sass/yaml/_iehacks.scss */
   * html .ym-cbox-left,
   * html .ym-cbox-right,
   * html .ym-cbox {
@@ -439,7 +426,7 @@
   }
 
   /* avoid growing widths */
-  /* line 366, ../../sass/yaml/_iehacks.scss */
+  /* line 365, ../../sass/yaml/_iehacks.scss */
   * html .ym-gbox,
   * html .ym-gbox-left,
   * html .ym-gbox-right {
@@ -453,11 +440,11 @@
   * (de) Vermeiden von unnötigen Seitenumbrüchen beim Ausdruck der Spalte .ym-col3 und Einschluss von Floats.
   *
   * @bugfix
-  * @affected  IE7
-  * @css-for   IE 5.x/Win, IE6, IE7
-  * @valid     yes
+  * @affected	IE7
+  * @css-for	 IE 5.x/Win, IE6, IE7
+  * @valid		 yes
   */
-  /* line 384, ../../sass/yaml/_iehacks.scss */
+  /* line 383, ../../sass/yaml/_iehacks.scss */
   .ym-gbox,
   .ym-gbox-left,
   .ym-gbox-right,

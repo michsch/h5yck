@@ -1,0 +1,38 @@
+// Disable/Enable Core Modules
+// ---------------------------------
+$use-yaml						: true !default;
+$yaml-prefix					: 'ym-' !default;
+
+$default-base-normalization		: true !default;
+$default-base-floathandling		: true !default;
+$default-base-columns			: true !default;
+$default-base-grids				: true !default;
+$default-base-forms				: true !default;
+$default-base-accessibility		: true !default;
+$default-base-print				: true !default;
+
+@if $use-yaml == false {
+	$default-base-normalization	: false;
+	$default-base-floathandling	: false;
+	$default-base-columns		: false;
+	$default-base-grids			: false;
+	$default-base-forms			: false;
+	$default-base-accessibility	: false;
+	$default-base-print			: false;
+}
+
+// Config: Columns Module
+// ---------------------------------
+$default-column-width			: 20% !default;
+$default-cbox-padding			: 10px !default;
+
+// Config: Grids Module
+// ---------------------------------
+$default-rounding-tolerance		: -5px !default;
+$default-gbox-padding			: 10px !default;
+
+// Config: Print Module
+// ---------------------------------
+$default-print-fontsize			: 10pt !default;
+$default-print-abbreviation		: false !default;
+$default-print-href				: false !default;

@@ -28,9 +28,44 @@ $c-crypt: #ffffff; // same as background color because that's the color of the a
 // font size & line height
 //
 // !do not delete because this is needed in mixin/sizes
-$font-size-body-px: 14;
-$line-height-px: 21;
+//
+$font-size-body-px	: 14;
+$line-height-px		: 21;
+$std-margin-px		: 21;
 
 // calculate font-size (in %) and line-height (in em)
 $font-size-body: $font-size-body-px / 16 * 100%;
-$line-height: em($line-height-px, $font-size-body-px);
+//$line-height: em($line-height-px, $font-size-body-px);
+//$line-height: $line-height-px / $font-size-body-px;
+$std-margin: em($std-margin-px, $font-size-body-px);
+
+// Vertical Rhythm
+// ---------------------------------------------------
+// font values have to be defined in [px] without unit
+$browser-default-font-size	: 16;
+$base-font-size			 : 14;
+$base-line-height		 : 21;
+
+$h1-font-size			 : 49;
+$h2-font-size			 : 35;
+$h3-font-size			 : 24;
+$h4-font-size			 : 21;
+$h5-font-size			 : 18;
+$h6-font-size			 : 14;
+$text-big-font-size		 : 16;
+$text-small-font-size	 : 12;
+
+$line-height				: $base-line-height / $base-font-size;
+$h1-font-scale				: $h1-font-size / $base-font-size;
+$h2-font-scale				: $h2-font-size / $base-font-size;
+$h3-font-scale				: $h3-font-size / $base-font-size;
+$h4-font-scale				: $h4-font-size / $base-font-size;
+$h5-font-scale				: $h5-font-size / $base-font-size;
+$h6-font-scale				: $h6-font-size / $base-font-size;
+$text-font-scale			: 1;
+$text-big-font-scale		: $text-big-font-size / $base-font-size;
+$text-small-font-scale		: $text-small-font-size / $base-font-size;
+
+// sprites
+$icon: sprite-map("icons/*.png", $spacing: 20px, $layout: vertical);
+$icon-retina: $icon;

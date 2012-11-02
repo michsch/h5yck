@@ -1,0 +1,167 @@
+// sprites mixins
+//
+// @author             Michael Schulze
+// @version            $1.0.2$
+// @copyright          Michael Schulze, 31 October, 2012
+// @license            All rights reserved. No usage without written permission.
+//
+// @package            compass,sass
+// @-sass-minver       3.2
+// @-compass-minver    0.12.2
+//
+// @lastmodified       $Date: 2012-10-31 22:15:42 +0100 (Wed, 31 Oct 2012) $
+
+$media-retina: "(min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx)" !default;
+$use-retina: 0 !default;
+$retina-ratio: 1.5 !default;
+$retina-ratio-opera: "3/2" !default;
+$retina-faktor: 2;
+
+@mixin media-retina {
+	@media (min--moz-device-pixel-ratio: $retina-ratio),
+	(-o-min-device-pixel-ratio: $retina-ratio-opera),
+	(-webkit-min-device-pixel-ratio: $retina-ratio),
+	(min-resolution: $retina-ratio + dppx) {
+		@content;
+	}
+}
+
+// setting the background-image
+//
+// @param Object sprites
+@mixin insert-sprites($sprites: $sprites) {
+	background-image: sprite-url($sprites);
+	background-repeat: no-repeat;
+}
+
+@mixin sprite-position($name, $x: 0, $y: 0, $sprites: $sprites, $sprites-retina: $sprites-retina, $use-retina: $use-retina) {
+	background-position: sprite-position($sprites, $name, $x, $y);
+
+	@if $use-retina == 1 {
+		@include media-retina
+		{
+			@include sprite-position-retina($name, $x, $y, $sprites, $sprites-retina);
+		}
+	}
+}
+
+@mixin sprite-position-retina($name, $x: 0, $y: 0, $sprites: $sprites, $sprites-retina: $sprites-retina) {
+	@if (sprite-position($sprites, $name) != sprite-position($sprites-retina, $name)) {
+		$x: $x * $retina-faktor;
+		$y: $y * $retina-faktor;
+		$ypos: round(nth(sprite-position($sprites-retina, $name, $x, $y), 2) / 2);
+		$xpos: round(nth(sprite-position($sprites-retina, $name, $x, $y), 1) / 2);
+		background-position: $xpos $ypos;
+	}
+
+	@include background-size(ceil(image-width(sprite-path($sprites-retina)) / 2) auto);
+	//background-image: sprite-url($sprites-retina);
+}
+
+@mixin magic-sprites($sprites: $sprites, $sprites-retina: $sprites-retina, $before: 0, $use-retina: $use-retina, $prefix: false) {
+	@if $prefix == false {
+		$prefix: sprite-map-name($sprites);
+	}
+
+	@media screen, projection
+	{
+
+		.#{$prefix}-sprites {
+			@include insert-sprites($sprites);
+			display: inline-block;
+			// should be calculated for @each $sprite-name if different icon size
+			width: ceil(image-width(sprite-path($sprites)));
+		}
+
+		@each $sprite-name in sprite-names($sprites) {
+			$sprite-selector: $sprite-name;
+			@if $before == 1 {
+				$sprite-selector: $sprite-name + ':before';
+			}
+			.#{$sprite-selector} {
+				@extend .#{$prefix}-sprites;
+				background-position: sprite-position($sprites, $sprite-name);
+				// could be outsourced if height/width is always the same on each element
+				//height: image-height(sprite-file($sprites, $sprite-name));
+				//width: image-width(sprite-file($sprites, $sprite-name));
+			}
+		}
+
+	}
+
+	@if $use-retina == 1 {
+		@include magic-retina-sprites($sprites, $sprites-retina, $before, $prefix);
+	}
+
+}
+
+@mixin magic-retina-sprites($sprites: $sprites, $sprites-retina: $sprites-retina, $before: 0, $prefix: false) {
+	@if $prefix == false {
+		$prefix: sprite-map-name($sprites);
+	}
+
+	@include media-retina {
+
+		.#{$prefix}-retina-sprites {
+			background-image: sprite-url($sprites-retina);
+			background-size: ceil(image-width(sprite-path($sprites-retina)) / 2) auto;
+		}
+
+		@each $sprite-name in sprite-names($sprites-retina) {
+			.#{$sprite-name} {
+				@extend .#{$prefix}-retina-sprites;
+				@if (sprite-position($sprites, $sprite-name) != sprite-position($sprites-retina, $sprite-name)) {
+					$ypos: round(nth(sprite-position($sprites-retina, $sprite-name), 2) / 2);
+					background-position: 0 $ypos;
+				}
+			}
+		}
+
+	}
+
+}
+
+// Original from Sven Wolfermann
+@mixin create-magic-sprites($sprites: $sprites, $sprites-retina: $sprites-retina, $use-retina: $use-retina) {
+
+	.sprite {
+		@include insert-sprites($sprites);
+		display: inline-block;
+		// should be calculated for @each $sprite-name if different icon size
+		width: ceil(image-width(sprite-path($sprites)));
+	}
+
+	@each $sprite-name in sprite-names($sprites) {
+		.#{$sprite-name} {
+			@extend .sprite;
+			background-position: sprite-position($sprites, $sprite-name);
+			// could be outsourced if height/width is always the same on each element
+			//height: image-height(sprite-file($sprites, $sprite-name));
+			//width: image-width(sprite-file($sprites, $sprite-name));
+		}
+	}
+
+	@include media-retina {
+
+		.retina-sprite {
+			background-image: sprite-url($sprites-retina);
+			background-size: ceil(image-width(sprite-path($sprites-retina)) / 2) auto;
+		}
+
+		.test {
+			@extend .retina-sprite;
+			color: black;
+		}
+
+		@each $sprite-name in sprite-names($sprites-retina) {
+			.#{$sprite-name} {
+				@extend .retina-sprite;
+				@if (sprite-position($sprites, $sprite-name) != sprite-position($sprites-retina, $sprite-name)) {
+					$ypos: round(nth(sprite-position($sprites-retina, $sprite-name), 2) / 2);
+					background-position: 0 $ypos;
+				}
+			}
+		}
+	}
+
+}

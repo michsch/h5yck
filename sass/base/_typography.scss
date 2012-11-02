@@ -48,6 +48,8 @@
 
   h1 {
     @include headline(49,42);
+    /* --- */
+    @include ym-headline($h1-font-size);
   }
   h2 {
     @include headline(42,42);

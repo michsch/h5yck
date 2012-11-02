@@ -1,6 +1,15 @@
-*.sass-cache/
+# system files
+*Thumbs.db
 *.DS_Store
-intermediate/
-publish/
-*.node_modules/
+
+# editor settings
+*.sublime-project
+*.sublime-workspace
+
+# sass cache and node modules folders
+*.sass-cache/
 *node_modules/
+
+# build script folders
+*intermediate/
+*publish/
