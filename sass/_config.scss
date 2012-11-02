@@ -67,5 +67,5 @@ $text-big-font-scale		: $text-big-font-size / $base-font-size;
 $text-small-font-scale		: $text-small-font-size / $base-font-size;
 
 // sprites
-$icon: sprite-map("icons/*.png", $spacing: 20px, $layout: vertical);
+$icon: sprite-map("icon/*.png", $spacing: 20px, $layout: vertical);
 $icon-retina: $icon;
