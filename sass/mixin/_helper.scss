@@ -12,14 +12,82 @@
 //
 // @lastmodified       $Date: 2012-09-15 15:39:59 +0200 (Sa., 15 Sep 2012) $
 
-// image replacement from Nicolas Gallagher and HTML5 boilerplate
+// image replacement by Nicolas Gallagher (2011)
 // http://nicolasgallagher.com/another-css-image-replacement-technique/
-@mixin image-replace() {
-  border: 0;
+@mixin image-replace($image: null, $display: null, $reset-border-background: true) {
   font: 0/0 a;
   text-shadow: none;
   color: transparent;
-  background-color: transparent;
+
+  // reset the border and background-color
+  // see http://css-tricks.com/examples/ImageReplacement/ -> 2012 H5BP Image Replacement
+  @if $reset-border-background == true {
+    border: 0;
+    background-color: transparent;
+  }
+  @if $image != null {
+    @include image-and-dimensions($image, $display);
+  } @else if $display != null {
+    display: $display;
+  }
+}
+
+// image replacement from HTML5 boilerplate (2012)
+// https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
+@mixin image-replace-h5bp($image: null, $display: null, $reset-border-background: true) {
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+  }
+
+  @if $reset-border-background == true {
+    border: 0;
+    background-color: transparent;
+  }
+  @if $image != null {
+    @include image-and-dimensions($image, $display);
+  } @else if $display != null {
+    display: $display;
+  }
+}
+
+// Phark Method (2003)
+// Very likely the most widely used method.
+// Problematic in RTL situations (or anywhere text-align isn't left).
+@mixin image-replace-indent($image: null, $display: null, $reset-border-background: false) {
+  text-indent: -9999px;
+
+  // reset the border and background-color
+  @if $reset-border-background == true {
+    border: 0;
+    background-color: transparent;
+  }
+  @if $image != null {
+    @include image-and-dimensions($image, $display);
+  } @else if $display != null {
+    display: $display;
+  }
+}
+
+// set dimensions to a given image
+@mixin image-dimensions($image) {
+  width: image-width($image);
+  height: image-height($image);
+}
+
+// set background image and dimensions
+@mixin image-and-dimensions($image, $display: null){
+  @if $display != null {
+    display: $display;
+  }
+  background: transparent image-url("#{$image}") no-repeat;
+  @include image-dimensions($image);
 }
 
 // standard clearfix
@@ -57,15 +125,15 @@
 // micro clearfix from Nicolas Gallagher
 // http://css-tricks.com/snippets/css/clear-fix/
 @mixin micro-clearfix() {
-  .group:before,
-  .group:after {
+  &:before,
+  &:after {
     content: "";
     display: table;
   } 
-  .group:after {
+  &:after {
     clear: both;
   }
-  .group {
+  & {
     zoom: 1; /* For IE 6/7 (trigger hasLayout) */
   }
 }

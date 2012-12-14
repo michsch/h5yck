@@ -1,4 +1,4 @@
-/*! H5YCK - v1.3.4 - 2012-11-02
+/*! H5YCK - v1.3.4 - 2012-11-04
 * https://github.com/michsch/h5yck
 * Copyright (c) 2012 Michael Schulze; Licensed MIT license */
 

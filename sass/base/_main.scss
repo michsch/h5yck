@@ -11,44 +11,30 @@
 // @-compass-minver    0.12.2
 //
 // @lastmodified       $Date: 2012-09-15 15:39:59 +0200 (Sa., 15 Sep 2012) $
-
-@media all
-{
   
-  /*
-  * @section global typography settings
-  *
-  * vertical rhythm settings (based on em-unit)
-  * -------------------------------------------
-  * basefont-size: 14px (87.5%)
-  * line-height  : 21px (factor: 1.5)
-  */
+/*
+* @section global typography settings
+*
+* vertical rhythm settings (based on em-unit)
+* -------------------------------------------
+* basefont-size: 14px (87.5%)
+* line-height  : 21px (factor: 1.5)
+*/
 
-  /* (en) reset font size for all elements to standard (16 Pixel) */
-  /* (de) Alle Schriftgrößen auf Standardgröße (16 Pixel) zurücksetzen */
-  html * { font-size:100%; }
-  html, body { height: 100%; }
-  
-  /* (en) base layout gets standard font size 14px */
-  /* (de) Basis-Layout erhält Standardschriftgröße von 14 Pixeln */
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: $font-size-body;
-    color: $c-text;
+/* (en) reset font size for all elements to standard (16 Pixel) */
+/* (de) Alle Schriftgrößen auf Standardgröße (16 Pixel) zurücksetzen */
+html * { font-size:100%; }
+html, body { height: 100%; }
 
-    /* (en) Prevent auto-scaling of text in mobile webkit browsers */
-    /* (en) Automatische Schriftvergrößerung in mobilen Webkit-Browsern vermeiden */
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-  }
-}
+/* (en) base layout gets standard font size 14px */
+/* (de) Basis-Layout erhält Standardschriftgröße von 14 Pixeln */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: $font-size-body;
+  color: $c-text;
 
-@media screen, projection {
-  
-  html, body, form {
-    padding: 0;
-  }
-  
-  /* force vertical scrollbar */
-  body { overflow-y:scroll; }
+  /* (en) Prevent auto-scaling of text in mobile webkit browsers */
+  /* (en) Automatische Schriftvergrößerung in mobilen Webkit-Browsern vermeiden */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }

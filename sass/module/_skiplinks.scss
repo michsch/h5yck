@@ -12,18 +12,13 @@
 //
 // @lastmodified       $Date: 2012-09-15 15:39:59 +0200 (Sa., 15 Sep 2012) $
 
-@media screen, projection
-{
+.ym-skiplinks { height: 24px; width: #222; }
 
-  .ym-skiplinks { height: 24px; width: #222; }
-
-  .ym-skiplinks a.ym-skip:focus,
-  .ym-skiplinks a.ym-skip:active {  
-    color:#fff;  
-    background:#333;  
-    border-bottom:1px #000 solid;
-    padding:10px 0;
-    text-decoration:none;
-  }
-
+.ym-skiplinks a.ym-skip:focus,
+.ym-skiplinks a.ym-skip:active {  
+  color:#fff;  
+  background:#333;  
+  border-bottom:1px #000 solid;
+  padding:10px 0;
+  text-decoration:none;
 }

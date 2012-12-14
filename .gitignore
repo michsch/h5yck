@@ -6,6 +6,11 @@
 *.sublime-project
 *.sublime-workspace
 
+# eclipse
+.buildpath
+.project
+.settings/
+
 # sass cache and node modules folders
 *.sass-cache/
 *node_modules/

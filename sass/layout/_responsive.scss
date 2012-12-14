@@ -12,10 +12,11 @@
 //
 // @lastmodified       $Date: 2012-09-15 15:39:59 +0200 (Sa., 15 Sep 2012) $
 
-// activate max-width of media elements for browsers that support media queries
 @media only screen
 and (min-width: 0px)
 {
+
+  /* activate max-width of media elements for browsers that support media queries */
   img
   ,embed
   ,object
@@ -31,6 +32,7 @@ and (min-width: 0px)
     max-width: 60em;
   }
   */
+
 }
 
 @media only screen

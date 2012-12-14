@@ -17,9 +17,9 @@ and (min-width: 0px)
 {
 
   /* use border-box for form elements */
-  input
-  ,textarea
-  ,select {
+  input,
+  textarea,
+  select {
     @include box-sizing(border-box);
   }
 

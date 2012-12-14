@@ -6,14 +6,14 @@
 @import "yaml/mixins";
 
 @media all {
-	@import "yaml/normalization",
-			"yaml/float-handling",
-			"yaml/columns",
-			"yaml/grids-core",
-			"yaml/forms-core",
-			"yaml/accessibility";
+	@import "yaml/base-modules/normalization",
+			"yaml/base-modules/float-handling",
+			"yaml/base-modules/columns",
+			"yaml/base-modules/grids-core",
+			"yaml/base-modules/forms-core",
+			"yaml/base-modules/accessibility";
 }
 
 @media print {
-	@import "yaml/print-core";
+	@import "yaml/base-modules/print-core";
 }

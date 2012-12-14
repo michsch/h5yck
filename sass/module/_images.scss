@@ -12,24 +12,19 @@
 //
 // @lastmodified       $Date: 2012-09-15 15:39:59 +0200 (Sa., 15 Sep 2012) $
 
-@media all
-{
+.flexible {
+  margin-top: 1.5em;
+  max-width: 100%;
+  height: auto;
+}
 
-  .flexible {
-    margin-top: 1.5em;
-    max-width: 100%;
-    height: auto;
-  }
+* html .flexible {  /* IE6 support */
+  width: 98%;    /* 2% space for borders */
+}
 
-  * html .flexible {  /* IE6 support */
-    width: 98%;    /* 2% space for borders */
-  }
-
-  .bordered {
-    margin-top: 1.5em;
-    border: 2px #eee solid;
-    border: 2px rgba(255,255,255,1) solid;
-    @include box-shadow(0 0 3px rgba(0,0,0,.25));
-  }
-
+.bordered {
+  margin-top: 1.5em;
+  border: 2px #eee solid;
+  border: 2px rgba(255,255,255,1) solid;
+  @include box-shadow(0 0 3px rgba(0,0,0,.25));
 }

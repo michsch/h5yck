@@ -21,6 +21,8 @@ $default-base-print				: true !default;
 	$default-base-print			: false;
 }
 
+$ym-column-layout				: 'table' !default;
+
 // Config: Columns Module
 // ---------------------------------
 $default-column-width			: 20% !default;

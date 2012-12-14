@@ -15,46 +15,66 @@
 //
 // @lastmodified       $Date: 2012-09-15 15:39:59 +0200 (Sa., 15 Sep 2012) $
 
-/*! H5YCK - v1.3.4 - 2012-09-15
+/*! H5YCK - v1.3.4 - 2012-11-04
  * https://github.com/michsch/h5yck
  * Copyright (c) 2012 Michael Schulze; Licensed MIT license
  */
 
-// import mixins
-//@import "compass/css3";
-@import "mixin/css3";
-@import "mixin/sizes";
-@import "mixin/helper";
-@import "mixin/sprites";
-
-// import yaml css framework
-@import "yaml/base";
-
 // import config file with colors and other vars
 @import "config";
+
+// import mixins
+@import "mixin/css3",
+		"mixin/sizes",
+		"mixin/helper",
+		"mixin/sprites",
+		"mixin/columns";
 
 // import fonts
 @import "base/fonts";
 
-// import base
-@import "base/main";
-@import "base/typography";
-@import "base/images";
-@import "base/tables";
-@import "base/forms";
+// import yaml css framework
+@import "yaml/base";
 
-// import layout
-@import "layout/screen";
-@import "layout/responsive";
-@import "layout/print";
-@import "layout/sprites";
+@media all
+{
+	// base
+	@import "base/main",
+			"base/typography",
+			"base/images",
+			"base/tables";
+}
 
-// modules
-@import "module/skiplinks";
-@import "module/nav";
-@import "module/generic";
-@import "module/images";
-@import "module/tables";
-@import "module/forms";
-@import "module/fancybox";
-@import "module/jquery-tabs";
+@import "base/forms",
+		"layout/sprites";
+
+@media screen, projection
+{
+	// base and layout
+	@import "base/screen",
+			"layout/screen";
+}
+
+@media all
+{
+	// modules
+	@import "module/images",
+			"module/tables",
+			"module/generic";
+}
+
+@media screen, projection
+{
+	// modules
+	@import "module/skiplinks",
+			"module/nav";
+}
+
+// modules with integrated media queries
+@import "module/forms",
+		"module/fancybox",
+		"module/jquery-tabs";
+
+// layouts for responsive design and print
+@import "layout/responsive",
+		"layout/print";

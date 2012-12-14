@@ -30,7 +30,7 @@
 // @param integer font size in pixel
 // @param integer in pixel
 // @return string em
-@function em($px: $line-height-px, $font-size: $font-size-body-px) {
+@function em($px: $line-height-px, $font-size: $base-font-size) {
   @return $px / $font-size * 1em;
 }
 
@@ -39,7 +39,7 @@
 // @param integer font size in pixel
 // @param integer reference size (for rem always font-size of body) in pixel
 // @return string rem
-@function rem($px: $line-height-px, $font-size: $font-size-body-px) {
+@function rem($px: $line-height-px, $font-size: $base-font-size) {
   @return $px / $font-size * 1rem;
 }
 
@@ -48,7 +48,7 @@
 // @param integer pixel
 // @param integer reference pixel
 // @return string em
-@function pc($px: $line-height-px, $standard: $font-size-body-px) {
+@function pc($px: $line-height-px, $standard: $base-font-size) {
   @return $px / $standard * 100%;
 }
 
@@ -57,7 +57,7 @@
 // @param integer font size in px
 // @param integer font-size of parent element in px (if empty than it's the global font size)
 // @return string css font-size with calculated % value
-@mixin font-size($px, $standard: $font-size-body-px) {
+@mixin font-size($px, $standard: $base-font-size) {
   font-size: pc($px,$standard);
 }
 
@@ -67,13 +67,13 @@
 // @param integer font size in pixel
 // @param integer line-height in pixel
 // @return string line height
-@mixin line-height($line-height: $line-height-px, $font-size: $font-size-body-px) {
+@mixin line-height($line-height: $line-height-px, $font-size: $base-font-size) {
   line-height: em($line-height, $font-size);
 }
 
 // ---- headline calulactions -----------------------------------------------------------------
 
-@mixin headline($font-size: $font-size-body-px, $line-height: $line-height-px, $margin-top: $std-margin-px) {
+@mixin headline($font-size: $font-size-body-px, $line-height: $base-line-height, $margin-top: $base-margin) {
   @include font-size($font-size);
   @include line-height($line-height,$font-size);
   margin-top: em($margin-top,$font-size);

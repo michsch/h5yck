@@ -12,21 +12,16 @@
 //
 // @lastmodified       $Date: 2012-09-15 15:39:59 +0200 (Sa., 15 Sep 2012) $
 
-@media all
-{
+img,
+figure {
+  margin: 0;
+}
 
-  img,
-  figure {
-    margin: 0;
-  }
-
-  figure {
-    display: block;
-    width: auto;
-    padding: $line-height / 2;
-    margin-top: $line-height;
-    background: #fff;
-    @include border-radius(.2em);
-  }
-
+figure {
+  display: block;
+  width: auto;
+  padding: $std-margin / 2;
+  margin-top: $std-margin;
+  background: #fff;
+  @include border-radius(.2em);
 }
