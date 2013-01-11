@@ -103,9 +103,10 @@ module.exports = function(grunt) {
       dev: {
         src: 'sass',
         dest: 'css/dev',
+        outputstyle: 'expanded',
         linecomments: true,
         forcecompile: false,
-        debugsass: false,
+        debugsass: true,
         images: 'img'
       },
       prod: {
