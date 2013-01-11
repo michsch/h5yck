@@ -158,3 +158,16 @@
     @content;
   }
 }
+
+@mixin font-face($name, $filename, $font-key, $path: $path, $font-weight: normal, $font-style: normal) {
+  @font-face {
+      font-family: "#{$name}";
+      src: url('#{$path}/#{$filename}.eot');
+      src: url('#{$path}/#{$filename}.eot?#iefix') format('embedded-opentype'),
+           url('#{$path}/#{$filename}.woff') format('woff'),
+           url('#{$path}/#{$filename}.ttf') format('truetype'),
+           url('#{$path}/#{$filename}.svg##{$font-key}') format('svg');
+      font-weight: $font-weight;
+      font-style: $font-style;
+  }
+}

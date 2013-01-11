@@ -1,3 +1,8 @@
+###jshint devel:true
+###
+###global require:true, define:true, $:true, jQuery:true, Modernizr:true
+###
+
 ###*
  * plugins file with some jQuery plugins and standard functions
  *
