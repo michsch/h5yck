@@ -1,4 +1,4 @@
-@if $default-base-columns == true {
+@if $ym-base-columns == true {
 	/**
 	* @section Column Module
 	*/
@@ -16,27 +16,27 @@
 
 	.#{$yaml-prefix}col1 {
 		float: left;
-		width: $default-column-width;
+		width: $ym-column-width;
 	}
 
 	.#{$yaml-prefix}col2 {
 		float: right;
-		width: $default-column-width;
+		width: $ym-column-width;
 	}
 
 	.#{$yaml-prefix}col3 {
 		width: auto;
-		margin: 0 $default-column-width;
+		margin: 0 $ym-column-width;
 	}
 
 	.#{$yaml-prefix}cbox {
-		padding: 0 $default-cbox-padding;
+		padding: 0 $ym-cbox-padding;
 	}
 	.#{$yaml-prefix}cbox-left {
-		padding: 0 $default-cbox-padding 0 0;
+		padding: 0 $ym-cbox-padding 0 0;
 	}
 	.#{$yaml-prefix}cbox-right {
-		padding: 0 0 0 $default-cbox-padding;
+		padding: 0 0 0 $ym-cbox-padding;
 	}
 
 	// (en) IE-Clearing: Only used in Internet Explorer, switched on in iehacks.css

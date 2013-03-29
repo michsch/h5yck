@@ -1,4 +1,4 @@
-@if $default-base-grids == true {
+@if $ym-base-grids == true {
 
 	/**
 	* @section Grid Module
@@ -16,7 +16,7 @@
 	}
 
 	.#{$yaml-prefix}gl { float:left; margin: 0; }
-	.#{$yaml-prefix}gr { float:right; margin: 0 0 0 $default-rounding-tolerance; }
+	.#{$yaml-prefix}gr { float:right; margin: 0 0 0 $ym-rounding-tolerance; }
 
 	.#{$yaml-prefix}g20 { width:20%; }
 	.#{$yaml-prefix}g40 { width:40%; }
@@ -30,9 +30,9 @@
 	.#{$yaml-prefix}g38 { width:38.2%; }
 	.#{$yaml-prefix}g62 { width:61.8%; }
 
-	.#{$yaml-prefix}gbox { padding: 0 $default-gbox-padding }
-	.#{$yaml-prefix}gbox-left { padding: 0 $default-gbox-padding 0 0 }
-	.#{$yaml-prefix}gbox-right { padding: 0 0 0 $default-gbox-padding }
+	.#{$yaml-prefix}gbox { padding: 0 $ym-gbox-padding }
+	.#{$yaml-prefix}gbox-left { padding: 0 $ym-gbox-padding 0 0 }
+	.#{$yaml-prefix}gbox-right { padding: 0 0 0 $ym-gbox-padding }
 
 	.#{$yaml-prefix}equalize { overflow:hidden; }
 
