@@ -16,7 +16,9 @@
 @import "yaml/yaml_globals";
 
 // import YAML mixins
-@import "yaml/mixins/yaml_mixins_core";
+@import "yaml/mixins/yaml_mixins_core",
+		"yaml/mixins/yaml_mixins_columns",
+		"yaml/mixins/yaml_mixins_content";
 
 @media all {
 	@import "yaml/base-modules/normalization",

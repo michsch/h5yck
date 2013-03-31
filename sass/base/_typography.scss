@@ -26,7 +26,7 @@ kbd,
 samp,
 var,
 tt {
-  font-family: Consolas, "Lucida Console", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier;
+  font-family: $ym-font-monospace;
 }
 
 /*--- Headings | Überschriften ------------------------------------------------------------------------*/
@@ -37,42 +37,39 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
-  font-weight: normal;
-  color: #161e21;
+  font-family: $ym-font-sans;
+  font-weight: 400;
+  color: $ym-headings-color;
   margin: 0;
 }
 
 h1 {
-  @include headline(49,42);
-  /* --- */
-  @include ym-headline($h1-font-size);
+  //@include headline(49,42);
+  @include ym-headline($ym-h1-font-size);
 }
 h2 {
-  @include headline(42,42);
+  @include ym-headline($ym-h2-font-size);
 }
 h3 {  
-  @include headline(25,21);
+  @include ym-headline($ym-h3-font-size);
 }
 h4 {
-  @include headline(19,21);
+  @include ym-headline($ym-h4-font-size);
 }
 h5 {
-  @include headline(16,21);
+  @include ym-headline($ym-h5-font-size);
 }
 h6 {
-  @include headline(14,21);
+  @include ym-headline($ym-h6-font-size);
   font-weight: 700;
 }
-
-h4, h5, h6 { color: #8B8F90; }
 
 /* --- Lists | Listen  -------------------------------------------------------------------------------- */
 
 ul,
 ol,
 dl {
-  font-size: 1em;
+  font-size: $ym-text-font-scale * 100%;
   line-height: $line-height;
   margin: $std-margin 0 0 1em;
 }
@@ -101,20 +98,20 @@ ol ul {
 }
 
 li {
-  font-size: 1em;
+  font-size: $ym-text-font-scale * 100%;
   line-height: $line-height;
   margin-left: 0.8em;
 }
 
-dt { font-weight:bold; }
+dt { font-weight: bold; }
 
-dd { margin:0 0 1.5em 0.8em; }
+dd { margin: 0 0 $line-height * 1em 0.8em; }
 
 /* --- general text formatting | Allgemeine Textauszeichnung ------------------------------------------ */
 
 p {
-  font-size:1em;
-  line-height:$line-height;
+  font-size: $ym-text-font-scale * 100%;
+  line-height: $line-height;
   margin: $std-margin 0 0 0;
 }
 
@@ -125,7 +122,8 @@ blockquote, cite, q {
 
 blockquote {
   margin: $std-margin 0 0 $std-margin;
-  color: #666;
+  color: $ym-blockquote-text-color;
+  background: $ym-blockquote-bg-color;
 }
 
 strong, b { font-weight: bold; }
@@ -146,20 +144,21 @@ kbd,
 tt,
 samp,
 var {
-  font-size: 100%;
+  font-size: $ym-text-font-scale * 100%;
 }
 
 pre {
+  font-size: $ym-text-font-scale * 100%;
   line-height: $line-height;
   margin: $std-margin 0 0 0;
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
-pre, code { color: #800; }
+pre, code { color: $ym-pre-text-color; }
 
 kbd, samp, var, tt {
-  color: #666;
+  color: $ym-kbd-text-color;
   font-weight: bold;
 }
 
@@ -184,8 +183,8 @@ sup { top: -0.5em; }
 sub { bottom: -0.25em; }
 
 mark {
-  background: #ff0;
-  color: #000;
+  background: $ym-mark-bg-color;
+  color: $ym-mark-text-color;
 }
 
 hr {
@@ -200,16 +199,19 @@ hr {
 /*--- Links ----------------------------------------------------------------------------------------- */
 
 a {
-  color: $c-text-link;
-  background: transparent;
+  color: $ym-link-text-color;
+  background: $ym-link-bg-color;
   text-decoration: none;
+
   &:active { outline: none; }
 
+  /* (en) maximum constrast for tab focus - change with great care */
+  /* (en) Maximaler Kontrast für Tab Focus - Ändern Sie diese Regel mit Bedacht */
   &:focus,
   &:hover {
-    text-decoration: underline;
-    color: $c-text-link-focus;
-    background: #fff;
+    background-color: $ym-link-focus-bg-color;
+    color: $ym-link-focus-text-color;
+    text-decoration: none;
     outline: 0 none;
   }
 }
