@@ -1,17 +1,3 @@
-// Fancybox 2.0.4
-//
-// @author             Michael Schulze
-// @version            $1.3.4$
-// @copyright          Michael Schulze, 2 Mai, 2012
-// @license            fancyapps.com/fancybox/#license
-//
-// @package            yaml,compass,sass
-// @-yaml-minver       4.0.1
-// @-sass-minver       3.2
-// @-compass-minver    0.12.2
-//
-// @lastmodified       $Date: 2012-09-15 15:39:59 +0200 (Sa., 15 Sep 2012) $
-
 /* ! fancyBox v2.0.4 fancyapps.com | fancyapps.com/fancybox/#license */
 
 @media screen, projection
@@ -46,9 +32,7 @@
   }
 
   .fancybox-opened .fancybox-outer {
-    -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-       -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    @include box-shadow( 0 10px 25px rgba(0, 0, 0, 0.5) );
   }
 
   .fancybox-inner {
@@ -83,8 +67,11 @@
     max-height: 100%;
   }
 
-  #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-    background-image: image-url("fancybox_sprite.png");
+  #fancybox-loading,
+  .fancybox-close,
+  .fancybox-prev span,
+  .fancybox-next span {
+    background-image: image-url("fancybox/fancybox_sprite.png");
   }
 
   #fancybox-loading {
@@ -102,7 +89,7 @@
   #fancybox-loading div {
     width: 44px;
     height: 44px;
-    background: image-url("fancybox_loading.gif") center center no-repeat;
+    background: image-url("fancybox/fancybox_loading.gif") center center no-repeat;
   }
 
   .fancybox-close {
@@ -121,7 +108,7 @@
     width: 40%;
     height: 100%;
     cursor: pointer;
-    background: transparent image-url("blank.gif"); /* helps IE */
+    background: transparent image-url("fancybox/blank.gif"); /* helps IE */
     z-index: 1003;
   }
 
@@ -133,7 +120,8 @@
     right: 0;
   }
 
-  .fancybox-prev span, .fancybox-next span {
+  .fancybox-prev span,
+  .fancybox-next span {
     position: absolute;
     top: 50%;
     width: 36px;
@@ -154,7 +142,8 @@
     background-position: 0 -72px;
   }
 
-  .fancybox-prev:hover span, .fancybox-next:hover span {
+  .fancybox-prev:hover span,
+  .fancybox-next:hover span {
     visibility: visible;
   }
 
@@ -208,9 +197,7 @@
     padding: 2px 20px;
     background: transparent; /* Fallback for web browsers that doesn't support RGBa */
     background: rgba(0, 0, 0, 0.8);
-    -webkit-border-radius: 15px;
-       -moz-border-radius: 15px;
-            border-radius: 15px;
+    @include border-radius( 15px );
     text-shadow: 0 1px 2px #222;
     color: #FFF;
     font-weight: bold;
