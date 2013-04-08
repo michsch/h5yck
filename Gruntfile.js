@@ -3,19 +3,6 @@ module.exports = function(grunt) {
 
   var appDir, useRequireJs, tasks, gruntConfig;
 
-  // Load grunt-compass plugin
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-coffee');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-contrib-compress');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  //grunt.loadNpmTasks('grunt-compass');
-  grunt.loadNpmTasks('grunt-contrib-requirejs');
-  //grunt.loadNpmTasks('grunt-requirejs');
-
   appDir = '';
 
   // define tasks
@@ -64,7 +51,7 @@ module.exports = function(grunt) {
         'compass:prod',
         'coffee',
         'jshint',
-        'concat:prod',
+        'concat',
         'uglify',
         'compress'
       ]
@@ -91,7 +78,7 @@ module.exports = function(grunt) {
     },
     // Lists of files or URLs to be unit tested with QUnit, used by the "qunit" task.
     qunit: {
-      all: ['js/test/**/*.html']
+      all: [ appDir + 'js/test/**/*.html' ]
     },
     compassKahlil: {
       dev: {
@@ -187,30 +174,52 @@ module.exports = function(grunt) {
         }
       },
       all: [
-        appDir + 'js/dev/*.js',
-        appDir + 'js/dev/module/*.js',
-        // only lint own plugin files
-        appDir + 'js/dev/plugin/plugins.js',
-        appDir + 'js/dev/plugin/jquery.accessifyhtml5.js',
-        appDir + 'js/dev/plugin/jquery.ddfapplication.js',
-        appDir + 'js/dev/plugin/jquery.growl.js'
+        appDir + 'js/dev/*.js'
+        //appDir + 'js/dev/module/*.js'
+
       ],
+      modules: {
+        options: {
+          devel: true,
+          globals: {
+            log: true,
+            console: true
+          }
+        },
+        files: {
+          src: [
+          appDir + 'js/dev/module/*.js',
+          '!' + appDir + 'js/dev/module/external.js',
+          // only lint own plugin files
+          appDir + 'js/dev/plugin/plugins.js',
+          appDir + 'js/dev/plugin/jquery.accessifyhtml5.js',
+          appDir + 'js/dev/plugin/jquery.ddfapplication.js',
+          appDir + 'js/dev/plugin/jquery.growl.js'
+          ]
+        }
+      },
       grunt: {
         options: {
           node: true,
-          strict : true
+          strict : true,
+          globals: {
+            module: true
+          }
         },
-        globals: {
-          module: true
+        files: {
+          src: ['Gruntfile.js']
         }
       },
       tests: {
         options: {
-          jquery: true
+          jquery: true,
+          globals: {
+            jQuery: true,
+            Modernizr: true
+          }
         },
-        globals: {
-          jQuery: true,
-          Modernizr: true
+        files: {
+          src: [ appDir + 'tests/**/*.js' ]
         }
       }
     },
@@ -292,18 +301,6 @@ module.exports = function(grunt) {
               override : {
                 optimize: 'none'
               }
-            },
-            {
-              name: 'module/photovoter',
-              exclude: [
-                'configuration',
-                'underscore',
-                'module/underscore-mixins',
-                'plugin/jquery.fancybox'
-              ],
-              override : {
-                //optimize: 'none'
-              }
             }
           ]
         }
@@ -322,8 +319,6 @@ module.exports = function(grunt) {
       },
       prod: {
         files: {
-          'js/dev/plugins.js' : [ appDir + 'js/dev/plugins/*.js', appDir + 'js/dev/plugins.js' ],
-          'js/dev/modules.js' : [ appDir + 'js/dev/modules/*.js' ],
           'js/prod/main-<%= pkg.version %>.js' : [ appDir + 'js/dev/plugins.js', appDir + 'js/dev/modules.js' ]
         }/*
         src: [
@@ -374,7 +369,6 @@ module.exports = function(grunt) {
       }
     },
     // Configuration options for the "watch" task.
-    // Configuration options for the "watch" task.
     watch: {
       //files: ['Gruntfile.js', 'js/plugins/**/*.js', 'js/main.js', 'js/plugins.js', 'sass/**/*.scss'],
       dev: {
@@ -389,6 +383,19 @@ module.exports = function(grunt) {
   };
 
   grunt.initConfig( gruntConfig );
+
+    // Load grunt-compass plugin
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  //grunt.loadNpmTasks('grunt-compass');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
+  //grunt.loadNpmTasks('grunt-requirejs');
 
   grunt.registerTask(tasks.dev.name, tasks.dev.tasks);
   grunt.registerTask(tasks.prod.name, tasks.prod.tasks);
