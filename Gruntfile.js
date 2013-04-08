@@ -67,7 +67,8 @@ module.exports = function(grunt) {
 
   // Project configuration.
   gruntConfig = {
-    pkg: '<json:package.json>',
+    //pkg: '<json:package.json>',
+    pkg: grunt.file.readJSON('package.json'),
     // Project metadata, used by some directives, helpers and tasks.
     meta: {
       banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
@@ -173,6 +174,18 @@ module.exports = function(grunt) {
           _: true
         }
       },
+      grunt: {
+        options: {
+          node: true,
+          strict : true,
+          globals: {
+            module: true
+          }
+        },
+        files: {
+          src: ['Gruntfile.js']
+        }
+      },
       all: [
         appDir + 'js/dev/*.js'
         //appDir + 'js/dev/module/*.js'
@@ -188,26 +201,18 @@ module.exports = function(grunt) {
         },
         files: {
           src: [
-          appDir + 'js/dev/module/*.js',
-          '!' + appDir + 'js/dev/module/external.js',
-          // only lint own plugin files
-          appDir + 'js/dev/plugin/plugins.js',
-          appDir + 'js/dev/plugin/jquery.accessifyhtml5.js',
-          appDir + 'js/dev/plugin/jquery.ddfapplication.js',
-          appDir + 'js/dev/plugin/jquery.growl.js'
+            appDir + 'js/dev/module/*.js',
+            '!' + appDir + 'js/dev/module/external.js'
           ]
         }
       },
-      grunt: {
-        options: {
-          node: true,
-          strict : true,
-          globals: {
-            module: true
-          }
-        },
+      plugins: {
         files: {
-          src: ['Gruntfile.js']
+          src: [
+            // only lint own plugin files
+            appDir + 'js/dev/plugin/plugins.js',
+            appDir + 'js/dev/plugin/jquery.accessifyhtml5.js'
+          ]
         }
       },
       tests: {
@@ -313,13 +318,13 @@ module.exports = function(grunt) {
       },
       dev: {
         files: {
-          'js/dev/plugins.js' : [ appDir + 'js/dev/plugins/*.js', appDir + 'js/dev/plugins.js' ],
-          'js/dev/modules.js' : [ appDir + 'js/dev/modules/*.js' ]
+          'js/dev/plugins.js' : [ appDir + 'js/dev/plugin/*.js' ],
+          'js/dev/modules.js' : [ appDir + 'js/dev/module/*.js' ]
         }
       },
       prod: {
         files: {
-          'js/prod/main-<%= pkg.version %>.js' : [ appDir + 'js/dev/plugins.js', appDir + 'js/dev/modules.js' ]
+          'js/prod/main-<%= pkg.version %>.js' : [ appDir + 'js/dev/plugins.js', appDir + 'js/dev/modules.js', appDir + 'js/dev/main.js' ]
         }/*
         src: [
           '',
