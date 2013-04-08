@@ -1,3 +1,9 @@
+/*jshint devel:true
+*/
+
+/*global require:true, define:true, $:true, jQuery:true, Modernizr:true
+*/
+
 /**
  * main jQuery script file
  *

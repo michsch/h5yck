@@ -21,39 +21,6 @@
 
   "use strict"
 
-  ###*
-   * Accessifyhtml5.js
-   * Adds ARIA to new elements in browsers which don’t do it by themselves.
-   *
-   * originally by Eric Eggert
-   * https://github.com/yatil/accessifyhtml5.js
-  ###
-  $.accessifyhtml5 = ( defaults ) ->
-    fixes =
-      article:
-        role: "article"
-      aside:
-        role: "complementary"
-      nav:
-        role: "navigation"
-      output:
-        "aria-live": "polite"
-      section:
-        role: "region"
-      "[required]":
-        "aria-required": "true"
-
-    if defaults
-      fixes[defaults.header] = role: "banner"  if defaults.header
-      fixes[defaults.footer] = role: "contentinfo"  if defaults.footer
-
-    $.each(fixes, (index, item) ->
-      $(index).attr(item)
-      true
-    )
-
-    true
-
   firstplugin =
     init : ( options ) ->
       defaults =
@@ -97,67 +64,6 @@
     # place your plugin code here
 
     true
-
-  ###*
-   * "Yet Another Multicolumn Layout" - YAML CSS Framework
-   *
-   * (en) Workaround for IE8 und Webkit browsers to fix focus problems when using skiplinks
-   * (de) Workaround für IE8 und Webkit browser, um den Focus zu korrigieren, bei Verwendung von Skiplinks
-   *
-   * @note            inspired by Paul Ratcliffe's article
-   *                  http://www.communis.co.uk/blog/2009-06-02-skip-links-chrome-safari-and-added-wai-aria
-   *                  Many thanks to Mathias Schäfer (http://molily.de/) for his code improvements
-   *
-   * @copyright       Copyright 2005-2012, Dirk Jesse
-   * @license         CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
-   *                  YAML-CDL (http://www.yaml.de/license.html)
-   * @link            http://www.yaml.de
-   * @package         yaml
-   * @version         4.0+
-   * @revision        $Revision: 617 $
-   * @lastmodified    $Date: 2012-01-05 23:56:54 +0100 (Do, 05 Jan 2012) $
-  ###
-  (->
-    YAML_focusFix =
-      skipClass: "ym-skip"
-      init: ->
-        userAgent = navigator.userAgent.toLowerCase()
-        is_webkit = userAgent.indexOf("webkit") > -1
-        is_ie = userAgent.indexOf("msie") > -1
-        if is_webkit or is_ie
-          body = document.body
-          handler = YAML_focusFix.click
-          if body.addEventListener
-            body.addEventListener "click", handler, false
-          else body.attachEvent "onclick", handler  if body.attachEvent
-
-      trim: (str) ->
-        str.replace(/^\s\s*/, "").replace /\s\s*$/, ""
-
-      click: (e) ->
-        e = e or window.event
-        target = e.target or e.srcElement
-        a = target.className.split(" ")
-        i = 0
-
-        while i < a.length
-          cls = YAML_focusFix.trim(a[i])
-          if cls is YAML_focusFix.skipClass
-            YAML_focusFix.focus target
-            break
-          i++
-
-      focus: (link) ->
-        if link.href
-          href = link.href
-          id = href.substr(href.indexOf("#") + 1)
-          target = document.getElementById(id)
-          if target
-            target.setAttribute "tabindex", "-1"
-            target.focus()
-
-    YAML_focusFix.init()
-  )()
 
   ###*
    * JavaScript email encrypter
