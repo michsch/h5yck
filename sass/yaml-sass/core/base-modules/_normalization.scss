@@ -1,6 +1,6 @@
 @if $ym-base-normalization == true {
 	/*
-	 *	@section Normalisation Module
+	 *  @section Normalisation Module
 	 */
 
 	// (en) Global reset of paddings and margins for all HTML elements
@@ -16,9 +16,9 @@
 	// (de) Globale Korrektur des Italics Bugs des IE 5.x und IE 6
 	//
 	// @bugfix
-	// @affected	 IE 5.x/Win, IE6
-	// @css-for		IE 5.x/Win, IE6
-	// @valid			yes
+	// @affected   IE 5.x/Win, IE6
+	// @css-for    IE 5.x/Win, IE6
+	// @valid      yes
 
 	* html body * { overflow:visible; }
 
@@ -41,7 +41,7 @@
 	// (en) HTML 5 - adjusting visual formatting model to block level
 	// (en) HTML 5 - Anpassung des visuellen Formatmodells auf Blockelemente
 	article,aside,details,figcaption,figure,
-	footer,header,hgroup,nav,section {
+	footer,header,hgroup,main,nav,section {
 		display:block;
 	}
 

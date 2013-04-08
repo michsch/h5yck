@@ -1,3 +1,4 @@
+@charset "utf-8";
 /**
  *  "Yet Another Multicolumn Layout" - YAML CSS Framework
  *  (en) YAML core stylesheet
@@ -13,22 +14,18 @@
 // @link            http://www.yaml.de
 // @package         yaml
 
-@import "yaml/yaml_globals";
-
-// import YAML mixins
-@import "yaml/mixins/yaml_mixins_core",
-		"yaml/mixins/yaml_mixins_columns",
-		"yaml/mixins/yaml_mixins_content";
+@import "yaml-sass/yaml_globals",
+			"yaml-sass/mixins/yaml_mixins_core";
 
 @media all {
-	@import "yaml/base-modules/normalization",
-			"yaml/base-modules/float-handling",
-			"yaml/base-modules/columns",
-			"yaml/base-modules/grids-core",
-			"yaml/base-modules/forms-core",
-			"yaml/base-modules/accessibility";
+	@import "base-modules/normalization",
+			"base-modules/float-handling",
+			"base-modules/columns",
+			"base-modules/grids-core",
+			"base-modules/forms-core",
+			"base-modules/accessibility";
 }
 
 @media print {
-	@import "yaml/base-modules/print-core";
+	@import "base-modules/print-core";
 }

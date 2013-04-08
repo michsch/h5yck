@@ -1,15 +1,20 @@
+////////////////////////////////////////////////////////////////////
+//
+// YAML Core
+//
+////////////////////////////////////////////////////////////////////
+
+$use-yaml				: true !default;
+
 // Disable/Enable Core Modules
 // ---------------------------------
-$use-yaml					: true !default;
-$yaml-prefix				: 'ym-' !default;
-
-$ym-base-normalization		: true !default;
-$ym-base-floathandling		: true !default;
-$ym-base-columns			: true !default;
-$ym-base-grids				: true !default;
-$ym-base-forms				: true !default;
-$ym-base-accessibility		: true !default;
-$ym-base-print				: true !default;
+$ym-base-normalization	: true !default;
+$ym-base-floathandling	: true !default;
+$ym-base-columns		: true !default;
+$ym-base-grids			: true !default;
+$ym-base-forms			: true !default;
+$ym-base-accessibility	: true !default;
+$ym-base-print			: true !default;
 
 @if $use-yaml == false {
 	$ym-base-normalization	: false;
@@ -21,23 +26,21 @@ $ym-base-print				: true !default;
 	$ym-base-print			: false;
 }
 
-$ym-column-layout				: 'table' !default;
-
 // Config: Columns Module
 // ---------------------------------
-$ym-column-width			: 20% !default;
-$ym-cbox-padding			: 10px !default;
+$ym-column-width		: 20% !default;
+$ym-cbox-padding		: 10px !default;
 
 // Config: Grids Module
 // ---------------------------------
-$ym-rounding-tolerance		: -5px !default;
-$ym-gbox-padding			: 10px !default;
+$ym-rounding-tolerance	: -5px !default;
+$ym-gbox-padding		: 10px !default;
 
 // Config: Print Module
 // ---------------------------------
-$ym-print-fontsize			: 10pt !default;
-$ym-print-abbreviation		: false !default;
-$ym-print-href				: false !default;
+$ym-print-fontsize		: 10pt !default;
+$ym-print-abbreviation	: false !default;
+$ym-print-href			: false !default;
 
 ////////////////////////////////////////////////////////////////////
 //
