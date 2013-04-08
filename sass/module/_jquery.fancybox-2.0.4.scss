@@ -1,5 +1,7 @@
 /* ! fancyBox v2.0.4 fancyapps.com | fancyapps.com/fancybox/#license */
 
+$fancy-imgpath: 'fancybox/' !default;
+
 @media screen, projection
 {
 
@@ -22,9 +24,7 @@
     background: #f9f9f9;
     color: #444;
     text-shadow: none;
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-        border-radius: 4px;
+    @include border-radius( 4px );
   }
 
   .fancybox-opened {
@@ -71,7 +71,7 @@
   .fancybox-close,
   .fancybox-prev span,
   .fancybox-next span {
-    background-image: image-url("fancybox/fancybox_sprite.png");
+    background-image: image-url($fancy-imgpath + "fancybox_sprite.png");
   }
 
   #fancybox-loading {
@@ -89,7 +89,7 @@
   #fancybox-loading div {
     width: 44px;
     height: 44px;
-    background: image-url("fancybox/fancybox_loading.gif") center center no-repeat;
+    background: image-url($fancy-imgpath + "fancybox_loading.gif") center center no-repeat;
   }
 
   .fancybox-close {
@@ -108,7 +108,7 @@
     width: 40%;
     height: 100%;
     cursor: pointer;
-    background: transparent image-url("fancybox/blank.gif"); /* helps IE */
+    background: transparent image-url($fancy-imgpath + "blank.gif"); /* helps IE */
     z-index: 1003;
   }
 
