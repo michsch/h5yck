@@ -1,3 +1,4 @@
+@charset "utf-8";
 /**
  * "Yet Another Multicolumn Layout" - YAML CSS Framework
  * (en) YAML core stylesheet - structure-independent bugfixes of IE/Win CSS-bugs
@@ -11,14 +12,14 @@
   * @debug
   * @app-yaml-default disabled
   */
-  /* body { background:#0f0; background-image:none; }	*/
+  /* body { background:#0f0; background-image:none; }	 */
   /**
   * Correct inline positioning for unknown HTML5 elements in IE 6 & 7
   *
   * @workaround
-  * @affected	IE6, IE7
-  * @css-for	 IE6, IE7
-  * @valid		 no
+  * @affected  IE6, IE7
+  * @css-for   IE6, IE7
+  * @valid     no
   */
   /*------------------------------------------------------------------------------------------------------*/
   /**
@@ -26,11 +27,11 @@
   * (de) Scrollbar-Fix wird in alten IE's nicht benötigt, zudem verursacht der Fix Probleme im IE6
   *
   * @workaround
-  * @affected	IE6, IE7
-  * @css-for	 IE6, IE7
-  * @valid		 no
+  * @affected  IE6, IE7
+  * @css-for   IE6, IE7
+  * @valid     no
   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\0000351}}
   body {
     o\verflow: visible;
   }
@@ -39,13 +40,13 @@
   * (en) HTML5 - default media element styles
   * (de) HTML5 - Standard Eigenschaften für Media-Elemente
   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\0000360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\0000359}}
   article, aside, details, figcaption, figure,
-  footer, header, hgroup, nav, section {
+  footer, header, main, hgroup, nav, section {
     zoom: 1;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\0000365}}
   audio,
   canvas,
   video {
@@ -57,7 +58,7 @@
   * (en) enable bicubic interpolation of images on scaling
   * (de) aktiviert bikubische Interpolation beim Skalieren von Bildern
   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\0000375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\0000374}}
   img {
     -ms-interpolation-mode: bicubic;
     zoom: 1;
@@ -69,23 +70,23 @@
   * (de) Korrigiert das fehlerhafte overflow-Verhalten von textarea und input-Elementen
   *
   * @workaround
-  * @affected	IE 5.x/Win, IE6
-  * @css-for	 IE 5.x/Win, IE6
-  * @valid		 no
+  * @affected  IE 5.x/Win, IE6
+  * @css-for   IE 5.x/Win, IE6
+  * @valid     no
   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\0000393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\0000392}}
   * html iframe,
   * html frame {
     overflow: auto;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\0000394}}
   * html input,
   * html frameset {
     overflow: hidden;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\0000395}}
   * html textarea {
     overflow: scroll;
     overflow-x: hidden;
@@ -100,16 +101,16 @@
   * Helpful to fix several possible problems in older IE versions (#main).
   *
   * @bugfix
-  * @affected	IE 5.x/Win, IE6, IE7
+  * @affected	 IE 5.x/Win, IE6, IE7
   * @css-for	 IE 5.x/Win, IE6, IE7
   * @valid		 yes
   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003113}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003112}}
   body, #main {
     position: relative;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003113}}
   * html body {
     position: static;
   }
@@ -121,11 +122,11 @@
   *
   * @workaround
   * @see http://perishablepress.com/press/2009/12/06/new-clearfix-hack/
-  * @affected	IE 5.x/Win, IE6, IE7
-  * @css-for	 IE 5.x/Win, IE6, IE7
-  * @valid		 yes
+  * @affected  IE 5.x/Win, IE6, IE7
+  * @css-for   IE 5.x/Win, IE6, IE7
+  * @valid     yes
   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003129}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003128}}
   .ym-clearfix {
     zoom: 1;
   }
@@ -137,11 +138,11 @@
   * (de) Bugfix für unvollständige Darstellung der Spalteninhalte / Spaltentrenner
   *
   * @bugfix
-  * @affected	IE 5.x/Win, IE6
+  * @affected	 IE 5.x/Win, IE6
   * @css-for	 IE 5.x/Win, IE6
   * @valid		 yes
   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003145}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003144}}
   * html .ym-col1,
   * html .ym-col2,
   * html .ym-col3 {
@@ -154,29 +155,29 @@
   * (de) Vermeidung verschiedenster Bugs durch Erzwingen von "hasLayout"
   *
   * @workaround
-  * @affected	IE 5.x/Win, IE6, IE7
-  * @css-for	 IE 5.x/Win, IE6, IE7
-  * @valid		 no
+  * @affected  IE 5.x/Win, IE6, IE7
+  * @css-for   IE 5.x/Win, IE6, IE7
+  * @valid     no
   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003159}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003158}}
   body {
     height: 1%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003160}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003159}}
   .ym-wrapper, .ym-wbox, #header, #nav, #main, #footer {
     zoom: 1;
   }
 
   /* IE6 & IE7	*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003161}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003160}}
   * html .ym-wrapper, * html .ym-wbox {
     height: 1%;
     hei\ght: auto;
   }
 
   /* IE 5.x & IE6 | IE6 only */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003162}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003161}}
   * html #header, * html #nav, * html #main, * html #footer {
     width: 100%;
     wid\th: auto;
@@ -184,7 +185,7 @@
 
   /* IE 5.x & IE6 | IE6 only */
   /* trigger hasLayout to force containing content */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003165}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003164}}
   .ym-gbox, .ym-gbox-left, .ym-gbox-right {
     height: 1%;
   }
@@ -195,11 +196,11 @@
   * @see http://www.positioniseverything.net/explorer/ie-listbug.html
   *
   * @bugfix
-  * @affected	IE 5.x/Win, IE6
-  * @css-for	 IE 5.x/Win, IE6
-  * @valid		 yes
+  * @affected  IE 5.x/Win, IE6
+  * @css-for   IE 5.x/Win, IE6
+  * @valid     yes
   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003179}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003178}}
   * html ul, * html ol, * html dl {
     position: relative;
   }
@@ -209,11 +210,11 @@
   * List-Numbering Bug
   *
   * @bugfix
-  * @affected	IE 5.x/Win, IE6, IE7
-  * @css-for	 IE 5.x/Win, IE6, IE7
-  * @valid		 yes
+  * @affected  IE 5.x/Win, IE6, IE7
+  * @css-for   IE 5.x/Win, IE6, IE7
+  * @valid     yes
   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003192}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003191}}
   body ol li {
     display: list-item;
   }
@@ -223,11 +224,11 @@
   * Browser-based image scaling (not)
   *
   * @workaround
-  * @affected	IE 5.x/Win, IE6
-  * @css-for	 IE 5.x/Win, IE6
-  * @valid		 yes
+  * @affected  IE 5.x/Win, IE6
+  * @css-for   IE 5.x/Win, IE6
+  * @valid     yes
   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003205}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003204}}
   * html .flexible {
     zoom: 1;
   }
@@ -236,21 +237,21 @@
   * Form related bugfixes
   *
   * @bugfix
-  * @affected	IE 5.x/Win, IE6, IE7
-  * @css-for	 IE 5.x/Win, IE6, IE7
-  * @valid		 no
+  * @affected  IE 5.x/Win, IE6, IE7
+  * @css-for   IE 5.x/Win, IE6, IE7
+  * @valid     no
   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003218}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003217}}
   button, input {
-    *overflow: visible;
+    *overflow: visible !important;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003219}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003218}}
   table button, table input {
     *overflow: auto;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003221}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003220}}
   fieldset, legend {
     position: relative;
   }
@@ -260,35 +261,136 @@
   * Global adjustments/fixes for YAML's form construction kit
   *
   * @workaround
-  * @affected	IE 5.x/Win, IE6, IE7
-  * @css-for	 IE 5.x/Win, IE6, IE7
-  * @valid		 no
+  * @affected  IE 5.x/Win, IE6, IE7
+  * @css-for   IE 5.x/Win, IE6, IE7
+  * @valid     no
   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003236}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003235}}
   .ym-form,
   .ym-form div,
   .ym-form div * {
     zoom: 1;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003241}}
+  .ym-form input,
+  .ym-form select,
+  .ym-form textarea {
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003247}}
+  .ym-form .ym-fbox-grid {
+    display: block;
+    overflow: hidden;
+    margin-right: -5px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003254}}
+  .ym-form .ym-fbox-grid .ym-type-text input,
+  .ym-form .ym-fbox-grid .ym-type-text textarea,
+  .ym-form .ym-fbox-grid .ym-type-select select {
+    width: 96% !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003260}}
+  .ym-form .ym-g33 {
+    display: inline;
+    width: 31% !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003261}}
+  .ym-form .ym-g66 {
+    display: inline;
+    width: 64% !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003262}}
+  .ym-form .ym-g38 {
+    display: inline;
+    width: 36% !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003263}}
+  .ym-form .ym-g62 {
+    display: inline;
+    width: 59% !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003267}}
+  .ym-form input.ym-g20, .ym-form textarea.ym-g20, .ym-form select.ym-g20 {
+    display: inline;
+    width: 16% !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003268}}
+  .ym-form input.ym-g40, .ym-form textarea.ym-g40, .ym-form select.ym-g40 {
+    display: inline;
+    width: 36% !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003269}}
+  .ym-form input.ym-g60, .ym-form textarea.ym-g60, .ym-form select.ym-g60 {
+    display: inline;
+    width: 56% !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003270}}
+  .ym-form input.ym-g80, .ym-form textarea.ym-g80, .ym-form select.ym-g80 {
+    display: inline;
+    width: 76% !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003271}}
+  .ym-form input.ym-g25, .ym-form textarea.ym-g25, .ym-form select.ym-g25 {
+    display: inline;
+    width: 21% !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003272}}
+  .ym-form input.ym-g33, .ym-form textarea.ym-g33, .ym-form select.ym-g33 {
+    display: inline;
+    width: 29.333% !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003273}}
+  .ym-form input.ym-g50, .ym-form textarea.ym-g50, .ym-form select.ym-g50 {
+    display: inline;
+    width: 46% !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003274}}
+  .ym-form input.ym-g66, .ym-form textarea.ym-g66, .ym-form select.ym-g66 {
+    display: inline;
+    width: 62.666% !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003275}}
+  .ym-form input.ym-g75, .ym-form textarea.ym-g75, .ym-form select.ym-g75 {
+    display: inline;
+    width: 71% !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003276}}
+  .ym-form input.ym-g38, .ym-form textarea.ym-g38, .ym-form select.ym-g38 {
+    display: inline;
+    width: 34.2% !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003277}}
+  .ym-form input.ym-g62, .ym-form textarea.ym-g62, .ym-form select.ym-g62 {
+    display: inline;
+    width: 57.8% !important;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003283}}
+  .ym-columnar .ym-fbox-grid {
+    margin-left: 0;
+    float: right;
+  }
+
   /*------------------------------------------------------------------------------------------------------*/
   /**
   * (en) Workaround for 'collapsing margin at #col3' when using CSS-property clear
-  *		Left margin of #col3 collapses when using clear:both in 1-3-2 (or 2-3-1) layout and right column is the
-  *		longest and left column is the shortest one. For IE6 and IE7 a special workaround was developed
-  *		in YAML.
+  *		 Left margin of #col3 collapses when using clear:both in 1-3-2 (or 2-3-1) layout and right column is the
+  *		 longest and left column is the shortest one. For IE6 and IE7 a special workaround was developed
+  *		 in YAML.
   *
   * (de) Workaround für 'kollabierenden Margin an #col3' bei Verwendung der CSS-Eigenschaft clear
-  *		Der linke Margin von #col3 kollabiert bei der Verwendung von clear:both im 1-3-2 (oder 2-3-1) Layout
-  *		wenn gleichzeitig die linke Spalte die kürzeste und die rechte die längste ist. Im IE6 und IE7 lässt
-  *		sich der Bug durch eine speziell für YAML entwickelten Workaround umgehen.
+  *		 Der linke Margin von #col3 kollabiert bei der Verwendung von clear:both im 1-3-2 (oder 2-3-1) Layout
+  *		 wenn gleichzeitig die linke Spalte die kürzeste und die rechte die längste ist. Im IE6 und IE7 lässt
+  *		 sich der Bug durch eine speziell für YAML entwickelten Workaround umgehen.
   *
   * @workaround
-  * @affected	IE 5.x/Win, IE6, IE7
-  * @css-for	 IE 5.x/Win, IE6, IE7
-  * @valid		 no
+  * @affected  IE 5.x/Win, IE6, IE7
+  * @css-for   IE 5.x/Win, IE6, IE7
+  * @valid     no
   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003257}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003308}}
   html .ym-ie-clearing {
     /* (en) Only a small help for debugging */
     /* (de) Nur eine kleine Hilfe zur Fehlersuche */
@@ -307,31 +409,31 @@
     margin: -2px 0 -1em 1px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003278}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003329}}
   * html .ym-ie-clearing {
     margin: -2px 0 -1em 0;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003279}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003330}}
   .ym-cbox {
     margin-bottom: -2px;
   }
 
   /* (en) avoid horizontal scrollbars in IE7 in borderless layouts because of negative margins */
   /* (de) Vermeidung horizontaler Scrollbalken bei randabfallenden Layouts im IE7 */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003283}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003334}}
   html {
     margin-right: 1px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003284}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003335}}
   * html {
     margin-right: 0;
   }
 
   /* (en) Bugfix:Essential for IE7 */
   /* (de) Bugfix:Notwendig im IE7 */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003288}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003339}}
   .ym-col3 {
     position: relative;
   }
@@ -342,9 +444,9 @@
   * @see http://www.positioniseverything.net/explorer/guillotine.html
   *
   * @workaround
-  * @affected	IE 5.x/Win, IE6
-  * @css-for	 IE 5.x/Win, IE6
-  * @valid		 yes
+  * @affected  IE 5.x/Win, IE6
+  * @css-for   IE 5.x/Win, IE6
+  * @valid     yes
   */
 }
 @media screen, projection {
@@ -356,35 +458,35 @@
   * @see http://positioniseverything.net/explorer/doubled-margin.html
   *
   * @bugfix
-  * @affected	IE 5.x/Win, IE6
-  * @css-for	 IE 5.x/Win, IE6, IE7
-  * @valid		 yes
+  * @affected  IE 5.x/Win, IE6
+  * @css-for   IE 5.x/Win, IE6, IE7
+  * @valid     yes
   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003369}}
   .ym-col1, .ym-col2 {
     display: inline;
   }
 
   /* Fix for:"Linking to anchors in elements within the containing block" Problem in IE5.x & IE 6.0 */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003372}}
   .ym-grid {
     overflow: hidden;
     display: block;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003373}}
   * html .ym-grid {
     overflow: visible;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003376}}
   .ym-gl,
   .ym-gr {
     display: inline;
   }
 
   /* transform CSS tables back into floats */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003379}}
   .ym-equalize .ym-gl {
     float: left;
     display: inline;
@@ -392,7 +494,7 @@
     margin-bottom: -32767px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003385}}
   .ym-equalize .ym-gr {
     float: right;
     margin-left: -5px;
@@ -401,7 +503,7 @@
     margin-bottom: -32767px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003392}}
   .no-ie-padding .ym-gl,
   .no-ie-padding .ym-gr {
     padding-bottom: 0;
@@ -414,11 +516,11 @@
   * @see http://www.positioniseverything.net/explorer/expandingboxbug.html
   *
   * @workaround
-  * @affected	IE 5.x/Win, IE6
-  * @css-for	 IE 5.x/Win, IE6
-  * @valid		 yes
+  * @affected  IE 5.x/Win, IE6
+  * @css-for   IE 5.x/Win, IE6
+  * @valid     yes
   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003411}}
   * html .ym-cbox-left,
   * html .ym-cbox-right,
   * html .ym-cbox {
@@ -426,7 +528,7 @@
   }
 
   /* avoid growing widths */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003416}}
   * html .ym-gbox,
   * html .ym-gbox-left,
   * html .ym-gbox-right {
@@ -440,11 +542,11 @@
   * (de) Vermeiden von unnötigen Seitenumbrüchen beim Ausdruck der Spalte .ym-col3 und Einschluss von Floats.
   *
   * @bugfix
-  * @affected	IE7
-  * @css-for	 IE 5.x/Win, IE6, IE7
-  * @valid		 yes
+  * @affected  IE7
+  * @css-for   IE 5.x/Win, IE6, IE7
+  * @valid     yes
   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml\/_iehacks\.scss}line{font-family:\00003383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mschulze\/Dropbox\/htdocs\/dev\/h5yck\/sass\/yaml-sass\/core\/_iehacks\.scss}line{font-family:\00003434}}
   .ym-gbox,
   .ym-gbox-left,
   .ym-gbox-right,

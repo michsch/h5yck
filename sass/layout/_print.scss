@@ -16,7 +16,7 @@
 {
 
   @if $use-yaml == true { $default-base-print: true; }
-  @import "yaml/base-modules/print-core";
+  @import "yaml-sass/core/base-modules/print-core";
 
   /* (en) change font size unit to [pt] - avoids problems with [px] in Gecko based browsers    */
   /* (de) Wechsel der der Schriftgrößen-Maßheinheit zu [pt] - Probleme mit [px] in Gecko-Browsern vermeiden */
