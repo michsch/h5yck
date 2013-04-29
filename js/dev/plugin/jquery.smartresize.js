@@ -1,32 +1,45 @@
-(function( $, sr ) {
+/**!
+ * smartresize jquery plugin
+*/
+
+(function($, sr) {
   "use strict";
+
   var debounce;
+  debounce = void 0;
+  /**
+   * debouncing function from John Hann
+   * http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+  */
 
-  // debouncing function from John Hann
-  // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
-  debounce = function( func, threshold, execAsap ) {
-    var timeout;
-
-    return function debounced () {
-      var obj = this, args = arguments;
-      function delayed () {
-        if (!execAsap)
+  debounce = function(func, threshold, execAsap) {
+    var debounced, timeout;
+    timeout = void 0;
+    return debounced = function() {
+      var args, delayed, obj;
+      delayed = function() {
+        if (!execAsap) {
           func.apply(obj, args);
-        timeout = null;
-      }
-
-      if (timeout)
+        }
+        return timeout = null;
+      };
+      obj = this;
+      args = arguments;
+      if (timeout) {
         clearTimeout(timeout);
-      else if (execAsap)
-        func.apply(obj, args);
-
-      timeout = setTimeout(delayed, threshold || 100);
+      } else {
+        if (execAsap) {
+          func.apply(obj, args);
+        }
+      }
+      return timeout = setTimeout(delayed, threshold || 100);
     };
   };
-
-  // smartresize
-  $.fn[sr] = function( fn, threshold, execAsap ) {
-    return fn ? this.on( 'resize', debounce( fn, threshold || 100, execAsap ) ) : this.trigger( sr );
+  return $.fn[sr] = function(fn, threshold, execAsap) {
+    if (fn) {
+      return this.on('resize', debounce(fn, threshold || 100, execAsap));
+    } else {
+      return this.trigger(sr);
+    }
   };
-
-})( jQuery, 'smartresize' );
+})(jQuery, 'smartresize');

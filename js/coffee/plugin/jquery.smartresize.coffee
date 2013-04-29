@@ -18,14 +18,13 @@
         func.apply obj, args  unless execAsap
         timeout = null
       obj = this
-      args = arguments_
+      args = arguments
       if timeout
         clearTimeout timeout
       else func.apply obj, args  if execAsap
       timeout = setTimeout(delayed, threshold or 100)
 
-  
   # smartresize
   $.fn[sr] = (fn, threshold, execAsap) ->
-    (if fn then @on("resize", debounce(fn, threshold or 100, execAsap)) else @trigger(sr))
-) jQuery, "smartresize"
+    (if fn then @on('resize', debounce(fn, threshold or 100, execAsap)) else @trigger(sr))
+) jQuery, 'smartresize'
