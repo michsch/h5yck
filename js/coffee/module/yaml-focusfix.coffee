@@ -87,7 +87,7 @@
         target.setAttribute 'tabindex', '-1'
         target.focus()
 
-  if jQuery isnt undefined and typeof jQuery is 'function'
+  if typeof jQuery is 'function' and jQuery
     jQuery ->
       YAML_focusFix.init()
   else

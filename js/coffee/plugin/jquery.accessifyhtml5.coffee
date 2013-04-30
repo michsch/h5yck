@@ -5,65 +5,75 @@
 
 ###*
  * Accessifyhtml5.js
+ * The jQuery part of accessifyhtml5.js is now deprecated. It won’t get new features and may be removed soon.
  * Adds ARIA to new elements in browsers which don’t do it by themselves.
  *
  * originally by Eric Eggert
  * https://github.com/yatil/accessifyhtml5.js
 ###
 
-( ( $, root, factory ) ->
+( ( $, root, factory, name ) ->
   "use strict"
 
   # CommonJS
   if typeof exports is 'object'
-    module.exports = factory();
+    module.exports = factory $;
   # AMD
   else if typeof define is 'function' and define.amd
-    define(['jquery'], factory)
+    define ['jquery'], factory( $ )
   # Browser
-  else
-    root.accessifyhtml5 = factory()
+  #else
+  #  true
+  #  root[name] = factory $
 
   # register as jQuery plugin
-  if typeof $ is 'function'
-    factory($)
+  if typeof $ is 'function' && $
+    $[name] = factory $
 
+  return true
 )( jQuery, ( typeof window is 'object' and window ) || this, ( $ ) ->
   "use strict"
 
-  $.accessifyhtml5 = ( defaults ) ->
+  AccessifyHTML5 = ( defaults, override = false ) ->
     fixes =
       article:
-        role: "article"
+        role: 'article'
       aside:
-        role: "complementary"
+        role: 'complementary'
       nav:
-        role: "navigation"
+        role: 'navigation'
+      main:
+        role: 'main'
       output:
-        "aria-live": "polite"
+        'aria-live': 'polite'
       section:
-        role: "region"
-      "[required]":
-        "aria-required": "true"
+        role: 'region'
+      '[required]':
+        'aria-required': 'true'
 
     if defaults
-      fixes[defaults.header] = role: "banner"  if defaults.header
-      fixes[defaults.footer] = role: "contentinfo"  if defaults.footer
+      fixes[defaults.header] = role: 'banner' if defaults.header
+      fixes[defaults.footer] = role: 'contentinfo' if defaults.footer
+      if defaults.main
+        fixes[defaults.main] = role: 'main'
+        fixes.main =
+          role: ''
 
-    #$.each(fixes, (index, item) ->
-    #  $(index).attr(item)
-    #  true
-    #)
-
-    $.each( fixes, ( element, attributes ) ->
-      $(element).each(( index, element ) ->
-        for property of attributes
-          if $(this).attr(property) is false or typeof $(this).attr(property) is undefined
-            $(this).attr(property, attributes[property])
-        true
-      )
+    
+    $.each(fixes, (index, item) ->
+      if override
+        ###*
+         * replace attributes in every found element
+        ###
+        $(index).attr item
+      else
+        ###*
+         * Write attribute only if none is set in HTML yet.
+        ###
+        $(index).not('[' + item[0] +']').attr item
       true
     )
-
     true
-)
+
+  AccessifyHTML5
+, 'accessifyhtml5' )

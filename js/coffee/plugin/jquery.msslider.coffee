@@ -7,7 +7,7 @@
  * jQuery plugin msSlider
  *
  * @author             Michael Schulze
- * @version            $1.1.0$
+ * @version            $1.4.0$
  * @copyright          Michael Schulze, 10 February, 2012
  * @license            All rights reserved. No usage without written permission.
  * @package            coffeescript, jquery
