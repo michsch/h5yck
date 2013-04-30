@@ -28,38 +28,38 @@
     module.exports = factory
   else if typeof define is 'function' and define.amd
     define([
+      'configuration'
       'jquery'
       'module/accessifyhtml5'
-    ], factory( $, accessifyhtml5 ) )
+      'plugins'
+    ], () ->
+      factory.apply this, arguments
+    )
   else
     root._App = factory()
 
   true
-)( ( typeof window is 'object' and window ) or this, ( $, accessifyhtml5 ) ->
+)( ( typeof window is 'object' and window ) or this, ( config, $, accessifyhtml5, plugins ) ->
   "use strict"
-  console.log config
-  $ = $ or jQuery
-  config = config or window._config
 
   exports = exports || {}
 
   language = $('html').attr('lang')
   lang = if !language then 'en' else language
 
-  config = config || {}
-  config.ll =
-    en:
-      from: 'from'
-      to: 'to'
-      image: 'image'
-    de:
-      from: 'von'
-      to: 'bis'
-      image: 'Bild'
+  if config is undefined
+    config = {}
+    config.ll =
+      en:
+        from: 'from'
+        to: 'to'
+        image: 'image'
+      de:
+        from: 'von'
+        to: 'bis'
+        image: 'Bild'
 
   config.lang = (if (typeof config.ll[lang] is "object" && config.ll[lang]) then lang else 'en')
-
-  console.dir arguments
 
   class DOMReady
     #self = this
@@ -74,7 +74,6 @@
      * @return boolean true
     ###
     init : ->
-      console.log accessifyhtml5
       accessifyhtml5()
       $('html').removeClass('no-js').addClass('js')
 
@@ -215,7 +214,7 @@
             $(".fancybox-title").hide()
           )
 
-      if $('*').is('.fancybox')
+      if typeof $.fn.fancybox is 'function' and $('*').is('.fancybox')
         o = $.extend( true, {}, fancyboxDefaults, options || {} )
         $('.fancybox').fancybox( o )
 
@@ -236,14 +235,6 @@
     init : ->
 
       true
-
-  ###
-  $(document).ready ->
-    exports.domReady = new DomReady()
-
-  $(window).load ->
-    exports.domLoad = new DomLoad()
-  ###
 
   class App
 

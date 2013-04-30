@@ -1,4 +1,11 @@
-( ( root, factory ) ->
+###*jshint devel:true
+###
+###*globals
+  define
+  _site
+###
+
+( ( _site, root, factory ) ->
   "use strict"
 
   if typeof exports is 'object'
@@ -6,10 +13,11 @@
   else if typeof define is 'function' and define.amd
     define factory
   else
-    root._config = factory
+    _site.config = factory
+    root._site = _site
 
   true
-)( ( typeof window is 'object' and window ) or this, () ->
+)( _site or {}, ( typeof window is 'object' and window ) or this, () ->
   "use strict"
 
   exports = {
