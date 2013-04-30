@@ -370,15 +370,10 @@ module.exports = function(grunt) {
         files: {
           'js/dev/plugins.js' : [
             appDir + 'js/dev/plugin/fancybox/jquery.fancybox.js',
-            appDir + 'js/dev/plugin/*.js',
-            '!' + appDir + 'js/dev/plugin/jquery.accessifyhtml5.js'
+            appDir + 'js/dev/plugin/*.js'
           ],
           'js/dev/modules.js' : [
-            appDir + 'js/dev/module/log.js',
-            appDir + 'js/dev/module/json.js',
-            appDir + 'js/dev/module/accessifyhtml5.js',
-            appDir + 'js/dev/module/pubsub.js',
-            appDir + 'js/dev/module/yaml-focusfix.js'
+            appDir + 'js/dev/module/*.js'
           ]
         }
       },
@@ -398,8 +393,8 @@ module.exports = function(grunt) {
           banner: '<%= meta.banner %>'
         },
         files: {
-          'js/prod/plugins.js' : [ appDir + 'js/dev/plugins.js' ],
-          'js/prod/modules.js' : [ appDir + 'js/dev/modules.js' ],
+          'js/prod/plugins.min.js' : [ appDir + 'js/dev/plugins.js' ],
+          'js/prod/modules.min.js' : [ appDir + 'js/dev/modules.js' ],
           'js/prod/main-<%= pkg.version %>.min.js' : [ appDir + 'js/prod/main-<%= pkg.version %>.js' ]
         }
       },
