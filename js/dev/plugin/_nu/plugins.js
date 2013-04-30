@@ -17,14 +17,14 @@
  * @lastmodified       $Date: 2012-03-30 13:16:22 +0200 (Fr., 30 Mär 2012) $
  *
 */
-
 (function($, window, document) {
   "use strict";
-
   var firstplugin, isEventSupported;
+
   firstplugin = {
     init: function(options) {
       var defaults, el, firstload, o;
+
       defaults = {
         resize: 1
       };
@@ -34,6 +34,7 @@
       if (o.resize === 1) {
         $(window).resize(function() {
           var firstLoad;
+
           firstLoad = 0;
           firstplugin.update(o);
           return true;
@@ -43,6 +44,7 @@
     },
     update: function(o) {
       var el;
+
       el = 0;
       return el.each(function() {});
     }
@@ -58,6 +60,7 @@
   };
   $.secondplugin = function(options) {
     var defaults, o;
+
     defaults = {
       resize: 1
     };
@@ -73,8 +76,10 @@
 
   isEventSupported = (function() {
     var TAGNAMES;
+
     window.isEventSupported = function(eventName) {
       var el, isSupported;
+
       el = document.createElement(TAGNAMES[eventName] || 'div');
       eventName = 'on' + eventName;
       isSupported = eventName in el;
@@ -98,3 +103,7 @@
   })();
   return true;
 })(jQuery, window, document);
+
+/*
+//@ sourceMappingURL=plugins.js.map
+*/

@@ -1,11 +1,10 @@
 /**!
  * smartresize jquery plugin
 */
-
 (function($, sr) {
   "use strict";
-
   var debounce;
+
   debounce = void 0;
   /**
    * debouncing function from John Hann
@@ -14,9 +13,11 @@
 
   debounce = function(func, threshold, execAsap) {
     var debounced, timeout;
+
     timeout = void 0;
     return debounced = function() {
       var args, delayed, obj;
+
       delayed = function() {
         if (!execAsap) {
           func.apply(obj, args);
@@ -43,3 +44,7 @@
     }
   };
 })(jQuery, 'smartresize');
+
+/*
+//@ sourceMappingURL=jquery.smartresize.js.map
+*/

@@ -23,11 +23,10 @@
 * @revision        $Revision: 617 $
 * @lastmodified    $Date: 2012-01-05 23:56:54 +0100 (Do, 05 Jan 2012) $
 */
-
 (function(root, factory) {
   "use strict";
-
   var f;
+
   f = factory();
   if (typeof exports === 'object') {
     module.exports = f;
@@ -41,13 +40,14 @@
   }
 })((typeof window === 'object' && window) || this, function() {
   "use strict";
-
   var YAML_focusFix;
+
   YAML_focusFix = {
     skipClass: "ym-skip"
   };
   YAML_focusFix.init = function() {
     var body, handler, is_ie, is_webkit, userAgent;
+
     userAgent = navigator.userAgent.toLowerCase();
     is_webkit = userAgent.indexOf('webkit') > -1;
     is_ie = userAgent.indexOf('msie') > -1;
@@ -68,6 +68,7 @@
   };
   YAML_focusFix.click = function(e) {
     var a, cls, i, target, _results;
+
     e = e || window.event;
     target = e.target || e.srcElement;
     a = target.className.split(' ');
@@ -85,6 +86,7 @@
   };
   YAML_focusFix.focus = function(link) {
     var href, id, target;
+
     if (link.href) {
       href = link.href;
       id = href.substr(href.indexOf('#') + 1);
@@ -95,7 +97,7 @@
       }
     }
   };
-  if (jQuery !== void 0 && typeof jQuery === 'function') {
+  if (typeof jQuery === 'function' && jQuery) {
     jQuery(function() {
       return YAML_focusFix.init();
     });
@@ -104,3 +106,7 @@
   }
   return YAML_focusFix;
 });
+
+/*
+//@ sourceMappingURL=yaml-focusfix.js.map
+*/

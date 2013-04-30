@@ -8,10 +8,8 @@
  * Some new useful underscore mixins
  * originally by echong: https://gist.github.com/echong/3861963#file-underscore-mixin-deepextend-coffee
 */
-
 (function(root, factory) {
-  "use strict";
-  if (typeof _ === 'function' && typeof exports === 'object') {
+  "use strict";  if (typeof _ === 'function' && typeof exports === 'object') {
     return module.exports = factory(_);
   } else if (typeof define === 'function' && define.amd) {
     return define(['underscore'], function(_) {
@@ -23,11 +21,12 @@
   }
 })((typeof window === 'object' && window) || this, function(_) {
   "use strict";
-
   var arrays, basicObjects, deepClone, deepExtend, deepExtendCouple, exports, isBasicObject;
+
   exports = exports || {};
   deepClone = function(obj) {
     var func, isArr;
+
     if (!_.isObject(obj || _.isFunction(obj))) {
       return obj;
     }
@@ -63,6 +62,7 @@
   };
   deepExtendCouple = function(destination, source, maxDepth) {
     var combine, recurse, sharedArrayKey, sharedArrayKeys, sharedObjectKey, sharedObjectKeys, _i, _j, _len, _len1;
+
     if (maxDepth === void 0) {
       maxDepth = 20;
     }
@@ -90,6 +90,7 @@
   };
   deepExtend = function() {
     var finalObj, maxDepth, objects, _i;
+
     if (2 <= arguments.length) {
       objects = [].slice.call(arguments, 0, _i = arguments.length - 1);
     } else {
@@ -122,3 +123,7 @@
   };
   return exports;
 });
+
+/*
+//@ sourceMappingURL=underscore-mixins.js.map
+*/

@@ -9,18 +9,18 @@
  *
  * A set of some standard functions for responsive design.
 */
-
 define(['configuration', 'underscore', 'jquery', 'pubsub', 'plugin/jquery.smartresize', 'exports'], function(config, _, $, PubSub, smartresize, exports) {
   "use strict";
-
   /**
-  * some client window, screen and document size functions
-  *
+   * some client window, screen and document size functions
+   *
   */
 
   var Responsive;
+
   Responsive = function() {
     var debug, debugResize, getDevicePixelRatio, getScreen, getScreenHeight, getScreenWidth, getWindow, getWindowHeight, getWindowWidth, init, onresize, r, updateOnResize;
+
     r = this;
     r.callback = {
       arr: []
@@ -52,6 +52,7 @@ define(['configuration', 'underscore', 'jquery', 'pubsub', 'plugin/jquery.smartr
     };
     getWindowWidth = function() {
       var windowWidth;
+
       windowWidth = window.innerWidth || document.documentElement.clientWidth;
       if (typeof windowWidth !== 'number') {
         windowWidth = $(window).width();
@@ -63,6 +64,7 @@ define(['configuration', 'underscore', 'jquery', 'pubsub', 'plugin/jquery.smartr
     };
     getWindowHeight = function() {
       var windowHeight;
+
       windowHeight = window.innerHeight || document.documentElement.clientHeight;
       if (typeof windowHeight !== 'number') {
         windowHeight = $(window).height();
@@ -74,16 +76,19 @@ define(['configuration', 'underscore', 'jquery', 'pubsub', 'plugin/jquery.smartr
     };
     getDevicePixelRatio = function() {
       var devicePixelRatio;
+
       devicePixelRatio = window.devicePixelRatio || 1;
       return devicePixelRatio;
     };
     getScreenWidth = function() {
       var screenWidth;
+
       screenWidth = screen.width || false;
       return screenWidth;
     };
     getScreenHeight = function() {
       var screenHeight;
+
       screenHeight = screen.height || false;
       return screenHeight;
     };
@@ -96,6 +101,7 @@ define(['configuration', 'underscore', 'jquery', 'pubsub', 'plugin/jquery.smartr
     onresize = function() {
       return $(window).smartresize(function() {
         var i, key;
+
         updateOnResize();
         if (PubSub === void 0 && require.defined('pubsub') === true) {
           PubSub = require('pubsub');
@@ -129,6 +135,7 @@ define(['configuration', 'underscore', 'jquery', 'pubsub', 'plugin/jquery.smartr
     };
     this.images = function() {
       var screenBreakPoint, screenWidth;
+
       screenBreakPoint = {
         page: {
           large: 1024,
@@ -142,6 +149,7 @@ define(['configuration', 'underscore', 'jquery', 'pubsub', 'plugin/jquery.smartr
       screenWidth = r.window.width;
       $('figure').each(function() {
         var figure, image, imagePath, large, medium, sbp, small;
+
         figure = $(this);
         if (figure.parents('.ym-grid').length > 0) {
           large = figure.attr('data-image-medium');
@@ -178,6 +186,7 @@ define(['configuration', 'underscore', 'jquery', 'pubsub', 'plugin/jquery.smartr
     };
     debug = function() {
       var devicePixelRatio, screen, screenHeight, screenWidth, w, windowHeight, windowWidth, wrapper;
+
       if (r.debugMode === true) {
         wrapper = $('<section id=r-sizes-debug></section>');
         screen = $('<p class=screen></p>');
@@ -212,6 +221,7 @@ define(['configuration', 'underscore', 'jquery', 'pubsub', 'plugin/jquery.smartr
     };
     debugResize = function() {
       var debugInfos;
+
       debugInfos = $('#r-sizes-debug');
       debugInfos.find('.screen-width').text(r.screen.width);
       debugInfos.find('.screen-height').text(r.screen.height);
@@ -243,3 +253,7 @@ define(['configuration', 'underscore', 'jquery', 'pubsub', 'plugin/jquery.smartr
   exports = new Responsive();
   return exports;
 });
+
+/*
+//@ sourceMappingURL=responsive.js.map
+*/

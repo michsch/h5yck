@@ -1,14 +1,14 @@
 module.exports = function(grunt) {
   "use strict";
 
-  var appDir, useRequireJs, tasks, gruntConfig, pkg;
+  var appDir, useRequireJs, tasks, gruntConfig, pkg, requireConfig;
 
   /* get package JSON file */
   pkg = grunt.file.readJSON('package.json');
 
   appDir = '';
 
-  useRequireJs = false;
+  useRequireJs = true;
 
   /**
    * define tasks
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
         'coffee',
         'jshint',
         'concat',
-        'uglify',
+        'uglify:prod',
         'compress'
       ]
     },
@@ -63,7 +63,7 @@ module.exports = function(grunt) {
       'coffee',
       'jshint',
       'requirejs:project',
-      'uglify',
+      'uglify:require',
       'compress'
     ];
   }
@@ -77,6 +77,41 @@ module.exports = function(grunt) {
   /* if task contains no watch files use the global definition in tasks.files */
   tasks.dev.files = tasks.dev.files || tasks.files;
   tasks.prod.files = tasks.prod.files || tasks.files;
+
+  requireConfig = {
+    paths: {
+      configuration: 'require-main',
+      requireLib: './vendor/require',
+      domReady: './module/domReady',
+      almond: './vendor/almond',
+      modernizr: './vendor/modernizr-2.6.2.min',
+      underscore: './vendor/underscore',
+      jquery: 'empty:',
+      pubsub: './module/pubsub',
+      hyphenator: './module/hyphenator/Hyphenator'
+    },
+    shim: {
+      modernizr: {
+        exports: 'Modernizr'
+      },
+      underscore: {
+        exports: '_'
+      },
+      hyphenator: {
+        exports: 'Hyphenator'
+      },
+      'module/underscore-mixins': ['underscore'],
+      'plugin/jquery.accessifyhtml5': ['jquery'],
+      'plugin/jquery.hoverIntent': ['jquery'],
+      'plugin/jquery.fancybox': ['jquery'],
+      'plugin/jquery.syncheight': ['jquery'],
+      'plugin/jquery.tabs': ['jquery'],
+      'plugin/jquery.sisyphus': ['jquery'],
+      'plugin/jquery.smartresize': ['jquery'],
+      'plugin/jquery.validate': ['jquery'],
+      'plugin/jquery.validate.js.additional-methods': ['jquery', 'plugin/jquery.validate']
+    }
+  };
 
   /* Grunt configuration object */
   gruntConfig = {
@@ -141,10 +176,13 @@ module.exports = function(grunt) {
       options: {
         bare: true
       },
-      glob_to_multiple: {
+      all: {
         expand: true,
         cwd: appDir + 'js/coffee/',
-        src: [ '**/*.coffee' ],
+        src: [
+          '**/*.coffee',
+          '!**/_nu/**/*.coffee'
+        ],
         dest: appDir + 'js/dev/',
         rename: function( destPath, srcPath ) {
           var dest;
@@ -271,23 +309,23 @@ module.exports = function(grunt) {
     requirejs: {
       single: {
         options: {
-          name: 'main',
-          baseUrl: '.',
-          mainConfigFile: appDir + 'js/dev/main.js',
-          out: appDir + 'js/prod/main-<%= pkg.version %>.min.js',
+          name: 'require-main',
+          baseUrl: appDir + 'js/dev',
+          mainConfigFile: appDir + 'js/dev/require-main.js',
+          out: appDir + 'js/prod/require-main-<%= pkg.version %>.js',
           useStrict: true,
-          optimize: 'uglify2',
-          //optimize: 'none',
+          //optimize: 'uglify2',
+          optimize: 'none',
           //generateSourceMaps: true,
           //preserveLicenseComments: false,
           //useSourceUrl: true,
-          paths: {
-            requireLib: './vendor/require',
-            //jquery: './vendor/jquery-1.9.0.min',
-            jquery: 'empty:',
-            underscore: './vendor/underscore'
-          },
-          include: ['requireLib']
+          paths: requireConfig.paths,
+          shim: requireConfig.shim,
+          include: [
+            //'requireLib',
+            'almond',
+            'domReady'
+          ]
         }
       },
       project: {
@@ -303,46 +341,18 @@ module.exports = function(grunt) {
           //preserveLicenseComments: false,
           //useSourceUrl: true,
           preserveLicenseComments: false,
-          fileExclusionRegExp: /(^\.)|(^coffee)|(^old)/,
-          paths: {
-            configuration: 'main',
-            requireLib: './vendor/require',
-            domReady: './module/domReady',
-            modernizr: './vendor/modernizr-2.6.2.min',
-            underscore: './vendor/underscore',
-            jquery: 'empty:',
-            pubsub: './module/pubsub',
-            hyphenator: './module/hyphenator/Hyphenator',
-            waypoints: './plugin/jquery.waypoints'
-          },
-          shim: {
-            modernizr: {
-              exports: 'Modernizr'
-            },
-            underscore: {
-              exports: '_'
-            },
-            hyphenator: {
-              exports: 'Hyphenator'
-            },
-            'plugin/jquery.accessifyhtml5': ['jquery'],
-            'plugin/jquery.hoverIntent': ['jquery'],
-            'plugin/jquery.fancybox': ['jquery'],
-            'plugin/jquery.syncheight': ['jquery'],
-            'plugin/jquery.tabs': ['jquery'],
-            'plugin/jquery.sisyphus': ['jquery'],
-            'plugin/jquery.smartresize': ['jquery'],
-            'plugin/jquery.validate': ['jquery'],
-            'plugin/jquery.validate.js.additional-methods': ['jquery', 'plugin/jquery.validate'],
-            'plugin/jquery.ddfapplication': ['jquery'],
-            'plugin/jquery.photoZoom' : ['jquery'],
-            'plugin/jquery.waypoints' : ['jquery'],
-            'plugin/jquery.waypoints-infinite' : ['jquery', 'waypoints']
-          },
+          fileExclusionRegExp: /(^\.)|(^coffee)|(^old)|(^_nu)|(^main\.js)|(\.map)/,
+          removeCombined: true,
+          paths: requireConfig.paths,
+          shim: requireConfig.shim,
           modules: [
             {
-              name: 'main',
-              //include: ['requireLib'],
+              name: 'require-main',
+              include: [
+                //'requireLib',
+                'almond',
+                'domReady'
+              ],
               override : {
                 optimize: 'none'
               }
@@ -391,6 +401,14 @@ module.exports = function(grunt) {
           'js/prod/plugins.js' : [ appDir + 'js/dev/plugins.js' ],
           'js/prod/modules.js' : [ appDir + 'js/dev/modules.js' ],
           'js/prod/main-<%= pkg.version %>.min.js' : [ appDir + 'js/prod/main-<%= pkg.version %>.js' ]
+        }
+      },
+      require: {
+        options : {
+          banner: '<%= meta.banner %>'
+        },
+        files: {
+          'js/prod/require-main-<%= pkg.version %>.min.js' : [ appDir + 'js/prod/require-main.js' ]
         }
       }
     },
