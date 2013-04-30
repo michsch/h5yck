@@ -1,53 +1,39 @@
 module.exports = function(grunt) {
   "use strict";
 
-  var appDir, useRequireJs, tasks, gruntConfig;
+  var appDir, useRequireJs, tasks, gruntConfig, pkg;
+
+  /* get package JSON file */
+  pkg = grunt.file.readJSON('package.json');
 
   appDir = '';
 
-  // define tasks
-  useRequireJs = true;
+  useRequireJs = false;
+
+  /**
+   * define tasks
+   */
   tasks = {
-    files : [
+    files: [
       'Gruntfile.js',
       appDir + 'js/coffee/**/*.coffee',
       appDir + 'sass/**/*.scss'
-    ]
-  };
-
-  if (useRequireJs === true) {
-    tasks.dev = {
+    ],
+    d: 'dev', // default task
+    dev: {
       name: 'dev',
       tasks: [
-        'compass:dev',
-        'coffee',
-        'jshint'
-      ]
-    };
-    tasks.prod = {
-      name: 'prod',
-      tasks: [
-        'compass:prod',
-        'coffee',
-        'jshint',
-        'requirejs:project',
-        'uglify',
-        'compress'
-      ]
-    };
-  } else {
-    tasks.dev = {
-      name: 'dev',
-      tasks: [
+        'clean:dev',
         'compass:dev',
         'coffee',
         'jshint',
         'concat:dev'
       ]
-    };
-    tasks.prod = {
+    },
+    prod: {
       name: 'prod',
       tasks: [
+        'clean:prod',
         'compass:prod',
         'coffee',
         'jshint',
@@ -55,20 +41,46 @@ module.exports = function(grunt) {
         'uglify',
         'compress'
       ]
-    };
+    },
+    comments: {
+      name: 'comments',
+      tasks: [ 'string-replace:comments' ]
+    }
+  };
+
+  /**
+   * set some other tasks if require.js should be used
+   */
+  if (useRequireJs === true) {
+    tasks.dev.tasks = [
+      'compass:dev',
+      'coffee',
+      'jshint'
+    ];
+    tasks.prod.tasks = [
+      'clean:prod',
+      'compass:prod',
+      'coffee',
+      'jshint',
+      'requirejs:project',
+      'uglify',
+      'compress'
+    ];
   }
 
-  if (tasks.dev.files === void 0) {
-    tasks.dev.files = tasks.files;
-  }
-  if (tasks.prod.files === void 0) {
-    tasks.prod.files = tasks.files;
+  /* only add yamlPrefix replace task if prefix is not ym- */
+  if ( pkg.yamlPrefix !== 'ym-' ) {
+    tasks.dev.tasks.push( 'string-replace:yamlPrefix' );
+    tasks.prod.tasks.push( 'string-replace:yamlPrefix' );
   }
 
-  // Project configuration.
+  /* if task contains no watch files use the global definition in tasks.files */
+  tasks.dev.files = tasks.dev.files || tasks.files;
+  tasks.prod.files = tasks.prod.files || tasks.files;
+
+  /* Grunt configuration object */
   gruntConfig = {
-    //pkg: '<json:package.json>',
-    pkg: grunt.file.readJSON('package.json'),
+    pkg: pkg,
     // Project metadata, used by some directives, helpers and tasks.
     meta: {
       banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
@@ -81,58 +93,51 @@ module.exports = function(grunt) {
     qunit: {
       all: [ appDir + 'js/test/**/*.html' ]
     },
-    compassKahlil: {
-      dev: {
-        src: appDir + 'sass',
-        dest: appDir + 'css/dev',
-        outputstyle: 'expanded',
-        linecomments: true,
-        forcecompile: false,
-        debugsass: true,
-        images: appDir + 'img'
-      },
-      prod: {
-        src: appDir + 'sass',
-        dest: appDir + 'css/prod',
-        outputstyle: 'compressed',
-        linecomments: false,
-        forcecompile: true,
-        debugsass: false,
-        images: appDir + 'img'
-      }
+    clean: {
+      dev: [
+        'js/dev/modules.js',
+        'js/dev/plugins.js',
+        'js/dev/**/*.map'
+      ],
+      prod: [
+        'css/prod',
+        'js/dev/modules.js',
+        'js/dev/plugins.js',
+        'js/**/*.map',
+        'js/prod'
+      ]
     },
     compass: {
       dev: {
-        sassDir: appDir + 'sass',
-        cssDir: appDir + 'css/dev',
-        imagesDir: appDir + 'img',
-        javascriptDir: appDir + 'js',
-        fontsDir: appDir + 'fonts',
-        environment: 'development',
-        outputStyle: 'expanded',
-        noLineComments: false,
-        force: false,
-        debugInfo: true
+        options: {
+          sassDir: appDir + 'sass',
+          cssDir: appDir + 'css/dev',
+          imagesDir: appDir + 'img',
+          javascriptDir: appDir + 'js',
+          fontsDir: appDir + 'fonts',
+          environment: 'development',
+          outputStyle: 'expanded',
+          noLineComments: false,
+          force: false,
+          debugInfo: true
+        }
       },
       prod: {
-        sassDir: appDir + 'sass',
-        cssDir: appDir + 'css/prod',
-        imagesDir: appDir + 'img',
-        javascriptDir: appDir + 'js',
-        fontsDir: appDir + 'fonts',
-        environment: 'production',
-        outputStyle: 'compressed',
-        noLineComments: true,
-        force: true,
-        debugInfo: false
+        options: {
+          sassDir: appDir + 'sass',
+          cssDir: appDir + 'css/prod',
+          imagesDir: appDir + 'img',
+          javascriptDir: appDir + 'js',
+          fontsDir: appDir + 'fonts',
+          environment: 'production',
+          outputStyle: 'compressed',
+          noLineComments: true,
+          force: true,
+          debugInfo: false
+        }
       }
     },
     coffee: {
-      compile: {
-        options: {
-          bare: true
-        }
-      },
       options: {
         bare: true
       },
@@ -144,10 +149,43 @@ module.exports = function(grunt) {
         rename: function( destPath, srcPath ) {
           var dest;
           dest = destPath + srcPath.replace(/\.coffee$/,".js");
-
           return dest;
+        },
+        //ext: '.js',
+        options: {
+          sourceMap: true
         }
-        //ext: '.js'
+      }
+    },
+    'string-replace': {
+      comments: {
+        files: {
+          './': [ 'sass/*.scss', 'js/coffee/**/*.coffee' ]
+        },
+        options: {
+          replacements: [{
+            pattern : /@version( *)(?:\$.*)/ig,
+            replacement : '@version$1$$<%= pkg.version %>$'
+          }, {
+            pattern : /@author( *)(?:.*)/ig,
+            replacement : '@author$1<%= pkg.author.name %>'
+          }, {
+            pattern: /\/\*\! (?:[\w\d \.\-\_\$\+]+)(?: \- )(?:[\w\d\s\S])*\*\/(?:.*\s *\s)/i,
+            replacement: '<%= meta.banner %>'
+            //replacement: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + date.fullDate
+          }]
+        }
+      },
+      yamlPrefix: {
+        files: {
+          './': [ 'css/dev/**/*.css', 'css/prod/**/*.css' ]
+        },
+        options: {
+          replacements: [{
+            pattern     : /\.ym-/ig,
+            replacement : '.<%= pkg.yamlPrefix %>'
+          }]
+        }
       }
     },
     jshint: {
@@ -187,7 +225,7 @@ module.exports = function(grunt) {
         }
       },
       all: [
-        appDir + 'js/dev/*.js'
+        //appDir + 'js/dev/*.js'
         //appDir + 'js/dev/module/*.js'
 
       ],
@@ -201,7 +239,7 @@ module.exports = function(grunt) {
         },
         files: {
           src: [
-            appDir + 'js/dev/module/*.js',
+            //appDir + 'js/dev/module/*.js',
             '!' + appDir + 'js/dev/module/external.js'
           ]
         }
@@ -210,8 +248,10 @@ module.exports = function(grunt) {
         files: {
           src: [
             // only lint own plugin files
-            appDir + 'js/dev/plugin/plugins.js',
-            appDir + 'js/dev/plugin/jquery.accessifyhtml5.js'
+            appDir + 'js/dev/plugin/jquery.accessifyhtml5.js',
+            appDir + 'js/dev/plugin/jquery.msslider.js',
+            appDir + 'js/dev/plugin/jquery.smartresize.js',
+            appDir + 'js/dev/plugin/plugins.js'
           ]
         }
       },
@@ -318,23 +358,30 @@ module.exports = function(grunt) {
       },
       dev: {
         files: {
-          'js/dev/plugins.js' : [ appDir + 'js/dev/plugin/*.js' ],
-          'js/dev/modules.js' : [ appDir + 'js/dev/module/*.js' ]
+          'js/dev/plugins.js' : [
+            appDir + 'js/dev/plugin/fancybox/jquery.fancybox.js',
+            appDir + 'js/dev/plugin/*.js',
+            '!' + appDir + 'js/dev/plugin/jquery.accessifyhtml5.js'
+          ],
+          'js/dev/modules.js' : [
+            appDir + 'js/dev/module/log.js',
+            appDir + 'js/dev/module/json.js',
+            appDir + 'js/dev/module/accessifyhtml5.js',
+            appDir + 'js/dev/module/pubsub.js',
+            appDir + 'js/dev/module/yaml-focusfix.js'
+          ]
         }
       },
       prod: {
         files: {
-          'js/prod/main-<%= pkg.version %>.js' : [ appDir + 'js/dev/plugins.js', appDir + 'js/dev/modules.js', appDir + 'js/dev/main.js' ]
-        }/*
-        src: [
-          '',
-          'js/plugins.js',
-          'js/main.js'
-        ],
-        dest: 'js/main-<%= pkg.version %>.js'*/
+          'js/prod/main-<%= pkg.version %>.js' : [
+            appDir + 'js/dev/plugins.js',
+            appDir + 'js/dev/modules.js',
+            appDir + 'js/dev/main.js'
+          ]
+        }
       }
     },
-    // Lists of files to be minified with UglifyJS, used by the "min" task.
     uglify: {
       prod: {
         options : {
@@ -360,7 +407,7 @@ module.exports = function(grunt) {
           archive: appDir + 'css/prod/main.css.gz'
         },
         files: [
-          { src: [ appDir + 'css/prod/main.css' ], dest: appDir + 'css/prod/' }
+          { src: [ appDir + 'css/prod/main.css' ], dest: appDir + 'css/prod/main.css' }
         ]
       },
       jsmain: {
@@ -369,13 +416,11 @@ module.exports = function(grunt) {
           archive: appDir + 'js/prod/main-<%= pkg.version %>.min.js.gz'
         },
         files: [
-          { src: [ appDir + 'js/prod/main-<%= pkg.version %>.min.js' ], dest: appDir + 'js/prod/' }
+          { src: [ appDir + 'js/prod/main-<%= pkg.version %>.min.js' ], dest: appDir + 'js/prod/main-<%= pkg.version %>.min.js' }
         ]
       }
     },
-    // Configuration options for the "watch" task.
     watch: {
-      //files: ['Gruntfile.js', 'js/plugins/**/*.js', 'js/main.js', 'js/plugins.js', 'sass/**/*.scss'],
       dev: {
         files: tasks.dev.files,
         tasks: tasks.dev.tasks
@@ -398,13 +443,28 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  //grunt.loadNpmTasks('grunt-compass');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   //grunt.loadNpmTasks('grunt-requirejs');
+  grunt.loadNpmTasks('grunt-string-replace');
 
+  /* register all defined tasks */
+  var t;
+  for ( t in tasks ) {
+    if ( typeof tasks[t] === 'object' && tasks[t].name) {
+      /* register normal tasks */
+      grunt.registerTask( tasks[t].name, tasks[t].tasks );
+    } else if ( typeof tasks[t] === 'string' && t === 'd' ) {
+      /* register default task */
+      grunt.registerTask( 'default', 'watch:' + tasks[t] );
+    }
+  }
+
+  /*
   grunt.registerTask(tasks.dev.name, tasks.dev.tasks);
   grunt.registerTask(tasks.prod.name, tasks.prod.tasks);
+  grunt.registerTask(tasks.comments.name, tasks.comments.tasks);
+  */
 
   // Default task.
-  grunt.registerTask('default', 'watch:' + tasks.dev.name);
+  //grunt.registerTask('default', 'watch:' + tasks.dev.name);
 };

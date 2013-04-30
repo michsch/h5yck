@@ -27,8 +27,6 @@ Move into the project folder and fetch your dependencies
 ```bash
 cd h5yck
 npm install
-sudo npm install grunt-compass
-sudo npm install grunt-contrib
 ```
 
 Start grunt
