@@ -18,6 +18,7 @@
 # build script folders
 *intermediate/
 *publish/
+js/prod/
 
 # ignore js sourceMaps
 *.map
