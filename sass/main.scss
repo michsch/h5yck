@@ -1,34 +1,33 @@
 // main stylesheet for website <mywebsite.com>
 //
 // @author             Michael Schulze
-// @version            $1.3.4$
+// @version            $1.4.0$
 // @copyright          Michael Schulze, 08 April, 2013,
 //                     Copyright 2005-2013, Dirk Jesse (YAML)
 // @license            CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
 //                     YAML-CDL (http://www.yaml.de/license.html)
 //                     MIT license
 //
-// @package            yaml,compass,sass
-// @-yaml-minver       4.0.1
-// @-sass-minver       3.2
+// @package            compass,sass,yaml
 // @-compass-minver    0.12.2
+// @-sass-minver       3.2.3
+// @-yaml-minver       4.1.0
 //
-// @lastmodified       $Date: 2013-04-08 18:37:33 +0200 (Mon, 08 Apr 2013) $
+// @lastmodified       $Date: 2013-04-29 01:23:14 +0200 (Mon, 29 Apr 2013) $
 
-/*! H5YCK - v1.4.0 - 2013-04-08
- * https://github.com/michsch/h5yck
- * Copyright (c) 2012 Michael Schulze; Licensed MIT license
- */
+/*! H5YCK - v1.4.0 - 2013-04-29
+* https://github.com/michsch/h5yck
+* Copyright (c) 2013 Michael Schulze; Licensed MIT license */
 
 // import config file with colors and other vars
 @import "config";
 
 // import mixins
 @import "mixin/css3",
-		"mixin/sizes",
-		"mixin/helper",
-		"mixin/sprites",
-		"mixin/columns";
+    "mixin/sizes",
+    "mixin/helper",
+    "mixin/sprites",
+    "mixin/columns";
 
 // import fonts
 //@import "base/fonts";
@@ -38,43 +37,43 @@
 
 @media all
 {
-	// base
-	@import "base/main",
-			"base/typography",
-			"base/images",
-			"base/tables";
+  // base
+  @import "base/main",
+      "base/typography",
+      "base/images",
+      "base/tables";
 }
 
 @import "base/forms",
-		"layout/sprites";
+    "layout/sprites";
 
 @media screen, projection
 {
-	// base and layout
-	@import "base/screen",
-			"layout/screen";
+  // base and layout
+  @import "base/screen",
+      "layout/screen";
 }
 
 @media all
 {
-	// modules
-	@import "module/images",
-			"module/tables",
-			"module/generic";
+  // modules
+  @import "module/images",
+      "module/tables",
+      "module/generic";
 }
 
 @media screen, projection
 {
-	// modules
-	@import "module/skiplinks",
-			"module/nav";
+  // modules
+  @import "module/skiplinks",
+      "module/nav";
 }
 
 // modules with integrated media queries
 @import "module/forms",
-		"module/jquery.fancybox-2.1.4",
-		"module/jquery.tabs";
+    "module/fancybox/jquery.fancybox-2.1.4",
+    "module/jquery.tabs";
 
 // layouts for responsive design and print
 @import "layout/responsive",
-		"layout/print";
+    "layout/print";

@@ -1,18 +1,30 @@
 // patch stylesheet for IE <= 8
 //
 // @author             Michael Schulze
-// @version            $1.3.4$
+// @version            $1.4.0$
 // @copyright          Michael Schulze, 2 Mai, 2012
 // @license            MIT license
 //
-// @package            yaml,compass,sass
-// @-yaml-minver       4.0.1
-// @-sass-minver       3.2
+// @package            compass,sass,yaml
 // @-compass-minver    0.12.2
+// @-sass-minver       3.2.3
+// @-yaml-minver       4.1.0
 //
-// @lastmodified       $Date: 2012-09-15 15:39:59 +0200 (Sa., 15 Sep 2012) $
+// @lastmodified       $Date: 2013-04-29 01:22:14 +0200 (Mon, 29 Apr 2013) $
 
-@media screen, projection {
+// import config file with colors and other vars
+@import "config";
+
+// import mixins
+@import "mixin/css3",
+    "mixin/sizes",
+    "mixin/helper",
+    "mixin/sprites",
+    "mixin/columns";
+
+@media screen, projection
+{
+
   img
   ,embed
   ,object
